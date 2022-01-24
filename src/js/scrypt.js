@@ -1,59 +1,30 @@
-// nav
-window.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('#burger-open').addEventListener('click', function() {
-    document.querySelector('#burger-open').classList.toggle('active');
-    document.querySelector('#burger-close').classList.toggle('active');
-    gsap.fromTo(".nav__box",{x:-500, opacity: 0}, {duration: 0.6, x: 0, opacity: 1});
-    gsap.fromTo(".nav__btn-svg",{opacity: 0}, {duration: 0.8, opacity: 1});
-  })
-})
+// swiper-events
 
-window.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('#burger-close').addEventListener('click', function() {
-    document.querySelector('#burger-open').classList.toggle('active');
-    document.querySelector('#burger-close').classList.toggle('active');
-    gsap.to(".nav__box", {duration: 0, x: -500, opacity: 0});
-  })
-})
-// search
-window.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('#search-open').addEventListener('click', function() {
-    document.querySelector('#search-open').classList.toggle('active');
-    document.querySelector('.search__label').classList.toggle('active');
-    document.querySelector('#search-closed').classList.toggle('active');
-  })
-})
-window.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('#search-close').addEventListener('click', function() {
-    document.querySelector('#search-open').classList.toggle('active');
-    document.querySelector('.search__label').classList.toggle('active');
-    document.querySelector('.header__logo').classList.toggle('active');
-    document.querySelector('#search-closed').classList.toggle('active');
-  })
-})
-
-// location
-window.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('#location-close').addEventListener('click', function() {
-    document.querySelector('.location').classList.toggle('deactivate');
-  })
-})
-// form validate about
-
-new JustValidate('.about__form', {
-  rules: {
-    mail:{
-      required: true,
-      email: true
+let swiperEvents = new Swiper(".events__swiper", {
+  pagination: {
+    el: ".events__pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
-  },
-  messages: {
-    mail: 'Недопустимый формат',
   },
 });
 
+// swiper-progects
+let swiperProgects = new Swiper(".progects__swiper", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
-// form validate contacts
+// contacts
+// form
+
+let selector = document.querySelector("input[type='tel']");
+let im = new Inputmask("+7 (999)-999-99-99");
+im.mask(selector);
+
 new JustValidate('.form', {
   rules: {
     name: {
@@ -61,23 +32,21 @@ new JustValidate('.form', {
       minLength: 2,
       maxLength: 24,
     },
-    mail:{
+
+    tel: {
       required: true,
-      email: true
+      strength: {custom: '[^_]$'},
     },
-    message: {
-      required: true,
-    }
   },
 
   messages: {
     name: {
-      required: 'Недопустимый формат',
-      minLength: 'Недопустимый формат',
-      maxLength: 'Недопустимый формат'
+      required: 'Как вас зовут?',
+      minLength: 'Короткое имя',
+      maxLength: 'Длинное имя'
     },
-    mail: 'Недопустимый формат',
-    message: 'Напишите в заявке дату'
+
+    tel: 'Укажите ваш телефон',
   },
 });
 
@@ -99,5 +68,3 @@ function init() {
 
   myMap.geoObjects.add(myPlacemark);
 }
-
-
