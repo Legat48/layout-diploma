@@ -34,7 +34,7 @@ const fonts = () => {
 }
 // создание спрайта
 const svgSprites = () => {
-    return src('src/img/svg/**/*.svg')
+    return src('src/img/sprite/**/*.svg')
     .pipe(svgSprite({
         mode: {
             stack: {
