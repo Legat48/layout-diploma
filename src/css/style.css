@@ -1,0 +1,40 @@
+:root {
+  --color: ;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+html body {
+  font-family: sans-serif;
+}
+
+div .active {
+  display: block;
+}
+
+div .deactivate {
+  display: none;
+}
+
+img {
+  width: 100%;
+}
+
+.sprite {
+  display: none;
+}
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+/*# sourceMappingURL=style.css.map */
