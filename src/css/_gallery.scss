@@ -1,1 +1,74 @@
 @import '_mixin.scss';
+
+.gallery {
+  padding-top: 50px;
+  min-height: 800px;
+  color: var(--color-light-text);
+  background-image: url('../img/gallery-bg-320.jpg');
+  @include backgroundCenter;
+  &__title {
+    margin-bottom: 12px;
+    color: inherit;
+  }
+  &__label {
+    margin-bottom: 15px;
+  }
+  &__selects {
+    margin-bottom: 30px;
+    padding: 5px 15px;
+    width: 100%;
+    border: 1px solid var(--color-light-text);
+    border-radius: 5px;
+    color: inherit;
+    background-color: transparent;
+  }
+  &__option {
+    color: inherit;
+    background-color: transparent;
+  }
+  &__swiper {
+
+  }
+
+  &__slide {
+    width: 100%;
+    min-height: 367px;
+    @include backgroundCenter;
+    &_bg-one {
+      background-image: url('../img/gallery-one-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-one-320@2x.jpg");
+      }
+    }
+    &_bg-two {
+      background-image: url('../img/gallery-two-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-two-320@2x.jpg");
+      }
+    }
+    &_bg-three {
+      background-image: url('../img/gallery-three-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-three-320@2x.jpg");
+      }
+    }
+    &_bg-four {
+      background-image: url('../img/gallery-four-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-four-320@2x.jpg");
+      }
+    }
+    &_bg-five {
+      background-image: url('../img/gallery-five-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-five-320@2x.jpg");
+      }
+    }
+    &_bg-six {
+      background-image: url('../img/gallery-six-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-six-320@2x.jpg");
+      }
+    }
+  }
+}

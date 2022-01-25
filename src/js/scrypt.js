@@ -18,6 +18,19 @@ let swiperProgects = new Swiper(".progects__swiper", {
   },
 });
 
+// swiper-gallery
+
+var swiper = new Swiper(".gallery__swiper", {
+  pagination: {
+    el: ".gallery__pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".gallery__button-next",
+    prevEl: ".gallery__button-prev",
+  },
+});
+
 // contacts
 // form
 

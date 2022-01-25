@@ -1,1 +1,53 @@
 @import '_mixin.scss';
+
+.header {
+  padding-top: 15px;
+  padding-bottom: 14px;
+  background-color: var(--color-black);
+  &__grid {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__burger {
+    width: 25px;
+    height: 18px;
+  }
+  &__logo {
+    width: 97px;
+    height: 21px;
+  }
+  &__selects {
+    display: none;
+  }
+  &__search-toggle {
+    border: transparent;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+
+  }
+  &__toggle-open {
+    width: 18px;
+    height: 18px;
+  }
+
+}
+.nav {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-500px);
+  &__btn {
+    display: none;
+  }
+}
+
+.search {
+  display: none;
+}
+
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

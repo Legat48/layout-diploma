@@ -1,1 +1,60 @@
 @import '_mixin.scss';
+
+.catalog {
+  padding-top: 50px;
+  color: var(--color-text);
+  &__title {
+    margin-bottom: 12px;
+  }
+  &__accordion {
+
+  }
+  &__accordion-item {
+    border: transparent;
+
+  }
+  &__item-title {
+
+  }
+  &__item-button {
+    border: transparent;
+    border-top: 1px solid #CACACA;
+    border-bottom: 1px solid #CACACA;
+    background-color: transparent;
+  }
+  &__item-button:not(.collapsed) {
+    border-color: var(--color-darck-fill);
+    background-color: transparent;
+  }
+  &__tab-link {
+    margin-bottom: 10px;
+    &_active {
+      color: var(--color-fill);
+    }
+  }
+  &__accordion {
+    margin-bottom: 50px;
+    &-body {
+      padding: 20px 0;
+    }
+    &-plug {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 335px;
+      &-img {
+        min-width: 290px;
+        min-height: 181px;
+      }
+      &-title {
+        margin-bottom: 15px;
+      }
+      &-text {
+        margin-bottom: 5px;
+      }
+      &-link {
+        color: var(--color-fill);
+      }
+    }
+  }
+}
