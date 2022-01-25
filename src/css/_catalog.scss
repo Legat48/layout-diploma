@@ -6,55 +6,97 @@
   &__title {
     margin-bottom: 12px;
   }
+
   &__accordion {
+    margin-bottom: 50px;
+  }
+
+  &__tab {
 
   }
-  &__accordion-item {
+}
+
+.catalog-accordion {
+  &__item {
     border: transparent;
-
   }
-  &__item-title {
-
-  }
-  &__item-button {
+  &__button {
     border: transparent;
     border-top: 1px solid #CACACA;
     border-bottom: 1px solid #CACACA;
     background-color: transparent;
   }
-  &__item-button:not(.collapsed) {
+  &__button:not(.collapsed) {
     border-color: var(--color-darck-fill);
     background-color: transparent;
   }
-  &__tab-link {
+  &__body {
+    padding: 20px 0;
+  }
+  &__link {
     margin-bottom: 10px;
     &_active {
       color: var(--color-fill);
     }
   }
-  &__accordion {
-    margin-bottom: 50px;
-    &-body {
-      padding: 20px 0;
+  &__plug {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 155px;
+    min-height: 335px;
+    &-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 130px;
+      border: 2px solid #B7B7B7;
+      background-color: transparent;
     }
-    &-plug {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 335px;
-      &-img {
-        min-width: 290px;
-        min-height: 181px;
-      }
-      &-title {
-        margin-bottom: 15px;
-      }
-      &-text {
-        margin-bottom: 5px;
-      }
-      &-link {
-        color: var(--color-fill);
-      }
+    &-img::before {
+      content: '';
+      position: absolute;
+      z-index: 10;
+      top: 8px;
+      right: 8px;
+      bottom: 8px;
+      left: 8px;
+      background-color: #B7B7B7;
     }
+    &-title {
+      margin-bottom: 15px;
+    }
+    &-text {
+      margin-bottom: 5px;
+    }
+    &-link {
+      color: var(--color-fill);
+    }
+  }
+}
+
+.catalog-tab {
+  &__img {
+    min-width: 290px;
+    min-height: 181px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__img {
+    margin-bottom: 20px;
+    width: 290px;
+    height: 181px;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__info {
+    margin-bottom: 5px;
+    color: var(--color-gray-text);
   }
 }
