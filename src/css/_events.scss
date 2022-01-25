@@ -1,1 +1,71 @@
 @import '_mixin.scss';
+
+.events {
+  &__title {
+    margin-bottom: 12px;
+  }
+  &__swiper {
+
+  }
+  &__wrapper {
+    margin-bottom: 20px;
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 217px 23px 50px;
+    border: 1px solid #CACACA;
+    min-height: 683px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% 200px;
+    &_bg-one {
+      background-image: url('../img/events-one-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/events-one-320@2x.jpg");
+      }
+    }
+    &_bg-two {
+      background-image: url('../img/events-two-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/events-two-320@2x.jpg");
+      }
+    }
+    &_bg-three {
+      background-image: url('../img/events-three-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/events-three-320@2x.jpg");
+      }
+    }
+    &_bg-four {
+      background-image: url('../img/events-four-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/events-four-320@2x.jpg");
+      }
+    }
+    &_bg-five {
+      background-image: url('../img/events-five-320.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/events-five-320@2x.jpg");
+      }
+    }
+  }
+  &__info {
+    margin-bottom: 10px;
+    text-align: right;
+    color: var(--color-gray-text);
+  }
+  &__card-title {
+    margin-bottom: 5px;
+  }
+  &__link {
+    margin-right: auto;
+    border-bottom: 1px solid var(--color-fill);
+    color: var(--color-fill);
+  }
+}
+
+.events .events__pagination {
+  position: relative;
+}

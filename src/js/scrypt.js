@@ -4,17 +4,14 @@ let swiperEvents = new Swiper(".events__swiper", {
   pagination: {
     el: ".events__pagination",
     clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
   },
 });
 
 // swiper-progects
 let swiperProgects = new Swiper(".progects__swiper", {
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    prevEl: ".progects__button_prev",
+    nextEl: ".progects__button_next",
   },
 });
 
@@ -66,17 +63,15 @@ new JustValidate('.form', {
 // map
 ymaps.ready(init);
 function init() {
-  var myMap = new ymaps.Map("map", {
-    center: [55.770624, 37.632742],
-    zoom: 16,
-    controls: ['']
+  let myMap = new ymaps.Map("map", {
+    center: [55.758468, 37.601088],
+    zoom: 15,
   });
 
-  var myPlacemark = new ymaps.Placemark([55.770624, 37.632742], {}, {
+  let myPlacemark = new ymaps.Placemark([55.758468, 37.601088], {}, {
     iconLayout: 'default#image',
     iconImageHref: 'img/geoObject.svg',
-    iconImageSize: [12, 12],
-    iconImageOffset: [1, 1]
+    iconImageSize: [20, 20],
   });
 
   myMap.geoObjects.add(myPlacemark);

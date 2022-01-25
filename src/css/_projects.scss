@@ -1,1 +1,64 @@
 @import '_mixin.scss';
+
+.progects {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: var(--color-text);
+  &__title {
+    margin-bottom: 12px;
+  }
+  &__text {
+    margin-bottom: 20px;
+  }
+  &__link {
+    color: var(--color-fill);
+  }
+  &__title-third {
+    margin-bottom: 20px;
+  }
+  &__swiper-box {
+    display: flex;
+    justify-content: space-between;
+    min-height: 65px;
+  }
+  &__swiper {
+    width: 100%
+  }
+  &__slide {
+    @include backgroundCenter;
+    &_bg-one {
+      background-image: url('../img/progects-grey-one.svg');
+    }
+    &_bg-two {
+      background-image: url('../img/progects-grey-two.svg');
+    }
+    &_bg-three {
+      background-image: url('../img/progects-grey-three.svg');
+    }
+    &_bg-four {
+      background-image: url('../img/progects-grey-four.svg');
+    }
+    &_bg-five {
+      background-image: url('../img/progects-grey-five.svg');
+    }
+    &_bg-six {
+      background-image: url('../img/progects-grey-six.svg');
+    }
+    &_bg-seven {
+      background-image: url('../img/progects-grey-seven.svg');
+    }
+    &_bg-eight {
+      background-image: url('../img/progects-grey-eight.svg');
+    }
+    &_bg-nine {
+      background-image: url('../img/progects-grey-nine.svg');
+    }
+  }
+  &__button {
+    position: relative;
+  }
+  &__button svg{
+    width: 30px;
+    height: 30px;
+  }
+}

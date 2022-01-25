@@ -780,7 +780,7 @@
             <h2 class="catalog-tab__title">
               Доменико Гирландайо
             </h2>
-            
+
             <div class="catalog-tab__info">
               2 июня 1448 — 11 января 1494.
             </div>
@@ -805,7 +805,7 @@
         </h2>
         <div class="events__swiper swiper">
           <ul class="events__wrapper swiper-wrapper">
-            <li class="events__card swiper-slide events__card-bg_one">
+            <li class="events__card swiper-slide events__card_bg-one">
               <p class="events__info">
                 Музей им. Щусева с 20 марта по 30 апреля
               </p>
@@ -821,7 +821,7 @@
               </a>
             </li>
 
-            <li class="events__card swiper-slide events__card-bg_two">
+            <li class="events__card swiper-slide events__card_bg-two">
               <p class="events__info">
                 ММОМА 24 марта 19:00
               </p>
@@ -837,7 +837,7 @@
               </a>
             </li>
 
-            <li class="events__card swiper-slide events__card-bg_three">
+            <li class="events__card swiper-slide events__card_bg-three">
               <p class="events__info">
                 Третьяковка на Крымском валу с 30 марта по 30 апреля
               </p>
@@ -853,7 +853,7 @@
               </a>
             </li>
 
-            <li class="events__card swiper-slide events__card-bg_four">
+            <li class="events__card swiper-slide events__card_bg-four">
               <p class="events__info">
                 Третьяковка на Крымском валу с 30 марта по 30 апреля
               </p>
@@ -868,7 +868,7 @@
               </a>
             </li>
 
-            <li class="events__card swiper-slide events__card-bg_five">
+            <li class="events__card swiper-slide events__card_bg-five">
               <p class="events__info">
                 ММАМ с 8 апреля по 20 мая
               </p>
@@ -913,27 +913,38 @@
         <h3 class="progects__title-third">
           Партнёры проектов:
         </h3>
-
-        <div class="progects__swiper swiper">
-          <ul class="progects__wrapper swiper-wrapper">
-            <li class="progects__slide swiper-slide progects__slide-bg-one"></li>
-            <li class="progects__slide swiper-slide progects__slide-bg-two"></li>
-            <li class="progects__slide swiper-slide progects__slide-bg-three"></li>
-            <li class="progects__slide swiper-slide progects__slide-bg-four"></li>
-            <li class="progects__slide swiper-slide progects__slide-bg-five"></li>
-            <li class="progects__slide swiper-slide progects__slide-bg-six"></li>
-            <li class="progects__slide swiper-slide progects__slide-bg-seven"></li>
-            <li class="progects__slide swiper-slide progects__slide-bg-eight"></li>
-            <li class="progects__slide swiper-slide progects__slide-bg-nine"></li>
-          </ul>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+        <div class="progects__swiper-box">
+          <button class="progects__button progects__button_prev">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 0.999999 15 0.999999C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z" fill="#666666" stroke="black" stroke-width="2"/>
+              <path d="M14 20L19 15L14 10" stroke="white"/>
+            </svg>
+          </button>
+          <div class="progects__swiper swiper">
+            <ul class="progects__wrapper swiper-wrapper">
+              <li class="progects__slide swiper-slide progects__slide_bg-one"></li>
+              <li class="progects__slide swiper-slide progects__slide_bg-two"></li>
+              <li class="progects__slide swiper-slide progects__slide_bg-three"></li>
+              <li class="progects__slide swiper-slide progects__slide_bg-four"></li>
+              <li class="progects__slide swiper-slide progects__slide_bg-five"></li>
+              <li class="progects__slide swiper-slide progects__slide_bg-six"></li>
+              <li class="progects__slide swiper-slide progects__slide_bg-seven"></li>
+              <li class="progects__slide swiper-slide progects__slide_bg-eight"></li>
+              <li class="progects__slide swiper-slide progects__slide_bg-nine"></li>
+            </ul>
+          </div>
+          <button class="progects__button progects__button_next">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 0.999999 15 0.999999C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z" fill="#666666" stroke="black" stroke-width="2"/>
+              <path d="M14 20L19 15L14 10" stroke="white"/>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section class="contacts" id="contacts">
-      <div class="container contacts-box">
+      <div class="container contacts__box">
         <address class="contacts__address">
           <h3 class="contacts__address-title">
             Шоурум №4
@@ -943,18 +954,18 @@
           </p>
         </address>
 
-        <div role="form" aria-label="Форма" class="part castom-form">
+        <div class="contacts__form" role="form" aria-label="Форма" >
           <form action="" class="form">
-            <label class="label" for="name">
-              <input class="input" id="name" name="Имя" type="text" placeholder="Имя*" data-validate-field="name">
+            <label class="contacts__label label" for="name">
+              <input class="contacts__input input" id="name" name="Имя" type="text" placeholder="Имя*" data-validate-field="name">
             </label>
 
-            <label class="label" for="tel">
-              <input class="input" id="tel" name="tel" type="tel" placeholder="Телефон*" data-validate-field="tel"
+            <label class="contacts__label label" for="tel">
+              <input class="contacts__input input" id="tel" name="tel" type="tel" placeholder="Телефон*" data-validate-field="tel"
                 data-validate-rules="phone">
             </label>
 
-            <button class="form__btn">Заказать</button>
+            <button class="contacts__btn button">Заказать</button>
           </form>
         </div>
 
@@ -1000,11 +1011,11 @@
           </ul>
         </div>
       </div>
-      <div class="map" id="map"></div>
+      <div class="container map" id="map"></div>
     </section>
   </main>
   <footer class="footer">
-    <div class="container">
+    <div class="container footer__box">
       <ul class="footer__list">
         <li class="footer__item">
           <a class="footer__link" href="#" aria-label="на вконтакте">
