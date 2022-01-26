@@ -81,6 +81,7 @@ img {
 }
 
 .button {
+  border-color: transparent;
   background-color: transparent;
 }
 
@@ -434,6 +435,7 @@ img {
 }
 
 .button {
+  border-color: transparent;
   background-color: transparent;
 }
 
@@ -555,7 +557,6 @@ img {
   max-width: 176px;
   border-radius: 10px;
   color: var(--color-light-text);
-  /* background-color: ; */
 }
 
 .gallery__label {
@@ -606,6 +607,10 @@ img {
 
 .gallery__input:checked + span::before {
   opacity: 1;
+}
+
+.gallery__swiper {
+  margin-bottom: 20px;
 }
 
 .gallery__slide {
@@ -674,6 +679,29 @@ img {
   .gallery__slide_bg-six {
     background-image: url("../img/gallery-six-320@2x.jpg");
   }
+}
+
+.gallery__swiper-nav-box {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery__button-next, .gallery__button-prev,
+.gallery__button-next svg,
+.gallery__button-prev svg {
+  width: 30px;
+  height: 30px;
+}
+
+.gallery__pagination {
+  margin: 0 11px;
+}
+
+.gallery__swiper-nav-box .gallery__pagination {
+  position: relative;
+  bottom: 0;
+  padding-top: 6px;
+  width: auto;
 }
 
 .choices {
@@ -763,7 +791,6 @@ img {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* checkbox-menu */
 .catalog {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -783,10 +810,16 @@ img {
 }
 
 .catalog-accordion__button {
+  position: relative;
   border: transparent;
   border-top: 1px solid #CACACA;
   border-bottom: 1px solid #CACACA;
   background-color: transparent;
+}
+
+.catalog-accordion__btn-svg {
+  position: absolute;
+  right: 0;
 }
 
 .catalog-accordion__button:not(.collapsed) {
@@ -846,6 +879,11 @@ img {
 
 .catalog-accordion__plug-link {
   color: var(--color-fill);
+}
+
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+  background-image: none;
 }
 
 .catalog-tab__img {

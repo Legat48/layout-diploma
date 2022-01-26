@@ -26,7 +26,6 @@
     max-width: 176px;
     border-radius: 10px;
     color: var(--color-light-text);
-    /* background-color: ; */
   }
   &__label {
     position: relative;
@@ -71,6 +70,9 @@
   &__input:checked + span::before {
     opacity: 1;
   }
+  &__swiper {
+    margin-bottom: 20px;
+  }
   &__slide {
     width: 100%;
     min-height: 367px;
@@ -112,7 +114,33 @@
       }
     }
   }
+  &__swiper-nav-box {
+    display: flex;
+    justify-content: center;
+  }
+  &__button-next,
+  &__button-prev {
+
+  }
+  &__button-next,
+  &__button-prev,
+  &__button-next svg,
+  &__button-prev svg{
+    width: 30px;
+    height: 30px;
+  }
+  &__pagination {
+    margin: 0 11px;
+  }
 }
+//для пересиливания пагинации слайдера
+.gallery__swiper-nav-box .gallery__pagination {
+  position: relative;
+  bottom: 0;
+  padding-top: 6px;
+  width: auto;
+}
+
 // gallery-selects
 // так как селектор кастомный, приходится использовать стили
 // из библиотеки
@@ -206,77 +234,3 @@
   color: var(--color-light-text);
   background-color: rgba(255, 255, 255, 0.2);
 }
-
-/* checkbox-menu */
-
-// .checkbox-menu,
-// .gallery__checkbox {
-//   margin-right: 30px;
-//   padding: 20px 28px 28px;
-//   max-width: 176px;
-//   border-radius: 10px;
-//   color: var(--color-light-text);
-//   /* background-color: ; */
-// }
-
-// .checkbox-menu__header {
-//   margin: 0;
-//   margin-bottom: 20px;
-//   font-weight: 600;
-//   font-size: 18px;
-//   line-height: 25px;
-// }
-
-// .checkbox-menu__item:not(:last-child ) {
-//   margin-bottom: 20px;
-// }
-
-// .gallery__label {
-//   position: relative;
-//   padding-left: 21px;
-//   font-size: 1em;
-//   line-height: 1em;
-//   cursor: pointer;
-// }
-// .gallery__label:hover {
-//   color: #C283F3;
-// }
-
-
-// .gallery__input {
-//   display: none;
-// }
-
-// .gallery__input + span {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 12px;
-//   height: 12px;
-//   text-align: center;
-//   border: 1px solid var(--color-light-text);
-// }
-
-// .gallery__input:checked + span,
-// .gallery__label:hover span,
-// .gallery__input + span:hover {
-//   border-color: #C283F3;
-// }
-
-// .gallery__input + span::before {
-//   content: '\00B7';
-//   position: absolute;
-//   top: 65%;
-//   right: 0;
-//   left: 0;
-//   bottom: 0;
-//   font-size: 30px;
-//   line-height: 0;
-//   opacity: 0;
-//   color: #C283F3;
-//   transform: opacity .3 ease-in-out;
-// }
-
-// .gallery__input:checked + span::before {
-//   opacity: 1;
-// }

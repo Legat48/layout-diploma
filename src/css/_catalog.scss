@@ -22,10 +22,15 @@
     border: transparent;
   }
   &__button {
+    position: relative;
     border: transparent;
     border-top: 1px solid #CACACA;
     border-bottom: 1px solid #CACACA;
     background-color: transparent;
+  }
+  &__btn-svg {
+    position: absolute;
+    right: 0;
   }
   &__button:not(.collapsed) {
     border-color: var(--color-darck-fill);
@@ -77,7 +82,10 @@
     }
   }
 }
-
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+  background-image: none;
+}
 .catalog-tab {
   &__img {
     min-width: 290px;

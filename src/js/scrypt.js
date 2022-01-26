@@ -43,6 +43,7 @@ const searchAnim = (() => {
 
 // swiper-events
 const swiperEvents = new Swiper('.events__swiper', {
+  loop: true,
   pagination: {
     el: '.events__pagination',
     clickable: true,
@@ -51,6 +52,7 @@ const swiperEvents = new Swiper('.events__swiper', {
 
 // swiper-progects
 const swiperProgects = new Swiper('.progects__swiper', {
+  loop: true,
   navigation: {
     prevEl: '.progects__button_prev',
     nextEl: '.progects__button_next',
@@ -59,6 +61,7 @@ const swiperProgects = new Swiper('.progects__swiper', {
 // gallery
 // swiper-gallery
 const swiper = new Swiper('.gallery__swiper', {
+  loop: true,
   pagination: {
     el: '.gallery__pagination',
     type: 'fraction',
