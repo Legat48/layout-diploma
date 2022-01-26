@@ -83,6 +83,25 @@ const exampleSelect = (() => {
     });
   });
 })();
+
+// catalog
+// tab
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.catalog-accordion__link').forEach((tabLink) => {
+    tabLink.addEventListener('click', (event) => {
+      const { path } = event.currentTarget.dataset;
+      document.querySelectorAll('.catalog-accordion__link').forEach((el) => {
+        el.classList.remove('catalog-accordion__link_active');
+      });
+      event.currentTarget.classList.add('catalog-accordion__link_active');
+      document.querySelectorAll('.catalog-tab__item').forEach((tabContent) => {
+        tabContent.classList.add('deactivate');
+      });
+      document.querySelector(`[data-target="${path}"]`).classList.remove('deactivate');
+    });
+  });
+});
+
 // contacts
 // contacts form
 const selector = document.querySelector("input[type='tel']");
