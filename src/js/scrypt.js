@@ -13,43 +13,27 @@ const burgerAnim = (() => {
     if (burger.classList.contains('burger--active')) {
       gsap.fromTo('.nav__list', { x: -500, opacity: 0 }, { duration: 0.6, x: 0, opacity: 1 });
     } else if ((!burger.classList.contains('burger--active'))) {
-        gsap.to('.nav__list', { duration: 0.6, x: -500, opacity: 0 });
-      }
-
-    // if (e.classList.contains('burger--active')) {
-    //   gsap.fromTo('.nav__list', { x: -500, opacity: 0 }, { duration: 0.6, x: 0, opacity: 1 });
-    // }
+      gsap.to('.nav__list', { duration: 0.6, x: -500, opacity: 0 });
+    }
   });
 })();
 
-// window.addEventListener('DOMContentLoaded', () => {
-//   document.querySelector('#burger').addEventListener('click', () => {
-//   });
-// });
-
-// window.addEventListener('DOMContentLoaded', () => {
-//   document.querySelector('#burger-close').addEventListener('click', () => {
-//     document.querySelector('#burger-open').classList.toggle('active');
-//     document.querySelector('#burger-close').classList.toggle('active');
-//     gsap.to('.nav__list', { duration: 0, x: -500, opacity: 0 });
-//   });
-// });
 // // search
-// window.addEventListener('DOMContentLoaded', () => {
-//   document.querySelector('#search-open').addEventListener('click', () => {
-//     document.querySelector('#search-open').classList.toggle('active');
-//     document.querySelector('.search__label').classList.toggle('active');
-//     document.querySelector('#search-closed').classList.toggle('active');
-//   });
-// });
-// window.addEventListener('DOMContentLoaded', () => {
-//   document.querySelector('#search-close').addEventListener('click', () => {
-//     document.querySelector('#search-open').classList.toggle('active');
-//     document.querySelector('.search__label').classList.toggle('active');
-//     document.querySelector('.header__logo').classList.toggle('active');
-//     document.querySelector('#search-closed').classList.toggle('active');
-//   });
-// });
+const searchAnim = (() => {
+  const search = document.querySelector('#search-toggle');
+  const searchSvgOpen = document.getElementById('toggle-open');
+  const searchSvgClosed = document.getElementById('toggle-closed');
+  search.addEventListener('click', (e) => {
+    searchSvgOpen.classList.toggle('active');
+    searchSvgClosed.classList.toggle('active');
+    e.currentTarget.classList.toggle('active');
+    if (search.classList.contains('active')) {
+      gsap.fromTo('.search', { y: -100, opacity: 0 }, { duration: 0.6, y: 0, opacity: 1 });
+    } else if ((!search.classList.contains('active'))) {
+      gsap.to('.search', { duration: 0.6, y: -100, opacity: 0 });
+    }
+  });
+})();
 
 // swiper-events
 const swiperEvents = new Swiper('.events__swiper', {
