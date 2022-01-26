@@ -1078,11 +1078,19 @@ img {
 
 .progects__button {
   position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: none;
 }
 
+.progects__button,
 .progects__button svg {
   width: 30px;
   height: 30px;
+}
+
+.progects__swiper-box .progects__swiper {
+  margin: 0 17px;
 }
 
 .contacts__box {
