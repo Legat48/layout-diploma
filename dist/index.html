@@ -199,7 +199,7 @@
           </ul>
         </nav>
 
-        <ul class="header__selects">
+        <!-- <ul class="header__selects">
           <li class="header__selects-item select-custom">
             <select name="select" class="select">
               <option class="header__option_bg header__option_bg1-1" value="">
@@ -284,7 +284,7 @@
               </option>
             </select>
           </li>
-        </ul>
+        </ul> -->
         <form class="search">
           <button class="search__btn button" id="searchBtn" type="submit">
             <svg class="search__btn-svg" id="" aria-label="Кнопка открыть меню">
@@ -373,43 +373,41 @@
           Фильтр:
         </label>
         <select class="gallery__selects select" name="gallery-select">
-          <option class="gallery__option gallery__option_bg1-1" value="">
+          <option value="1">
             Живопись
           </option>
-          <option class="gallery__option gallery__option_bg1-2" value="">
+          <option value="2">
             Рисунок
           </option>
-          <option class="gallery__option gallery__option_bg1-3" value="">
+          <option value="3">
             Скульптура
           </option>
         </select>
 
-        <div class="gallery__checkbox checkbox-menu">
-          <ul class="checkbox-menu__list">
-            <li class="checkbox-menu__item">
-              <div class="checkbox">
-                <label class="checkbox__label" for="dino">
-                  <input class="checkbox__input" id="dino" type="checkbox" name="checkbox" required tabindex="0">
-                  XIX век
-                  <span></span>
-                </label>
-              </div>
+        <div class="gallery__checkbox">
+          <ul class="gallery__check-list">
+            <li class="gallery__check-item">
+              <label class="gallery__label" for="XIX">
+                <input class="gallery__input" id="XIX" type="checkbox" name="XIX" required tabindex="0">
+                XIX век
+                <span></span>
+              </label>
             </li>
 
-            <li class="checkbox-menu__item">
+            <li class="gallery__check-item">
               <div class="checkbox">
-                <label class="checkbox__label" for="bears">
-                  <input class="checkbox__input" id="bears" type="checkbox" name="checkbox" required tabindex="0">
+                <label class="gallery__label" for="XX">
+                  <input class="gallery__input" id="XX" type="checkbox" name="XX" required tabindex="0">
                   XX век
                   <span></span>
                 </label>
               </div>
             </li>
 
-            <li class="checkbox-menu__item">
+            <li class="gallery__check-item">
               <div class="checkbox">
-                <label class="checkbox__label" for="roe">
-                  <input class="checkbox__input" id="roe" type="checkbox" name="checkbox" required tabindex="0">
+                <label class="gallery__label" for="modernity">
+                  <input class="gallery__input" id="modernity" type="checkbox" name="modernity" required tabindex="0">
                   Современность
                   <span></span>
                 </label>

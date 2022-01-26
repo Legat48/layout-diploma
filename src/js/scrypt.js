@@ -8,11 +8,17 @@
 // анимация кнопки бургера
 const burgerAnim = (() => {
   const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav');
+  const search = document.querySelector('#search-toggle');
   burger.addEventListener('click', (e) => {
     e.currentTarget.classList.toggle('burger--active');
     if (burger.classList.contains('burger--active')) {
+      search.style.zIndex = 1;
+      nav.style.zIndex = 2;
       gsap.fromTo('.nav__list', { x: -500, opacity: 0 }, { duration: 0.6, x: 0, opacity: 1 });
     } else if ((!burger.classList.contains('burger--active'))) {
+      search.style.zIndex = 4;
+      nav.style.zIndex = -1;
       gsap.to('.nav__list', { duration: 0.6, x: -500, opacity: 0 });
     }
   });
@@ -62,6 +68,18 @@ const swiper = new Swiper('.gallery__swiper', {
     prevEl: '.gallery__button-prev',
   },
 });
+// select-gallery
+const exampleSelect = (() => {
+  const elements = document.querySelectorAll('.select');
+  elements.forEach((element) => {
+    const choices = new Choices(element, {
+      searchEnabled: false,
+      position: 'bottom',
+      shouldSort: false,
+      itemSelectText: '',
+    });
+  });
+})();
 // contacts
 // contacts form
 const selector = document.querySelector("input[type='tel']");
