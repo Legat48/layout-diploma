@@ -2,10 +2,16 @@
 
 .gallery {
   padding-top: 50px;
-  min-height: 800px;
   color: var(--color-light-text);
   background-image: url('../img/gallery-bg-320.jpg');
   @include backgroundCenter;
+  &__box,
+  &__content-box,
+  &__swiper-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   &__title {
     margin-bottom: 12px;
     color: inherit;
@@ -70,13 +76,23 @@
   &__input:checked + span::before {
     opacity: 1;
   }
+  &__swiper-box {
+    width: 100%;
+  }
+  &__swiper-nav-box {
+    display: flex;
+    justify-content: center;
+  }
   &__swiper {
     margin-bottom: 20px;
+    width: 100%;
   }
   &__slide {
     width: 100%;
     min-height: 367px;
-    @include backgroundCenter;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     &_bg-one {
       background-image: url('../img/gallery-one-320.jpg');
       @media (min-resolution: 2dppx) {
@@ -114,10 +130,7 @@
       }
     }
   }
-  &__swiper-nav-box {
-    display: flex;
-    justify-content: center;
-  }
+
   &__button-next,
   &__button-prev {
 
@@ -233,4 +246,107 @@
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
   color: var(--color-light-text);
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 321px) {
+  .gallery__slide {
+    min-height: 330px;
+    &_bg-one {
+      background-image: url('../img/gallery-one-768.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-one-768@2x.jpg");
+      }
+    }
+    &_bg-two {
+      background-image: url('../img/gallery-two-768.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-two-768@2x.jpg");
+      }
+    }
+    &_bg-three {
+      background-image: url('../img/gallery-three-768.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-three-768@2x.jpg");
+      }
+    }
+    &_bg-four {
+      background-image: url('../img/gallery-four-768.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-four-768@2x.jpg");
+      }
+    }
+    &_bg-five {
+      background-image: url('../img/gallery-five-768.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-five-768@2x.jpg");
+      }
+    }
+    &_bg-six {
+      background-image: url('../img/gallery-six-768.jpg');
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/gallery-six-768@2x.jpg");
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .gallery {
+    &__swiper-box {
+      flex-direction: column-reverse;
+    }
+    &__swiper-nav-box {
+      margin-right: auto;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .gallery {
+    &__box {
+      flex-direction: row;
+    }
+    &__swiper-box {
+      width: 75%;
+    }
+    &__slide {
+      min-height: 315px;
+      &_bg-one {
+        background-image: url('../img/gallery-one-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/gallery-one-1024@2x.jpg");
+        }
+      }
+      &_bg-two {
+        background-image: url('../img/gallery-two-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/gallery-two-1024@2x.jpg");
+        }
+      }
+      &_bg-three {
+        background-image: url('../img/gallery-three-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/gallery-three-1024@2x.jpg");
+        }
+      }
+      &_bg-four {
+        background-image: url('../img/gallery-four-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/gallery-four-1024@2x.jpg");
+        }
+      }
+      &_bg-five {
+        background-image: url('../img/gallery-five-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/gallery-five-1024@2x.jpg");
+        }
+      }
+      &_bg-six {
+        background-image: url('../img/gallery-six-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/gallery-six-1024@2x.jpg");
+        }
+      }
+    }
+  }
 }

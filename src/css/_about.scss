@@ -3,11 +3,14 @@
 .about {
   padding-top: 50px;
   padding-bottom: 50px;
+  // мне кажется это очень плохой поступок,
+  //  но как бороться с анимацией хидера по другому я не придумал
+  background-color: var(--color-white);
   &__title {
     margin-bottom: 12px;
 
   }
   &__text {
-    
+
   }
 }

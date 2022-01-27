@@ -71,12 +71,83 @@ document.querySelectorAll('.header-dropdown__scrollbar').forEach((el) => {
 
 // swiper-hero
 const swiperHero = new Swiper('.hero__swiper', {
-  centeredSlides: true,
+  allowTouchMove: false,
+  loop: true,
+  effect: 'fade',
+  speed: 10000,
   autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
+    delay: 10000,
   },
 });
+
+// gallery
+// swiper-gallery
+const swiper = new Swiper('.gallery__swiper', {
+  slidesPerView: 1,
+  grid: {
+    rows: 1,
+    fill: 'row',
+  },
+  spaceBetween: 20,
+  pagination: {
+    el: '.gallery__pagination',
+    type: 'fraction',
+  },
+  navigation: {
+    nextEl: '.gallery__button-next',
+    prevEl: '.gallery__button-prev',
+  },
+
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 34,
+    },
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 6,
+      spaceBetween: 50,
+    },
+  },
+  a11y: false,
+  keyboard: true,
+  watchSlidesProgress: true,
+  watchSlidesVisibility: true,
+  slideVisibleClass: 'slide-visible',
+  on: {
+    init() {
+      this.slides.forEach((slide) => {
+        if (!slide.classList.contains('slide-visible')) {
+          slide.tabIndex = '-1';
+        } else {
+          slide.tabIndex = '';
+        }
+      });
+    },
+    slideChange() {
+      this.slides.forEach((slide) => {
+        if (!slide.classList.contains('slide-visible')) {
+          slide.tabIndex = '-1';
+        } else {
+          slide.tabIndex = '';
+        }
+      });
+    },
+  },
+});
+// select-gallery
+const exampleSelect = (() => {
+  const elements = document.querySelectorAll('.select');
+  elements.forEach((element) => {
+    const choices = new Choices(element, {
+      searchEnabled: false,
+      position: 'bottom',
+      shouldSort: false,
+      itemSelectText: '',
+    });
+  });
+})();
 
 // swiper-events
 const swiperEvents = new Swiper('.events__swiper', {
@@ -95,31 +166,6 @@ const swiperProgects = new Swiper('.progects__swiper', {
     nextEl: '.progects__button_next',
   },
 });
-// gallery
-// swiper-gallery
-const swiper = new Swiper('.gallery__swiper', {
-  loop: true,
-  pagination: {
-    el: '.gallery__pagination',
-    type: 'fraction',
-  },
-  navigation: {
-    nextEl: '.gallery__button-next',
-    prevEl: '.gallery__button-prev',
-  },
-});
-// select-gallery
-const exampleSelect = (() => {
-  const elements = document.querySelectorAll('.select');
-  elements.forEach((element) => {
-    const choices = new Choices(element, {
-      searchEnabled: false,
-      position: 'bottom',
-      shouldSort: false,
-      itemSelectText: '',
-    });
-  });
-})();
 
 // catalog
 // tab
