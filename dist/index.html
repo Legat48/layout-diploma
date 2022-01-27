@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/choices.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/accordion.min.css">
   <link rel="stylesheet" href="css/justValidateTooltip.css">
   <link rel="stylesheet" href="css/simplebar.css">
   <link rel="stylesheet" href="css/swiper-bundle.min.css">
@@ -26,6 +27,7 @@
   <script defer src="js/choices.min.js"></script>
   <script defer src="js/inputmask.min.js"></script>
   <script defer src="js/bootstrap.bundle.min.js"></script>
+  <script defer src="js/accordion.min.js"></script>
   <script defer src="js/just-validate.min.js"></script>
   <script defer src="js/simplebar.min.js"></script>
   <script defer src="js/swiper-bundle.min.js"></script>
@@ -574,7 +576,8 @@
                 <li class="gallery__check-item">
                   <div class="checkbox">
                     <label class="gallery__label" for="modernity">
-                      <input class="gallery__input" id="modernity" type="checkbox" name="modernity" required tabindex="0">
+                      <input class="gallery__input" id="modernity" type="checkbox" name="modernity" required
+                        tabindex="0">
                       Современность
                       <span></span>
                     </label>
@@ -630,25 +633,23 @@
           Каталог
         </h2>
 
-        <div class="catalog-accordion catalog__accordion  accordion" id="accordionExample">
-          <div class="catalog-accordion__item accordion-item">
-            <h3 class="catalog-accordion__item-title accordion-header" id="headingOne">
-              <button class="catalog-accordion__button accordion-button" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <ul class=" catalog-accordion catalog__accordion questions js-accordion-container">
+          <li class="catalog-accordion__unit question ac js-enabled">
+            <button class="catalog-accordion__btn button ac-trigger">
+              <h3 class="catalog-accordion__title">
                 C 1400 по 1499 гг.
-                <div class="catalog-accordion__btn-svg">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
-                    <path d="M20 14L15 19L10 14" stroke="black" />
-                  </svg>
-                </div>
-              </button>
-            </h3>
-            <div id="collapseOne" class="catalog-accordion__text accordion-collapse collapse show"
-              aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="catalog-accordion__body accordion-body">
-                <ul role="tablist" aria-label="Список детятелей искусства" class="catalog__list" id="painters">
+              </h3>
+              <svg class="catalog-accordion__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                <path d="M20 14L15 19L10 14" stroke="black" />
+              </svg>
+            </button>
+
+            <div class="catalog-accordion__content ac-panel">
+              <div class="catalog-accordion__wrap">
+                <ul class="catalog-accordion__list">
                   <li class="catalog-accordion__item">
                     <a role="tab" aria-label="Бенедетто ди Биндо" class="catalog-accordion__link" href="#painter-plug"
                       data-path="tab-plug">Бенедетто ди Биндо</a>
@@ -749,29 +750,25 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </li>
 
-          <div class="catalog-accordion__item accordion-item">
-            <h3 class="catalog-accordion__header accordion-header" id="headingTwo">
-              <button class="catalog-accordion__button accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
-                aria-controls="collapseTwo">
+          <li class="catalog-accordion__unit question ac js-enabled">
+            <button class="catalog-accordion__btn button ac-trigger">
+              <h3 class="catalog-accordion__title">
                 C 1500 по 1599 гг.
-                <div class="catalog-accordion__btn-svg">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
-                    <path d="M20 14L15 19L10 14" stroke="black" />
-                  </svg>
-                </div>
-              </button>
-            </h3>
-            <div id="collapseTwo" class="catalog-accordion__text accordion-collapse collapse"
-              aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="catalog-accordion__body accordion-body">
+              </h3>
+              <svg class="catalog-accordion__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                <path d="M20 14L15 19L10 14" stroke="black" />
+              </svg>
+            </button>
+
+            <div class="catalog-accordion__content ac-panel">
+              <div class="catalog-accordion__wrap">
                 <div class="catalog-accordion__plug">
                   <div class="catalog-accordion__plug-img"></div>
-
                   <h3 class="catalog-accordion__plug-title">
                     Здесь пока пусто
                   </h3>
@@ -784,29 +781,25 @@
                 </div>
               </div>
             </div>
-          </div>
+          </li>
 
-          <div class="catalog-accordion__item accordion-item">
-            <h3 class="catalog-accordion__header accordion-header" id="headingThree">
-              <button class="catalog-accordion__button accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true"
-                aria-controls="collapseThree">
+          <li class="catalog-accordion__unit question ac js-enabled">
+            <button class="catalog-accordion__btn button ac-trigger">
+              <h3 class="catalog-accordion__title">
                 C 1600 по 1699 гг.
-                <div class="catalog-accordion__btn-svg">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
-                    <path d="M20 14L15 19L10 14" stroke="black" />
-                  </svg>
-                </div>
-              </button>
-            </h3>
-            <div id="collapseThree" class="catalog-accordion__text accordion-collapse collapse"
-              aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-              <div class="catalog-accordion__body accordion-body">
+              </h3>
+              <svg class="catalog-accordion__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                <path d="M20 14L15 19L10 14" stroke="black" />
+              </svg>
+            </button>
+
+            <div class="catalog-accordion__content ac-panel">
+              <div class="catalog-accordion__wrap">
                 <div class="catalog-accordion__plug">
                   <div class="catalog-accordion__plug-img"></div>
-
                   <h3 class="catalog-accordion__plug-title">
                     Здесь пока пусто
                   </h3>
@@ -819,29 +812,25 @@
                 </div>
               </div>
             </div>
-          </div>
+          </li>
 
-          <div class="catalog-accordion__item accordion-item">
-            <h3 class="catalog-accordion__header accordion-header" id="headingFour">
-              <button class="catalog-accordion__button accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true"
-                aria-controls="collapseFour">
+          <li class="catalog-accordion__unit question ac js-enabled">
+            <button class="catalog-accordion__btn button ac-trigger">
+              <h3 class="catalog-accordion__title">
                 C 1700 по 1799 гг.
-                <div class="catalog-accordion__btn-svg">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
-                    <path d="M20 14L15 19L10 14" stroke="black" />
-                  </svg>
-                </div>
-              </button>
-            </h3>
-            <div id="collapseFour" class="catalog-accordion__text accordion-collapse collapse"
-              aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-              <div class="catalog-accordion__body accordion-body">
+              </h3>
+              <svg class="catalog-accordion__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                <path d="M20 14L15 19L10 14" stroke="black" />
+              </svg>
+            </button>
+
+            <div class="catalog-accordion__content ac-panel">
+              <div class="catalog-accordion__wrap">
                 <div class="catalog-accordion__plug">
                   <div class="catalog-accordion__plug-img"></div>
-
                   <h3 class="catalog-accordion__plug-title">
                     Здесь пока пусто
                   </h3>
@@ -854,29 +843,25 @@
                 </div>
               </div>
             </div>
-          </div>
+          </li>
 
-          <div class="catalog-accordion__item accordion-item">
-            <h3 class="catalog-accordion__header accordion-header" id="headingFive">
-              <button class="catalog-accordion__button accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true"
-                aria-controls="collapseFive">
+          <li class="catalog-accordion__unit question ac js-enabled">
+            <button class="catalog-accordion__btn button ac-trigger">
+              <h3 class="catalog-accordion__title">
                 C 1800 по 1899 гг.
-                <div class="catalog-accordion__btn-svg">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
-                    <path d="M20 14L15 19L10 14" stroke="black" />
-                  </svg>
-                </div>
-              </button>
-            </h3>
-            <div id="collapseFive" class="catalog-accordion__text accordion-collapse collapse"
-              aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-              <div class="catalog-accordion__body accordion-body">
+              </h3>
+              <svg class="catalog-accordion__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                <path d="M20 14L15 19L10 14" stroke="black" />
+              </svg>
+            </button>
+
+            <div class="catalog-accordion__content ac-panel">
+              <div class="catalog-accordion__wrap">
                 <div class="catalog-accordion__plug">
                   <div class="catalog-accordion__plug-img"></div>
-
                   <h3 class="catalog-accordion__plug-title">
                     Здесь пока пусто
                   </h3>
@@ -889,29 +874,25 @@
                 </div>
               </div>
             </div>
-          </div>
+          </li>
 
-          <div class="catalog-accordion__item accordion-item">
-            <h3 class="catalog-accordion__header accordion-header" id="headingSix">
-              <button class="catalog-accordion__button accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true"
-                aria-controls="collapseSix">
+          <li class="catalog-accordion__unit question ac js-enabled">
+            <button class="catalog-accordion__btn button ac-trigger">
+              <h3 class="catalog-accordion__title">
                 C 1900 по 1999 гг.
-                <div class="catalog-accordion__btn-svg">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
-                    <path d="M20 14L15 19L10 14" stroke="black" />
-                  </svg>
-                </div>
-              </button>
-            </h3>
-            <div id="collapseSix" class="catalog-accordion__text accordion-collapse collapse"
-              aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-              <div class="catalog-accordion__body accordion-body">
+              </h3>
+              <svg class="catalog-accordion__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                <path d="M20 14L15 19L10 14" stroke="black" />
+              </svg>
+            </button>
+
+            <div class="catalog-accordion__content ac-panel">
+              <div class="catalog-accordion__wrap">
                 <div class="catalog-accordion__plug">
                   <div class="catalog-accordion__plug-img"></div>
-
                   <h3 class="catalog-accordion__plug-title">
                     Здесь пока пусто
                   </h3>
@@ -924,26 +905,23 @@
                 </div>
               </div>
             </div>
-          </div>
+          </li>
 
-          <div class="catalog-accordion__item accordion-item">
-            <h3 class="catalog-accordion__header accordion-header" id="headingSeven">
-              <button class="catalog-accordion__button accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true"
-                aria-controls="collapseSeven">
+          <li class="catalog-accordion__unit question ac js-enabled">
+            <button class="catalog-accordion__btn button ac-trigger">
+              <h3 class="catalog-accordion__title">
                 C 2000 г.
-                <div class="catalog-accordion__btn-svg">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
-                    <path d="M20 14L15 19L10 14" stroke="black" />
-                  </svg>
-                </div>
-              </button>
-            </h3>
-            <div id="collapseSeven" class="catalog-accordion__text accordion-collapse collapse"
-              aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-              <div class="catalog-accordion__body accordion-body">
+              </h3>
+              <svg class="catalog-accordion__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                <path d="M20 14L15 19L10 14" stroke="black" />
+              </svg>
+            </button>
+
+            <div class="catalog-accordion__content ac-panel">
+              <div class="catalog-accordion__wrap">
                 <div class="catalog-accordion__plug">
                   <div class="catalog-accordion__plug-img"></div>
                   <h3 class="catalog-accordion__plug-title">
@@ -958,8 +936,8 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
 
         <ul class="catalog-tab catalog__tab">
           <li class="catalog-tab__item catalog-tab__plug deactivate" id="painter-plug" data-target="tab-plug">

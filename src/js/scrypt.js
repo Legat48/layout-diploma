@@ -23,7 +23,6 @@ const burgerAnim = (() => {
     }
   });
 })();
-
 // // search
 const searchAnim = (() => {
   const search = document.querySelector('#search-toggle');
@@ -151,10 +150,31 @@ const exampleSelect = (() => {
 
 // swiper-events
 const swiperEvents = new Swiper('.events__swiper', {
+  slidesPerView: 1,
+  grid: {
+    rows: 1,
+    fill: 'row',
+  },
   loop: true,
+  a11y: false,
+  keyboard: true,
+  watchSlidesProgress: true,
+  watchSlidesVisibility: true,
   pagination: {
     el: '.events__pagination',
     clickable: true,
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 34,
+    },
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 6,
+      spaceBetween: 50,
+    },
   },
 });
 
@@ -184,7 +204,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
+// accordion
+(() => {
+  new Accordion('.js-accordion-container', {
+    openOnInit: [0],
+  });
+})();
 // contacts
 // contacts form
 const selector = document.querySelector("input[type='tel']");

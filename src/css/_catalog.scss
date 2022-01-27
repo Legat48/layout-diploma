@@ -18,26 +18,55 @@
 }
 
 .catalog-accordion {
-  &__item {
-    border: transparent;
+  &__unit {
+
   }
-  &__button {
+  &__btn {
     position: relative;
-    border: transparent;
-    border-top: 1px solid #CACACA;
-    border-bottom: 1px solid #CACACA;
-    background-color: transparent;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: -1px;
+    padding: 40px 120px 40px 40px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid lightgray;
+    text-align: left;
   }
-  &__btn-svg {
+  &__btn:hover {
+    color: #9d5cd0;
+  }
+  &__btn:focus {
+    color: #ffffff;
+  }
+  &__btn:focus .catalog-accordion__title::before {
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+  &__title {
+
+  }
+  &__icon {
     position: absolute;
-    right: 0;
+    top: 50%;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    transform: translateY(-50%) rotate(-180deg);
+    transition: background-color.3s, 0.6s ease, transform 0.3s, 0.6s ease;
   }
-  &__button:not(.collapsed) {
-    border-color: var(--color-darck-fill);
-    background-color: transparent;
+  &__content {
+    visibility: visible;
+    border-color: lightgray;
   }
-  &__body {
-    padding: 20px 0;
+  &__wrap {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  &__list {
+    padding-left: 0;
+    column-count: 3;
+  }
+  &__item {
+    width: calc(100% / 3 - 20px);
   }
   &__link {
     margin-bottom: 10px;
@@ -82,10 +111,13 @@
     }
   }
 }
-.accordion-button::after,
-.accordion-button:not(.collapsed)::after {
-  background-image: none;
+.question:first-child .catalog-accordion__btn:hover,
+.catalog-accordion__btn:hover,
+.is-active.question:first-child .catalog-accordion__btn,
+.is-active.question .catalog-accordion__btn {
+  border-color: var(--color-fill);
 }
+
 .catalog-tab {
   &__img {
     min-width: 290px;
@@ -107,5 +139,11 @@
   &__info {
     margin-bottom: 5px;
     color: var(--color-gray-text);
+  }
+}
+// переделать!
+@media (max-width: 1024px) {
+  .catalog-accordion__item {
+    width: calc(100% / 2 - 30px);
   }
 }

@@ -82,7 +82,9 @@ img {
 
 .button {
   border-color: transparent;
+  outline: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 @media (min-width: 576px) {
@@ -633,7 +635,6 @@ input[type="search"]::-webkit-search-results-decoration {
   z-index: -1;
   width: 100%;
   height: 100%;
-  animation-name: resize;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -1317,30 +1318,57 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-bottom: 50px;
 }
 
-.catalog-accordion__item {
-  border: transparent;
-}
-
-.catalog-accordion__button {
+.catalog-accordion__btn {
   position: relative;
-  border: transparent;
-  border-top: 1px solid #CACACA;
-  border-bottom: 1px solid #CACACA;
-  background-color: transparent;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: -1px;
+  padding: 40px 120px 40px 40px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid lightgray;
+  text-align: left;
 }
 
-.catalog-accordion__btn-svg {
+.catalog-accordion__btn:hover {
+  color: #9d5cd0;
+}
+
+.catalog-accordion__btn:focus {
+  color: #ffffff;
+}
+
+.catalog-accordion__btn:focus .catalog-accordion__title::before {
+  transform: translate(-50%, -50%) scaleX(1);
+}
+
+.catalog-accordion__icon {
   position: absolute;
-  right: 0;
+  top: 50%;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  transform: translateY(-50%) rotate(-180deg);
+  transition: background-color 0.3s, 0.6s ease, transform 0.3s, 0.6s ease;
 }
 
-.catalog-accordion__button:not(.collapsed) {
-  border-color: var(--color-darck-fill);
-  background-color: transparent;
+.catalog-accordion__content {
+  visibility: visible;
+  border-color: lightgray;
 }
 
-.catalog-accordion__body {
-  padding: 20px 0;
+.catalog-accordion__wrap {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.catalog-accordion__list {
+  padding-left: 0;
+  column-count: 3;
+}
+
+.catalog-accordion__item {
+  width: calc(100% / 3 - 20px);
 }
 
 .catalog-accordion__link {
@@ -1393,9 +1421,11 @@ input[type="search"]::-webkit-search-results-decoration {
   color: var(--color-fill);
 }
 
-.accordion-button::after,
-.accordion-button:not(.collapsed)::after {
-  background-image: none;
+.question:first-child .catalog-accordion__btn:hover,
+.catalog-accordion__btn:hover,
+.is-active.question:first-child .catalog-accordion__btn,
+.is-active.question .catalog-accordion__btn {
+  border-color: var(--color-fill);
 }
 
 .catalog-tab__img {
@@ -1422,6 +1452,12 @@ input[type="search"]::-webkit-search-results-decoration {
 .catalog-tab__info {
   margin-bottom: 5px;
   color: var(--color-gray-text);
+}
+
+@media (max-width: 1024px) {
+  .catalog-accordion__item {
+    width: calc(100% / 2 - 30px);
+  }
 }
 
 .events__title {
