@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (event) => {
       const { path } = event.currentTarget.dataset;
       const dropdownBox = document.querySelector(`[data-target="${path}"]`);
+      // переворачиваем стрелочку при клике
+      const icon = btn.querySelector('.header-dropdown__icon-svg');
+      icon.classList.toggle('header-dropdown__icon-svg_active');
+      // закрываем все списки и переключаем нажатый
       document.querySelectorAll('.header-dropdown__box').forEach((el) => {
         if (dropdownBox !== el) {
           el.classList.remove('active');

@@ -143,20 +143,19 @@
     </svg>
   </span>
   <header class="header">
-    <div class="container">
-      <div class="header__grid">
-        <button class="burger header__burger" id="burger" aria-label="Меню">
-          <span class="burger__line"></span>
-        </button>
-
-        <div class="header__row-up">
-          <svg class="header__logo" aria-label="Логотип">
-            <use xlink:href="#logo"></use>
-          </svg>
+    <div class="header__row-up">
+      <div class="container">
+        <div class="header__row-box">
+          <button class="burger header__burger" id="burger" aria-label="Меню">
+            <span class="burger__line"></span>
+          </button>
+          <a class="header__logo" aria-label="Логотип">
+            <svg class="header__logo-svg">
+              <use xlink:href="#logo"></use>
+            </svg>
+          </a>
 
           <nav class="header__nav nav">
-            <div class="header__bg-black"></div>
-
             <ul class="nav__list">
               <li class="nav__item">
                 <a href="#" class="nav__link">
@@ -200,19 +199,42 @@
               </button>
             </ul>
           </nav>
+
+          <button class="header__search-toggle" id="search-toggle" aria-label="Найти на сайте" tabindex="1">
+            <svg class="header__toggle-svg active" id="toggle-open" width="23" height="22" viewBox="0 0 23 22" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="6.8678" height="1.71695"
+                transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
+                fill="white" />
+            </svg>
+
+            <svg class="header__toggle-svg" id="toggle-closed" width="16" height="16" viewBox="0 0 16 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.666885 15.3045L15.3336 0.000275917L16.0002 0.695923L1.33355 16.0002L0.666885 15.3045Z"
+                fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z"
+                fill="white" />
+            </svg>
+          </button>
         </div>
-
-
-        <div class="header__row-down">
+      </div>
+    </div>
+    <div class="header__row-down">
+      <div class="container">
+        <div class="header__row-box">
           <ul class="header__dropdown header-dropdown">
             <li class="header-dropdown__element">
               <button class="header-dropdown__btn button" data-path="dropdown-one">
                 Реализм
-                <span class="header-dropdown__btn-icon">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                <span class="header-dropdown__icon">
+                  <svg class="header-dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white" />
                   </svg>
-                </span >
+                </span>
               </button>
               <div class="header-dropdown__box" data-target="dropdown-one">
                 <div class="header-dropdown__scrollbar">
@@ -255,11 +277,11 @@
             <li class="header-dropdown__element">
               <button class="header-dropdown__btn button" data-path="dropdown-two">
                 Импрессионизм
-                <span class="header-dropdown__btn-icon">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                <span class="header-dropdown__icon">
+                  <svg class="header-dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white" />
                   </svg>
-                </span >
+                </span>
               </button>
               <div class="header-dropdown__box" data-target="dropdown-two">
                 <div class="header-dropdown__scrollbar">
@@ -302,11 +324,11 @@
             <li class="header-dropdown__element">
               <button class="header-dropdown__btn button" data-path="dropdown-three">
                 Постимпрессионизм
-                <span class="header-dropdown__btn-icon">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                <span class="header-dropdown__icon">
+                  <svg class="header-dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white" />
                   </svg>
-                </span >
+                </span>
               </button>
               <div class="header-dropdown__box" data-target="dropdown-three">
                 <div class="header-dropdown__scrollbar">
@@ -349,11 +371,11 @@
             <li class="header-dropdown__element">
               <button class="header-dropdown__btn button" data-path="dropdown-four">
                 Авангард
-                <span class="header-dropdown__btn-icon">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                <span class="header-dropdown__icon">
+                  <svg class="header-dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white" />
                   </svg>
-                </span >
+                </span>
               </button>
               <div class="header-dropdown__box" data-target="dropdown-four">
                 <div class="header-dropdown__scrollbar">
@@ -396,11 +418,11 @@
             <li class="header-dropdown__element">
               <button class="header-dropdown__btn button" data-path="dropdown-five">
                 Футуризм
-                <span class="header-dropdown__btn-icon">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                <span class="header-dropdown__icon">
+                  <svg class="header-dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white" />
                   </svg>
-                </span >
+                </span>
               </button>
               <div class="header-dropdown__box" data-target="dropdown-five">
                 <div class="header-dropdown__scrollbar">
@@ -453,26 +475,6 @@
           </form>
         </div>
 
-        <button class="header__search-toggle" id="search-toggle" aria-label="Найти на сайте" tabindex="1">
-          <svg class="header__toggle-svg active" id="toggle-open" width="23" height="22" viewBox="0 0 23 22" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <rect width="6.8678" height="1.71695"
-              transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
-              fill="white" />
-          </svg>
-
-          <svg class="header__toggle-svg" id="toggle-closed" width="16" height="16" viewBox="0 0 16 16" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M0.666885 15.3045L15.3336 0.000275917L16.0002 0.695923L1.33355 16.0002L0.666885 15.3045Z"
-              fill="white" />
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z"
-              fill="white" />
-          </svg>
-        </button>
       </div>
     </div>
   </header>
@@ -1261,10 +1263,11 @@
           </a>
         </li>
       </ul>
-
-      <svg class="footer__logo" aria-label="Логотип">
-        <use xlink:href="#logo"></use>
-      </svg>
+      <a class="footer__logo">
+        <svg class="footer__logo" aria-label="Логотип">
+          <use xlink:href="#logo"></use>
+        </svg>
+      </a>
     </div>
   </footer>
 </body>
