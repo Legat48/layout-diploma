@@ -148,45 +148,6 @@ const exampleSelect = (() => {
   });
 })();
 
-// swiper-events
-const swiperEvents = new Swiper('.events__swiper', {
-  slidesPerView: 1,
-  grid: {
-    rows: 1,
-    fill: 'row',
-  },
-  loop: true,
-  a11y: false,
-  keyboard: true,
-  watchSlidesProgress: true,
-  watchSlidesVisibility: true,
-  pagination: {
-    el: '.events__pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    576: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 34,
-    },
-    1024: {
-      slidesPerView: 3,
-      slidesPerGroup: 6,
-      spaceBetween: 50,
-    },
-  },
-});
-
-// swiper-progects
-const swiperProgects = new Swiper('.progects__swiper', {
-  loop: true,
-  navigation: {
-    prevEl: '.progects__button_prev',
-    nextEl: '.progects__button_next',
-  },
-});
-
 // catalog
 // tab
 document.addEventListener('DOMContentLoaded', () => {
@@ -210,6 +171,95 @@ document.addEventListener('DOMContentLoaded', () => {
     openOnInit: [0],
   });
 })();
+
+// swiper-events
+const swiperEvents = new Swiper('.events__swiper', {
+  slidesPerView: 1,
+  grid: {
+    rows: 1,
+    fill: 'row',
+  },
+  loop: true,
+  a11y: false,
+  keyboard: true,
+  watchSlidesProgress: true,
+  watchSlidesVisibility: true,
+  navigation: {
+    nextEl: '.events__button-next',
+  },
+  pagination: {
+    el: '.events__pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 34,
+    },
+    992: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 50,
+    },
+  },
+});
+
+// swiper-progects
+const swiperProgects = new Swiper('.progects__swiper', {
+  loop: true,
+  navigation: {
+    prevEl: '.progects__button_prev',
+    nextEl: '.progects__button_next',
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 34,
+    },
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 6,
+      spaceBetween: 50,
+    },
+  },
+  a11y: false,
+  keyboard: true,
+  watchSlidesProgress: true,
+  watchSlidesVisibility: true,
+  slideVisibleClass: 'slide-visible',
+  on: {
+    init() {
+      this.slides.forEach((slide) => {
+        if (!slide.classList.contains('slide-visible')) {
+          slide.tabIndex = '-1';
+        } else {
+          slide.tabIndex = '';
+        }
+      });
+    },
+    slideChange() {
+      this.slides.forEach((slide) => {
+        if (!slide.classList.contains('slide-visible')) {
+          slide.tabIndex = '-1';
+        } else {
+          slide.tabIndex = '';
+        }
+      });
+    },
+  },
+});
+
+// tooltip
+
+(() => {
+  tippy('.js-tooltip', {
+    maxWidth: 264,
+    theme: 'castom-tooltip',
+  });
+})();
+
 // contacts
 // contacts form
 const selector = document.querySelector("input[type='tel']");

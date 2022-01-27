@@ -25,34 +25,12 @@
     width: 100%
   }
   &__slide {
-    @include backgroundCenter;
-    &_bg-one {
-      background-image: url('../img/progects-grey-one.svg');
-    }
-    &_bg-two {
-      background-image: url('../img/progects-grey-two.svg');
-    }
-    &_bg-three {
-      background-image: url('../img/progects-grey-three.svg');
-    }
-    &_bg-four {
-      background-image: url('../img/progects-grey-four.svg');
-    }
-    &_bg-five {
-      background-image: url('../img/progects-grey-five.svg');
-    }
-    &_bg-six {
-      background-image: url('../img/progects-grey-six.svg');
-    }
-    &_bg-seven {
-      background-image: url('../img/progects-grey-seven.svg');
-    }
-    &_bg-eight {
-      background-image: url('../img/progects-grey-eight.svg');
-    }
-    &_bg-nine {
-      background-image: url('../img/progects-grey-nine.svg');
-    }
+    width: 450px;
+    height: 150px;
+  }
+  &__slide img {
+    opacity: 0.6;
+    filter: grayscale(100%);
   }
   &__button {
     position: relative;

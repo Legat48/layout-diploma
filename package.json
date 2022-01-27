@@ -35,5 +35,8 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-terser": "^2.1.0",
     "svg-sprite": "^1.5.3"
+  },
+  "dependencies": {
+    "tippy.js": "^6.3.7"
   }
 }
