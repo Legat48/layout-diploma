@@ -143,161 +143,319 @@
     </svg>
   </span>
   <header class="header">
-
     <div class="container">
       <div class="header__grid">
         <button class="burger header__burger" id="burger" aria-label="Меню">
           <span class="burger__line"></span>
         </button>
 
-        <svg class="header__logo" aria-label="Логотип">
-          <use xlink:href="#logo"></use>
-        </svg>
+        <div class="header__row-up">
+          <svg class="header__logo" aria-label="Логотип">
+            <use xlink:href="#logo"></use>
+          </svg>
 
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#" class="nav__link">
-                О нас
-              </a>
+          <nav class="header__nav nav">
+            <div class="header__bg-black"></div>
+
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  О нас
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  Галерея
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  Каталог
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  События
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  Проекты
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  Контакты
+                </a>
+              </li>
+              <button class="nav__btn button">
+                <span>
+                  <svg class="nav__svg" width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M5.62 9.093L6.64 10.11 10.25 6.5 6.639 2.889 5.62 3.907l1.863 1.87H.5v1.445h6.984L5.62 9.092zM12.057 0H1.944C1.143 0 .5.65.5 1.444v2.89h1.444v-2.89h10.112v10.112H1.944v-2.89H.5v2.89C.5 12.35 1.143 13 1.944 13h10.112c.794 0 1.444-.65 1.444-1.444V1.444C13.5.65 12.85 0 12.056 0z"
+                      fill="#fff" />
+                  </svg>
+                </span>
+                Войти
+              </button>
+            </ul>
+          </nav>
+        </div>
+
+
+        <div class="header__row-down">
+          <ul class="header__dropdown header-dropdown">
+            <li class="header-dropdown__element">
+              <button class="header-dropdown__btn button" data-path="dropdown-one">
+                Реализм
+                <span class="header-dropdown__btn-icon">
+                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                  </svg>
+                </span >
+              </button>
+              <div class="header-dropdown__box" data-target="dropdown-one">
+                <div class="header-dropdown__scrollbar">
+                  <ul class="header-dropdown__list">
+                    <li class="header-dropdown__item header-dropdown__item_bg-1-1">
+                      <a href="#" class="header-dropdown__link">
+                        Тинторетто
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-1-2">
+                      <a href="#" class="header-dropdown__link">
+                        Фридрих
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-1-3">
+                      <a href="#" class="header-dropdown__link">
+                        Леонардо
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-1-4">
+                      <a href="#" class="header-dropdown__link">
+                        Верроккьо
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-1-1">
+                      <a href="#" class="header-dropdown__link">
+                        Тинторетто
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-1-2">
+                      <a href="#" class="header-dropdown__link">
+                        Фридрих
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">
-                Галерея
-              </a>
+
+            <li class="header-dropdown__element">
+              <button class="header-dropdown__btn button" data-path="dropdown-two">
+                Импрессионизм
+                <span class="header-dropdown__btn-icon">
+                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                  </svg>
+                </span >
+              </button>
+              <div class="header-dropdown__box" data-target="dropdown-two">
+                <div class="header-dropdown__scrollbar">
+                  <ul class="header-dropdown__list">
+                    <li class="header-dropdown__item header-dropdown__item_bg-2-1">
+                      <a href="#" class="header-dropdown__link">
+                        Моне
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-2-2">
+                      <a href="#" class="header-dropdown__link">
+                        Сислей
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-2-3">
+                      <a href="#" class="header-dropdown__link">
+                        Мане
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-2-4">
+                      <a href="#" class="header-dropdown__link">
+                        Ренуар
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-2-1">
+                      <a href="#" class="header-dropdown__link">
+                        Моне
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-2-2">
+                      <a href="#" class="header-dropdown__link">
+                        Сислей
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">
-                Каталог
-              </a>
+
+            <li class="header-dropdown__element">
+              <button class="header-dropdown__btn button" data-path="dropdown-three">
+                Постимпрессионизм
+                <span class="header-dropdown__btn-icon">
+                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                  </svg>
+                </span >
+              </button>
+              <div class="header-dropdown__box" data-target="dropdown-three">
+                <div class="header-dropdown__scrollbar">
+                  <ul class="header-dropdown__list">
+                    <li class="header-dropdown__item header-dropdown__item_bg-3-1">
+                      <a href="#" class="header-dropdown__link">
+                        Ван Гог
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-3-2">
+                      <a href="#" class="header-dropdown__link">
+                        Сезанн
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-3-3">
+                      <a href="#" class="header-dropdown__link">
+                        Гоген
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-3-4">
+                      <a href="#" class="header-dropdown__link">
+                        Сёра
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-3-1">
+                      <a href="#" class="header-dropdown__link">
+                        Ван Гог
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-3-2">
+                      <a href="#" class="header-dropdown__link">
+                        Сезанн
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">
-                События
-              </a>
+
+            <li class="header-dropdown__element">
+              <button class="header-dropdown__btn button" data-path="dropdown-four">
+                Авангард
+                <span class="header-dropdown__btn-icon">
+                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                  </svg>
+                </span >
+              </button>
+              <div class="header-dropdown__box" data-target="dropdown-four">
+                <div class="header-dropdown__scrollbar">
+                  <ul class="header-dropdown__list">
+                    <li class="header-dropdown__item header-dropdown__item_bg-4-1">
+                      <a href="#" class="header-dropdown__link">
+                        Кандинский
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-4-2">
+                      <a href="#" class="header-dropdown__link">
+                        Маринетти
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-4-3">
+                      <a href="#" class="header-dropdown__link">
+                        Малевич
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-4-4">
+                      <a href="#" class="header-dropdown__link">
+                        Пикассо
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-4-1">
+                      <a href="#" class="header-dropdown__link">
+                        Кандинский
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-4-2">
+                      <a href="#" class="header-dropdown__link">
+                        Маринетти
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">
-                Проекты
-              </a>
+
+            <li class="header-dropdown__element">
+              <button class="header-dropdown__btn button" data-path="dropdown-five">
+                Футуризм
+                <span class="header-dropdown__btn-icon">
+                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6.00001L0.999997 1" stroke="white"/>
+                  </svg>
+                </span >
+              </button>
+              <div class="header-dropdown__box" data-target="dropdown-five">
+                <div class="header-dropdown__scrollbar">
+                  <ul class="header-dropdown__list">
+                    <li class="header-dropdown__item header-dropdown__item_bg-5-1">
+                      <a href="#" class="header-dropdown__link">
+                        Карра
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-5-2">
+                      <a href="#" class="header-dropdown__link">
+                        Прателла
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-5-3">
+                      <a href="#" class="header-dropdown__link">
+                        Северини
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-5-4">
+                      <a href="#" class="header-dropdown__link">
+                        Балла
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-5-1">
+                      <a href="#" class="header-dropdown__link">
+                        Карра
+                      </a>
+                    </li>
+                    <li class="header-dropdown__item header-dropdown__item_bg-5-2">
+                      <a href="#" class="header-dropdown__link">
+                        Прателла
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">
-                Контакты
-              </a>
-            </li>
-            <button class="nav__btn button">
-              <span>
-                <svg class="nav__svg" width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.62 9.093L6.64 10.11 10.25 6.5 6.639 2.889 5.62 3.907l1.863 1.87H.5v1.445h6.984L5.62 9.092zM12.057 0H1.944C1.143 0 .5.65.5 1.444v2.89h1.444v-2.89h10.112v10.112H1.944v-2.89H.5v2.89C.5 12.35 1.143 13 1.944 13h10.112c.794 0 1.444-.65 1.444-1.444V1.444C13.5.65 12.85 0 12.056 0z"
-                    fill="#fff" />
-                </svg>
-              </span>
-              Войти
-            </button>
           </ul>
-        </nav>
 
-        <!-- <ul class="header__selects">
-          <li class="header__selects-item select-custom">
-            <select name="select" class="select">
-              <option class="header__option_bg header__option_bg1-1" value="">
-                Тинторетто
-              </option>
-              <option class="header__option_bg header__option_bg1-2" value="">
-                Фридрих
-              </option>
-              <option class="header__option_bg header__option_bg1-3" value="">
-                Леонардо
-              </option>
-              <option class="header__option_bg header__option_bg1-4" value="">
-                Верроккьо
-              </option>
-            </select>
-          </li>
+          <form class="header__search search">
+            <button class="search__btn button" id="searchBtn" type="submit">
+              <svg class="search__btn-svg" id="" aria-label="Кнопка открыть меню">
+                <use xlink:href="#search"></use>
+              </svg>
+            </button>
+            <label class="search__label" for="search-input">
+              <input class="search__input" id="search-input" type="search" tabindex="1">
+            </label>
+          </form>
+        </div>
 
-          <li class="header__selects-item select-custom">
-            <select name="select" class="select">
-              <option class="header__option_bg header__option_bg2-1" value="">
-                Моне
-              </option>
-              <option class="header__option_bg header__option_bg2-2" value="">
-                Сислей
-              </option>
-              <option class="header__option_bg header__option_bg2-3" value="">
-                Мане
-              </option>
-              <option class="header__option_bg header__option_bg2-4" value="">
-                Ренуар
-              </option>
-            </select>
-          </li>
-
-          <li class="header__selects-item select-custom">
-            <select name="select" class="select">
-              <option class="header__option_bg header__option_bg3-1" value="">
-                Ван Гог
-              </option>
-              <option class="header__option_bg header__option_bg3-2" value="">
-                Сезанн
-              </option>
-              <option class="header__option_bg header__option_bg3-3" value="">
-                Гоген
-              </option>
-              <option class="header__option_bg header__option_bg3-4" value="">
-                Сёра
-              </option>
-            </select>
-          </li>
-
-          <li class="header__selects-item select-custom">
-            <select name="select" class="select">
-              <option class="header__option_bg header__option_bg4-1" value="">
-                Кандинский
-              </option>
-              <option class="header__option_bg header__option_bg4-2" value="">
-                Маринетти
-              </option>
-              <option class="header__option_bg header__option_bg4-3" value="">
-                Малевич
-              </option>
-              <option class="header__option_bg header__option_bg4-4" value="">
-                Пикассо
-              </option>
-            </select>
-          </li>
-
-          <li class="header__selects-item select-custom">
-            <select name="select" class="select">
-              <option class="header__option_bg header__option_bg5-1" value="">
-                Карра
-              </option>
-              <option class="header__option_bg header__option_bg5-2" value="">
-                Прателла
-              </option>
-              <option class="header__option_bg header__option_bg5-3" value="">
-                Северини
-              </option>
-              <option class="header__option_bg header__option_bg5-4" value="">
-                Балла
-              </option>
-            </select>
-          </li>
-        </ul> -->
-        <form class="search">
-          <button class="search__btn button" id="searchBtn" type="submit">
-            <svg class="search__btn-svg" id="" aria-label="Кнопка открыть меню">
-              <use xlink:href="#search"></use>
-            </svg>
-          </button>
-          <label class="search__label" for="search-input">
-            <input class="search__input" id="search-input" type="search" tabindex="1">
-          </label>
-        </form>
         <button class="header__search-toggle" id="search-toggle" aria-label="Найти на сайте" tabindex="1">
-          <svg class="header__toggle-svg active" id="toggle-open" width="23" height="22" viewBox="0 0 23 22"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="header__toggle-svg active" id="toggle-open" width="23" height="22" viewBox="0 0 23 22" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
             <rect width="6.8678" height="1.71695"
               transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -305,8 +463,8 @@
               fill="white" />
           </svg>
 
-          <svg class="header__toggle-svg" id="toggle-closed" width="16" height="16" viewBox="0 0 16 16"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="header__toggle-svg" id="toggle-closed" width="16" height="16" viewBox="0 0 16 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
               d="M0.666885 15.3045L15.3336 0.000275917L16.0002 0.695923L1.33355 16.0002L0.666885 15.3045Z"
               fill="white" />
@@ -338,7 +496,7 @@
       <div class="hero__swiper" aria-hidden="true">
         <div class="hero__swiper-wrapper swiper-wrapper">
           <div class="hero__swiper-slide hero__swiper-slide_background-one swiper-slide"></div>
-          <div class="hero__swiper-slide hero__swiper-slide_background-do swiper-slide"></div>
+          <div class="hero__swiper-slide hero__swiper-slide_background-two swiper-slide"></div>
           <div class="hero__swiper-slide hero__swiper-slide_background-three swiper-slide"></div>
         </div>
       </div>
@@ -429,20 +587,24 @@
         <div class="gallery__swiper-nav-box">
           <button class="gallery__button-prev button">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666666"/>
-              <circle cx="15" cy="15" r="14" stroke="#666666"/>
-              <path d="M16 20L11 15L16 10" stroke="white"/>
-              </svg>
+              <path
+                d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z"
+                fill="#666666" />
+              <circle cx="15" cy="15" r="14" stroke="#666666" />
+              <path d="M16 20L11 15L16 10" stroke="white" />
+            </svg>
           </button>
 
           <div class="gallery__pagination swiper-pagination"></div>
 
           <button class="gallery__button-next button">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" fill="#666666"/>
-              <circle cx="15" cy="15" r="14" stroke="#666666"/>
-              <path d="M14 20L19 15L14 10" stroke="white"/>
-              </svg>
+              <path
+                d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
+                fill="#666666" />
+              <circle cx="15" cy="15" r="14" stroke="#666666" />
+              <path d="M14 20L19 15L14 10" stroke="white" />
+            </svg>
           </button>
         </div>
       </div>
@@ -462,9 +624,9 @@
                 C 1400 по 1499 гг.
                 <div class="catalog-accordion__btn-svg">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC"/>
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC"/>
-                    <path d="M20 14L15 19L10 14" stroke="black"/>
+                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                    <path d="M20 14L15 19L10 14" stroke="black" />
                   </svg>
                 </div>
               </button>
@@ -583,9 +745,9 @@
                 C 1500 по 1599 гг.
                 <div class="catalog-accordion__btn-svg">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC"/>
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC"/>
-                    <path d="M20 14L15 19L10 14" stroke="black"/>
+                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                    <path d="M20 14L15 19L10 14" stroke="black" />
                   </svg>
                 </div>
               </button>
@@ -618,9 +780,9 @@
                 C 1600 по 1699 гг.
                 <div class="catalog-accordion__btn-svg">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC"/>
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC"/>
-                    <path d="M20 14L15 19L10 14" stroke="black"/>
+                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                    <path d="M20 14L15 19L10 14" stroke="black" />
                   </svg>
                 </div>
               </button>
@@ -653,9 +815,9 @@
                 C 1700 по 1799 гг.
                 <div class="catalog-accordion__btn-svg">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC"/>
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC"/>
-                    <path d="M20 14L15 19L10 14" stroke="black"/>
+                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                    <path d="M20 14L15 19L10 14" stroke="black" />
                   </svg>
                 </div>
               </button>
@@ -688,9 +850,9 @@
                 C 1800 по 1899 гг.
                 <div class="catalog-accordion__btn-svg">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC"/>
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC"/>
-                    <path d="M20 14L15 19L10 14" stroke="black"/>
+                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                    <path d="M20 14L15 19L10 14" stroke="black" />
                   </svg>
                 </div>
               </button>
@@ -723,9 +885,9 @@
                 C 1900 по 1999 гг.
                 <div class="catalog-accordion__btn-svg">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC"/>
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC"/>
-                    <path d="M20 14L15 19L10 14" stroke="black"/>
+                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                    <path d="M20 14L15 19L10 14" stroke="black" />
                   </svg>
                 </div>
               </button>
@@ -758,9 +920,9 @@
                 C 2000 г.
                 <div class="catalog-accordion__btn-svg">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15" r="15" fill="#ECECEC"/>
-                    <circle cx="15" cy="15" r="14" stroke="#ECECEC"/>
-                    <path d="M20 14L15 19L10 14" stroke="black"/>
+                    <circle cx="15" cy="15" r="15" fill="#ECECEC" />
+                    <circle cx="15" cy="15" r="14" stroke="#ECECEC" />
+                    <path d="M20 14L15 19L10 14" stroke="black" />
                   </svg>
                 </div>
               </button>
@@ -786,8 +948,7 @@
         </div>
 
         <ul class="catalog-tab catalog__tab">
-          <li class="catalog-tab__item catalog-tab__plug deactivate" id="painter-plug"
-          data-target="tab-plug">
+          <li class="catalog-tab__item catalog-tab__plug deactivate" id="painter-plug" data-target="tab-plug">
             <svg class="catalog-tab__img" aria-label="Портрета художника в базе нет">
               <use xlink:href="#artist-stub"></use>
             </svg>
@@ -804,8 +965,7 @@
             </a>
           </li>
 
-          <li class="catalog-tab__item" id="painter-twelve"
-          data-target="tab-twelve">
+          <li class="catalog-tab__item" id="painter-twelve" data-target="tab-twelve">
             <picture class="catalog-tab__img">
               <source class="lazyload" media="(min-width: 1025px)" type="image/webp"
                 srcset="img/catalog-1920.webp 1x, img/catalog-1920@2x.webp 2x">
@@ -959,9 +1119,11 @@
         <div class="progects__swiper-box">
           <button class="progects__button progects__button_prev button">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666666"/>
-              <circle cx="15" cy="15" r="14" stroke="#666666"/>
-              <path d="M16 20L11 15L16 10" stroke="white"/>
+              <path
+                d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z"
+                fill="#666666" />
+              <circle cx="15" cy="15" r="14" stroke="#666666" />
+              <path d="M16 20L11 15L16 10" stroke="white" />
             </svg>
           </button>
           <div class="progects__swiper swiper">
@@ -979,9 +1141,11 @@
           </div>
           <button class="progects__button progects__button_next button">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" fill="#666666"/>
-              <circle cx="15" cy="15" r="14" stroke="#666666"/>
-              <path d="M14 20L19 15L14 10" stroke="white"/>
+              <path
+                d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
+                fill="#666666" />
+              <circle cx="15" cy="15" r="14" stroke="#666666" />
+              <path d="M14 20L19 15L14 10" stroke="white" />
             </svg>
           </button>
         </div>
