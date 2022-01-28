@@ -71,7 +71,6 @@
     line-height: 0;
     opacity: 0;
     color: var(--color-light-fill);
-    transform: opacity .3 ease-in-out;
   }
   &__input:checked + span::before {
     opacity: 1;
@@ -199,7 +198,7 @@
   line-height: 32px;
   color: var(--color-light-text);
   background-color: transparent;
-  transition: border var(--color-fill), background-color var(--color-fill);
+  transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 .is-focused .choices__inner,
 .is-open .choices__inner {
@@ -232,7 +231,6 @@
   align-items: center;
   justify-content: flex-start;
   padding: 0 20px 2px 20px;
-  transition: background-color 0.3, color 0.3, border 0.3;
 }
 .choices__list--dropdown .choices__item--selectable.is-highlighted:not(:first-child),
 .choices__list--dropdown .choices__item--selectable.is-highlighted + .choices__item {

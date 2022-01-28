@@ -42,15 +42,15 @@ const searchAnim = (() => {
 
 // dropdown
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.header-dropdown__btn').forEach((btn) => {
+  document.querySelectorAll('.dropdown__btn').forEach((btn) => {
     btn.addEventListener('click', (event) => {
       const { path } = event.currentTarget.dataset;
       const dropdownBox = document.querySelector(`[data-target="${path}"]`);
       // переворачиваем стрелочку при клике
-      const icon = btn.querySelector('.header-dropdown__icon-svg');
-      icon.classList.toggle('header-dropdown__icon-svg_active');
+      const icon = btn.querySelector('.dropdown__icon-svg');
+      icon.classList.toggle('dropdown__icon-svg_active');
       // закрываем все списки и переключаем нажатый
-      document.querySelectorAll('.header-dropdown__box').forEach((el) => {
+      document.querySelectorAll('.dropdown__box').forEach((el) => {
         if (dropdownBox !== el) {
           el.classList.remove('active');
         }
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // scrollbar
 
-document.querySelectorAll('.header-dropdown__scrollbar').forEach((el) => {
+document.querySelectorAll('.dropdown__scrollbar').forEach((el) => {
   new SimpleBar(el, {
     scrollbarMaxSize: 40,
   });
@@ -151,14 +151,14 @@ const exampleSelect = (() => {
 // catalog
 // tab
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.catalog-accordion__link').forEach((tabLink) => {
+  document.querySelectorAll('.accordion__link').forEach((tabLink) => {
     tabLink.addEventListener('click', (event) => {
       const { path } = event.currentTarget.dataset;
-      document.querySelectorAll('.catalog-accordion__link').forEach((el) => {
-        el.classList.remove('catalog-accordion__link_active');
+      document.querySelectorAll('.accordion__link').forEach((el) => {
+        el.classList.remove('accordion__link_active');
       });
-      event.currentTarget.classList.add('catalog-accordion__link_active');
-      document.querySelectorAll('.catalog-tab__item').forEach((tabContent) => {
+      event.currentTarget.classList.add('accordion__link_active');
+      document.querySelectorAll('.tab__item').forEach((tabContent) => {
         tabContent.classList.add('deactivate');
       });
       document.querySelector(`[data-target="${path}"]`).classList.remove('deactivate');
