@@ -2,6 +2,7 @@
 
 .gallery {
   padding-top: 50px;
+  padding-bottom: 50px;
   color: var(--color-light-text);
   background-image: url('../img/gallery-bg-320.jpg');
   @include backgroundCenter;
@@ -13,11 +14,15 @@
     justify-content: space-between;
   }
   &__title {
-    margin-bottom: 12px;
+    margin-bottom: 19px;
     color: inherit;
   }
   &__label {
-    margin-bottom: 15px;
+    position: relative;
+    margin-bottom: 14px;
+    font-size: 1em;
+    line-height: 1em;
+    cursor: pointer;
   }
   &__selects {
     margin-bottom: 30px;
@@ -29,51 +34,10 @@
     background-color: transparent;
   }
   &__checkbox {
+    margin-bottom: 21px;
     max-width: 176px;
     border-radius: 10px;
     color: var(--color-light-text);
-  }
-  &__label {
-    position: relative;
-    padding-left: 21px;
-    font-size: 1em;
-    line-height: 1em;
-    cursor: pointer;
-  }
-  &__label:hover {
-    color: var(--color-light-fill);
-  }
-  &__input {
-    display: none;
-  }
-  &__input + span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 12px;
-    height: 12px;
-    text-align: center;
-    border: 1px solid var(--color-light-text);
-  }
-  &__input:checked + span,
-  &__label:hover span,
-  &__input + span:hover {
-    border-color: var(--color-light-fill);
-  }
-  &__input + span::before {
-    content: '\00B7';
-    position: absolute;
-    top: 65%;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    font-size: 30px;
-    line-height: 0;
-    opacity: 0;
-    color: var(--color-light-fill);
-  }
-  &__input:checked + span::before {
-    opacity: 1;
   }
   &__swiper-box {
     width: 100%;
@@ -135,14 +99,13 @@
 
   }
   &__button-next,
-  &__button-prev,
-  &__button-next svg,
-  &__button-prev svg{
+  &__button-prev {
+    border: none;
     width: 30px;
     height: 30px;
   }
   &__pagination {
-    margin: 0 11px;
+    margin: 0 18px;
   }
 }
 //для пересиливания пагинации слайдера
@@ -157,10 +120,9 @@
 // так как селектор кастомный, приходится использовать стили
 // из библиотеки
 .choices {
+  margin-bottom: 39px;
   width: 100%;
-  // font-weight: normal;
-  // font-size: 16px;
-  // line-height: 32px;
+  font-size: 1em;
 }
 .choices[data-type*=select-one]:after {
   margin-top: -6px;
@@ -244,6 +206,53 @@
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
   color: var(--color-light-text);
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.checkbox {
+  &__label {
+    position: relative;
+    display: block;
+    margin-bottom: 16px;
+    padding-left: 24px;
+    font-size: 1em;
+    line-height: 1em;
+    cursor: pointer;
+  }
+  &__label:hover {
+    color: var(--color-light-fill);
+  }
+  &__input {
+    display: none;
+  }
+  &__input + span {
+    position: absolute;
+    top: 9%;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    border: 1px solid var(--color-light-text);
+  }
+  &__input:checked + span,
+  &__label:hover span,
+  &__input + span:hover {
+    border-color: var(--color-light-fill);
+  }
+  &__input + span::before {
+    content: '\00B7';
+    position: absolute;
+    top: 65%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    font-size: 30px;
+    line-height: 0;
+    opacity: 0;
+    color: var(--color-light-fill);
+  }
+  &__input:checked + span::before {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 321px) {
