@@ -5,9 +5,10 @@
   flex-direction: column;
   justify-content: space-between;
   &__row-up {
+    padding-top: 12px;
+    padding-bottom: 11px;
     background-color: var(--color-black);
   }
-
   &__row-down {
     background-color: transparent;
   }
@@ -21,9 +22,14 @@
     width: 25px;
     height: 18px;
   }
-  &__logo-svg {
+  &__logo {
+    margin-right: 6px;
     width: 97px;
     height: 21px;
+    background-image: url('../img/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   &__dropdown {
     display: none;
