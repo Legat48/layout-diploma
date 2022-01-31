@@ -299,12 +299,29 @@
 
 @media (min-width: 576px) {
   .gallery {
+    padding-top: 77px;
+    padding-bottom: 60px;
+    &__checkbox {
+      margin-bottom: 31px;
+    }
+    &__label {
+      margin-bottom: 19px;
+    }
     &__swiper-box {
       flex-direction: column-reverse;
     }
     &__swiper-nav-box {
+      margin-bottom: 30px;
       margin-right: auto;
     }
+  }
+
+  .choices {
+    margin-bottom: 49px;
+    max-width: 281px;
+  }
+  .choices[data-type*=select-one]:after {
+    right: 17.5px;
   }
 }
 

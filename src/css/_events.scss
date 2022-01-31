@@ -32,15 +32,24 @@
     margin-bottom: 20px;
   }
   &__card {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 218px 18px 50px 22px;
     border: 1px solid #CACACA;
     min-height: 683px;
-    background-position: top;
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-position: top center;
     background-repeat: no-repeat;
-    background-size: 100% 200px;
+    background-size: cover;
     &_bg-one {
       background-image: url('../img/events-one-320.jpg');
       @media (min-resolution: 2dppx) {

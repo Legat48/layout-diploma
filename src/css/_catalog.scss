@@ -7,9 +7,11 @@
   &__title {
     margin-bottom: 13px;
   }
-
+  &__text {
+    display: none;
+  }
   &__accordion {
-    margin-bottom: 51px;
+    margin-bottom: 50px;
   }
 
   &__tab {
@@ -19,7 +21,6 @@
 
 .accordion {
   &__unit {
-
   }
   &__unit .accordion__btn {
     position: relative;
@@ -86,6 +87,7 @@
   &__link {
     font-size: 1em;
     line-height: 2em;
+    color: inherit;
     &_active {
       color: var(--color-fill);
     }
@@ -164,8 +166,9 @@
   }
   &__img {
     margin-bottom: 14px;
-    width: 290px;
-    height: 181px;
+    min-width: 290px;
+    min-height: 181px;
+    object-fit: contain;
   }
   &__title {
     margin-bottom: 8px;
@@ -183,8 +186,66 @@
     line-height: 2em;
   }
 }
-// переделать!
-@media (max-width: 1024px) {
-  .accordion__item {
+
+
+@media (min-width: 576px) {
+  .catalog {
+    padding-top: 77px;
+    padding-bottom: 65px;
+    &__text {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 1em;
+      line-height: 2em;
+    }
+    &__accordion {
+      margin-bottom: 49px;
+    }
+  }
+
+  .accordion {
+    &__unit .accordion__btn {
+      padding: 34px 0 32px;
+    }
+    &__descr {
+      font-size: 1.5em;
+    }
+    &__icon {
+      top: 28%;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+    }
+    &__icon::after {
+      top: 43%;
+      left: 32%;
+      width: 18px;
+      height: 12px;
+    }
+    &__wrap {
+      padding-top: 26px;
+      padding-bottom: 20px;
+    }
+    &__item {
+      min-width: 288px;
+    }
+    &__list {
+      padding-left: 0;
+      min-height: 293px;
+      column-count: 3;
+      column-gap: 65px;
+    }
+  }
+  .tab {
+    &__img {
+      margin-bottom: 22px;
+    }
+    &__title {
+      margin-bottom: 4px;
+    }
+    &__info {
+      margin-bottom: 9px;
+    }
   }
 }

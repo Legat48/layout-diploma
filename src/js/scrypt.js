@@ -13,13 +13,14 @@ const burgerAnim = (() => {
   burger.addEventListener('click', (e) => {
     e.currentTarget.classList.toggle('burger--active');
     if (burger.classList.contains('burger--active')) {
+      clearTimeout(setTimeout(()=>{nav.style.zIndex = -1;}, 0))
       search.style.zIndex = 1;
       nav.style.zIndex = 2;
-      gsap.fromTo('.nav__box', { x: -500, opacity: 0 }, { duration: 0.6, x: 0, opacity: 1 });
+      gsap.fromTo('.nav__box', { x: -1000, opacity: 0 }, { duration: 0.6, x: 0, opacity: 1 });
     } else if ((!burger.classList.contains('burger--active'))) {
       search.style.zIndex = 4;
-      gsap.fromTo('.nav__box', { x: 0, opacity: 1 }, { duration: 0.6, x: -500 });
-      clearTimeout(setTimeout(()=>{nav.style.zIndex = -1;}, 600))
+      gsap.fromTo('.nav__box', { x: 0, opacity: 1 }, { duration: 0.6, x: -1000 });
+      setTimeout(()=>{nav.style.zIndex = -1;}, 300)
     }
   });
 })();

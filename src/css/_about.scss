@@ -4,15 +4,25 @@
   padding-top: 50px;
   padding-bottom: 41px;
   color: var(--color-text);
-  // мне кажется это очень плохой поступок,
-  //  но как бороться с анимацией хидера по другому я не придумал
   background-color: var(--color-white);
   &__title {
     margin-bottom: 12px;
-
   }
   &__text {
     font-size: 0.875em;
     line-height: 2em;
+  }
+}
+
+@media (min-width: 576px) {
+  .about {
+    padding-top: 76px;
+    padding-bottom: 70px;
+    &__title {
+      margin-bottom: 13px;
+    }
+    &__text {
+      font-size: 1em;
+    }
   }
 }

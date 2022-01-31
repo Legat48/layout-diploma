@@ -1,6 +1,5 @@
 @import '_mixin.scss';
 .hero {
-  min-height: 310px;
   &__box {
     display: flex;
     flex-direction: column;
@@ -8,6 +7,7 @@
     align-items: center;
     padding-top: 35px;
     padding-bottom: 45px;
+    min-height: 310px;
     color: var(--color-light-text);
   }
   &__title {
@@ -116,32 +116,38 @@
 
 @media (min-width: 576px) {
   .hero {
-    min-height: 668px;
     &__box {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      padding-top: 115px;
+      padding-bottom: 115px;
+      min-height: 668px;
       color: var(--color-light-text);
     }
-    &__header {
-      margin-right: auto;
+    &__title {
+      margin-right: 85px;
+      margin-bottom: 13px;
+      margin-left: 0;
       text-align: left;
+      font-size: 4.5em;
+      line-height: 1.125em;
     }
     &__text {
       margin-right: auto;
+      margin-bottom: auto;
+      margin-left: 0;
       text-align: left;
+      font-weight: bold;
+      font-size: 1.125em;
+      line-height: 1.725em;
     }
     &__button {
       margin-right: auto;
-      padding: 10px 18px;
-      border: 3px solid var(--color-fill);
-      border-radius: 100px;
-      color: inherit;
-      background-color: var(--color-fill);
-    }
-    &__swiper {
-      height: 768px;
+      padding: 22px 32px;
+      font-size: 1.125em;
+      line-height: 1.125em;
     }
   }
 }
