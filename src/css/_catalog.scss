@@ -5,11 +5,11 @@
   padding-bottom: 50px;
   color: var(--color-text);
   &__title {
-    margin-bottom: 12px;
+    margin-bottom: 13px;
   }
 
   &__accordion {
-    margin-bottom: 50px;
+    margin-bottom: 51px;
   }
 
   &__tab {
@@ -21,37 +21,55 @@
   &__unit {
 
   }
-  &__btn {
+  &__unit .accordion__btn {
     position: relative;
     display: block;
     width: 100%;
     margin-bottom: 0;
     margin-top: -1px;
-    padding: 40px 120px 40px 40px;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid lightgray;
+    padding: 20px 0 16px;
+    border-top: 1px solid var(--color-gray-fill);
+    border-bottom: 1px solid transparent;
     text-align: left;
   }
+  &__unit:last-child {
+    border-bottom: 1px solid var(--color-gray-fill);
+  }
   &__btn:hover {
-    color: #9d5cd0;
+    color: var(--color-fill);
   }
   &__btn:focus {
-    color: #ffffff;
+    color: var(--color-white);
   }
   &__btn:focus .accordion__title::before {
     transform: translate(-50%, -50%) scaleX(1);
   }
   &__descr {
-    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 2em;
   }
   &__icon {
     position: absolute;
-    top: 50%;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    transform: translateY(-50%) rotate(-180deg);
+    top: 30%;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    background-color: var(--color-gray-fill);
     transition: background-color.3s, 0.6s ease, transform 0.3s, 0.6s ease;
+  }
+
+  &__icon::after {
+    content: '';
+    position: absolute;
+    top: 33%;
+    left: 29%;
+    width: 12px;
+    height: 7px;
+    background-image: url('../img/arrow-down.svg');
+    @include backgroundCenter
   }
   &__content {
     visibility: visible;
@@ -63,13 +81,11 @@
   }
   &__list {
     padding-left: 0;
-    column-count: 3;
-  }
-  &__item {
-    width: calc(100% / 3 - 20px);
+    column-count: 1;
   }
   &__link {
-    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 2em;
     &_active {
       color: var(--color-fill);
     }
@@ -79,14 +95,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 155px;
-    min-height: 335px;
+    margin: 5px 0;
+    padding-left: 130px;
+    min-height: 140px;
     &-img {
       position: absolute;
       top: 0;
       left: 0;
       bottom: 0;
-      width: 130px;
+      width: 110px;
       border: 2px solid #B7B7B7;
       background-color: transparent;
     }
@@ -100,19 +117,39 @@
       left: 8px;
       background-color: #B7B7B7;
     }
+    &-title {
+      font-weight: 600;
+      font-size: 1.125em;
+      line-height: 2em;
+    }
     &-text {
-      margin-bottom: 5px;
+      margin-bottom: auto;
     }
     &-link {
       color: var(--color-fill);
     }
   }
 }
+
 .question:first-child .accordion__btn:hover,
 .accordion__btn:hover,
 .is-active.question:first-child .accordion__btn,
 .is-active.question .accordion__btn {
   border-color: var(--color-fill);
+}
+
+.is-active>.accordion__btn>.accordion__icon::after {
+  transform: scale(1, -1);
+}
+
+// стили плагина
+.ac {
+  margin: 0;
+  border: none;
+  background-color: transparent;
+}
+.ac .ac-trigger::after {
+  display: none;
 }
 
 .tab {
@@ -126,21 +163,28 @@
     justify-content: space-between;
   }
   &__img {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     width: 290px;
     height: 181px;
   }
   &__title {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+    font-size: 1.44em;
+    line-height: 2em;
   }
   &__info {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 0.75em;
+    line-height: 1em;
     color: var(--color-gray-text);
+  }
+  &__text {
+    font-size: 1em;
+    line-height: 2em;
   }
 }
 // переделать!
 @media (max-width: 1024px) {
   .accordion__item {
-    width: calc(100% / 2 - 30px);
   }
 }

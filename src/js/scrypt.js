@@ -15,11 +15,11 @@ const burgerAnim = (() => {
     if (burger.classList.contains('burger--active')) {
       search.style.zIndex = 1;
       nav.style.zIndex = 2;
-      gsap.fromTo('.nav__list', { x: -500, opacity: 0 }, { duration: 0.6, x: 0, opacity: 1 });
+      gsap.fromTo('.nav__box', { x: -500, opacity: 0 }, { duration: 0.6, x: 0, opacity: 1 });
     } else if ((!burger.classList.contains('burger--active'))) {
       search.style.zIndex = 4;
-      nav.style.zIndex = -1;
-      gsap.to('.nav__list', { duration: 0.6, x: -500, opacity: 0 });
+      gsap.fromTo('.nav__box', { x: 0, opacity: 1 }, { duration: 0.6, x: -500 });
+      clearTimeout(setTimeout(()=>{nav.style.zIndex = -1;}, 600))
     }
   });
 })();
@@ -294,6 +294,16 @@ function init() {
   const myMap = new ymaps.Map('map', {
     center: [55.758468, 37.601088],
     zoom: 15,
+    controls: ['geolocationControl', 'zoomControl'],
+  },
+  {
+    suppressMapOpenBlock: true,
+    geolocationControlSize: "large",
+    geolocationControlPosition:  { top: "200px", right: "20px" },
+    geolocationControlFloat: 'none',
+    zoomControlSize: "small",
+    zoomControlFloat: "none",
+    zoomControlPosition: { top: "120px", right: "20px" }
   });
   const myPlacemark = new ymaps.Placemark([55.758468, 37.601088], {}, {
     iconLayout: 'default#image',

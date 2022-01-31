@@ -1,20 +1,25 @@
 @import '_mixin.scss';
 
 .progects {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 37px;
+  padding-bottom: 46px;
   color: var(--color-text);
   &__title {
     margin-bottom: 12px;
   }
   &__text {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+    font-size: 1em;
+    line-height: 2em;
   }
   &__link {
     color: var(--color-fill);
   }
   &__title-third {
-    margin-bottom: 20px;
+    margin-bottom: 9px;
+    font-weight: 600;
+    font-size: 1.125em;
+    line-height: 2em;
   }
   &__swiper-box {
     display: flex;

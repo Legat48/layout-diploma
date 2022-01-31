@@ -43,6 +43,7 @@
   --color-white: #FFF;
   --color-very-light-fill: #D1A9F0;
   --color-light-fill: #C283F3;
+  --color-gray-fill: #CACACA;
   --color-fill: #9D5CD0;
   --color-dark-fill: #7943A4;
   --color-light-text: #fff;
@@ -106,16 +107,7 @@ div .deactivate {
 .top-wrap {
   position: relative;
 }
-// на случай, если хиро-свайпер не подгрузился
-.top-wrap::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-}
+
 
 
 @media (min-width: 576px) {
