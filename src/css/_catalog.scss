@@ -255,3 +255,38 @@
     }
   }
 }
+
+@media (min-width: 769px) {
+  .catalog {
+    padding-bottom: 27px;
+    &__text {
+      margin-bottom: 39px;
+    }
+    &__box {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    &__accordion {
+      width: 47.3%;
+    }
+    &__tab {
+      width: 47.2%;
+    }
+  }
+  .accordion {
+    &__wrap {
+      padding-bottom: 25px;
+    }
+    &__list {
+      min-height: 283px;
+      column-count: 2;
+      column-gap: 84px;
+    }
+  }
+  .tab {
+    &__img {
+      margin-bottom: 20px;
+    }
+  }
+}

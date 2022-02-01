@@ -335,14 +335,31 @@
 
 @media (min-width: 769px) {
   .gallery {
+    padding-bottom: 53px;
+    min-height: 560px;
     &__box {
       flex-direction: row;
     }
+    &__content-box {
+      justify-content: flex-start;
+      margin-right: 20px;
+      min-width: 280px;
+    }
+    &__checkbox {
+      margin-bottom: 53px
+    }
     &__swiper-box {
-      width: 75%;
+      margin-top: 28px;
+      max-width: 594px;
+    }
+    &__swiper-nav-box {
+      margin-bottom: 22px;
+    }
+    &__pagination {
+      margin: 0 19px;
     }
     &__slide {
-      min-height: 315px;
+      height: 315px;
       &_bg-one {
         background-image: url('../img/gallery-one-1024.jpg');
         @media (min-resolution: 2dppx) {
@@ -380,5 +397,10 @@
         }
       }
     }
+  }
+
+  .choices {
+    margin-bottom: auto;
+    max-width: 280px;
   }
 }

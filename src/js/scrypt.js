@@ -104,7 +104,7 @@ const swiper = new Swiper('.gallery__swiper', {
       slidesPerGroup: 2,
       spaceBetween: 34,
     },
-    1024: {
+    1025: {
       slidesPerView: 3,
       slidesPerGroup: 6,
       spaceBetween: 50,
@@ -198,10 +198,11 @@ const swiperEvents = new Swiper('.events__swiper', {
       slidesPerGroup: 2,
       spaceBetween: 34,
     },
+
     992: {
       slidesPerView: 3,
       slidesPerGroup: 3,
-      spaceBetween: 50,
+      spaceBetween: 24,
     },
   },
 });
@@ -219,7 +220,12 @@ const swiperProgects = new Swiper('.progects__swiper', {
       slidesPerGroup: 2,
       spaceBetween: 34,
     },
-    1024: {
+    769: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 50,
+    },
+    1025: {
       slidesPerView: 3,
       slidesPerGroup: 6,
       spaceBetween: 50,

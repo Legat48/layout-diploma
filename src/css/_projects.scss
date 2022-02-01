@@ -104,3 +104,20 @@
   }
 }
 
+@media (min-width: 769px) {
+  .progects {
+    &__text {
+      margin-bottom: 12px;
+    }
+    &__title-third {
+      margin-bottom: 15px;
+    }
+  }
+
+  .progects .progects__slide,
+  .progects .progects__slide img {
+    width: 384px;
+    height: 128px;
+  }
+}
+
