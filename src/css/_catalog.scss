@@ -230,7 +230,10 @@
     &__item {
       min-width: 288px;
     }
-
+    &__list {
+      column-count: 2;
+      column-gap: 65px;
+    }
   }
   .tab {
     &__img {
@@ -280,13 +283,23 @@
     }
     &__list {
       min-height: 283px;
-      column-count: 2;
+      column-count: 1;
       column-gap: 84px;
     }
   }
   .tab {
     &__img {
       margin-bottom: 20px;
+    }
+  }
+}
+
+@media (min-width: 1014px) {
+  .accordion {
+    &__list {
+      min-height: 283px;
+      column-count: 2;
+      column-gap: 84px;
     }
   }
 }
