@@ -1212,21 +1212,19 @@
           </p>
         </address>
 
-        <div class="contacts__form" role="form" aria-label="Форма">
-          <form action="#" class="form">
-            <label class="contacts__label label" for="name">
-              <input class="contacts__input input" id="name" name="Имя" type="text" placeholder="Имя*"
-                data-validate-field="name">
-            </label>
+        <form action="#" class="contacts__form form">
+          <label class="form__label" for="name">
+            <input class="form__input" id="name" name="Имя" type="text" placeholder="Имя*"
+              data-validate-field="name">
+          </label>
 
-            <label class="contacts__label label" for="tel">
-              <input class="contacts__input input" id="tel" name="tel" type="tel" placeholder="Телефон*"
-                data-validate-field="tel" data-validate-rules="phone">
-            </label>
+          <label class="form__label" for="tel">
+            <input class="form__input" id="tel" name="tel" type="tel" placeholder="Телефон*"
+              data-validate-field="tel" data-validate-rules="phone">
+          </label>
 
-            <button class="contacts__btn button">Заказать</button>
-          </form>
-        </div>
+          <button class="form__btn button">Заказать <span class="form__btn_full-text">обратный звонок</span> </button>
+        </form>
 
         <div class="contacts__connection">
           <h3 class="contacts__sub-title">
@@ -1270,7 +1268,7 @@
           </ul>
         </div>
       </div>
-      <div class="container map" id="map"></div>
+      <div class="container contacts__map" id="map"></div>
     </section>
   </main>
   <footer class="footer">

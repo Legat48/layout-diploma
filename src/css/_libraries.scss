@@ -55,22 +55,6 @@
   opacity: 1;
 }
 
-/* form */
-.castom-form {
-  margin-right: 30px;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  font-weight: 400;
-}
-
-.label {
-  position: relative;
-}
 // класс всплывающего предупреждения
 .js-validate-error-label {
   background: transparent;
@@ -80,9 +64,7 @@
   color: #FF5C00;
 }
 
-//* map */
-// это от куда, не забыть проверить
-.contacts .map {
+.contacts__map {
   padding: 0;
   width: auto;
   height: 320px;

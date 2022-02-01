@@ -125,6 +125,29 @@
   position: relative;
 }
 
+@media (min-width: 576px) {
+  .events {
+    &__card {
+      padding: 215px 18px 50px 35px;
+    }
+    &__info {
+    margin-bottom: 5px;
+    }
+    &__card-title {
+      margin-right: 10px;
+    }
+    &__text {
+      margin-right: 10px;
+    }
+    &__link {
+      padding: 4px 0px;
+    }
+  }
+  .events__swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 20px 8px 0;
+  }
+}
+
 @media (min-width: 1025px) {
   .events {
     &__button-next {

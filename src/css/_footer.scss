@@ -25,3 +25,32 @@
     height: 22px;
   }
 }
+
+@media (min-width: 576px) {
+  .footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &__box {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0;
+      width: auto;
+    }
+    &__svg {
+      width: 60px;
+      height: 60px;
+    }
+    &__item:not(:last-child) {
+      margin-right: 30px;
+    }
+    &__logo {
+      width: 173px;
+      height: 40px;
+    }
+  }
+}

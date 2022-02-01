@@ -20,34 +20,7 @@
     font-size: 0.875em;
     line-height: 1em;
   }
-  &__form {
-    margin-bottom: 20px;
-  }
-  &__label:not(:last-child){
-    margin-bottom: 20px;
-  }
-  &__label:nth-last-child(2) {
-    margin-bottom: 20px;
-  }
-  &__input {
-    padding: 10px 23px;
-    border: 1px solid var(--color-text);
-    border-radius: 100px;
-    width: 100%;
-  }
-  &__input::placeholder {
-    color: var(--color-gray-text);
-  }
-  &__btn {
-    margin-right: auto;
-    padding: 12px 33px;
-    border: 2px solid var(--color-fill);
-    border-radius: 100px;
-    font-weight: bold;
-    font-size: 0.725em;
-    line-height: 1em;
-    color: var(--color-fill);
-  }
+
   &__connection {
     display: flex;
     flex-direction: column;
@@ -71,5 +44,94 @@
   &__link>svg {
     width: 50px;
     height: 50px;
+  }
+  &__map {
+    padding: 0;
+    width: auto;
+    height: 320px;
+  }
+}
+
+.form {
+  margin-bottom: 20px;
+  &__label {
+    position: relative;
+  }
+  &__label {
+    margin-bottom: 20px;
+  }
+  &__input {
+    padding: 10px 23px;
+    border: 1px solid var(--color-text);
+    border-radius: 100px;
+    width: 100%;
+  }
+  &__input::placeholder {
+    color: var(--color-gray-text);
+  }
+  &__btn {
+    margin-right: auto;
+    padding: 12px 33px;
+    border: 2px solid var(--color-fill);
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.725em;
+    line-height: 1em;
+    color: var(--color-fill);
+    &_full-text {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .contacts {
+    border: 1px solid #CACACA;
+    padding-top: 40px;
+    &__address {
+      margin-bottom: 37px;
+    }
+    &__descr {
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+    &__address-info {
+      font-size: 1em;
+    }
+    &__sub-title {
+      margin-bottom: 0;
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+    &__connection {
+      margin-bottom: 37px;
+    }
+    &__link,
+    &__link>svg {
+      width: 40px;
+      height: 40px;
+    }
+    &__map {
+      height: 700px;
+    }
+  }
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    &__label {
+      margin: 0;
+    }
+    &__input {
+      padding: 15px 22px;
+    }
+    &__btn {
+      padding: 15px 27px;
+      font-weight: 700;
+      font-size: 1.125em;
+      &_full-text {
+        display: inline;
+      }
+    }
   }
 }
