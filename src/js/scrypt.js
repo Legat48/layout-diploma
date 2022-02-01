@@ -99,7 +99,7 @@ const swiper = new Swiper('.gallery__swiper', {
   },
 
   breakpoints: {
-    576: {
+    750: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 34,
@@ -193,7 +193,7 @@ const swiperEvents = new Swiper('.events__swiper', {
     clickable: true,
   },
   breakpoints: {
-    576: {
+    750: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 34,

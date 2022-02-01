@@ -39,6 +39,8 @@
     right: 0;
     left: 0;
     bottom: 0;
+    display: flex;
+    justify-content: center;
     height: 100%;
     outline: 1px solid #CACACA;
     outline-offset: -1px;
@@ -64,7 +66,13 @@
   margin: 0 17px;
 }
 
-@media (min-width: 576px) {
+.progects .progects__slide,
+.progects .progects__slide img {
+  width: 195px;
+  height: 65px;
+}
+
+@media (min-width: 480px) {
   .progects {
     padding-top: 64px;
     padding-bottom: 80px;
@@ -75,9 +83,15 @@
       margin-bottom: 21px;
       font-size: 1.5em;
     }
+
+  }
+}
+
+@media (min-width: 750px) {
+  .progects {
     &__slide img {
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
   .progects__swiper-box .progects__swiper {

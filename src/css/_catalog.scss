@@ -188,7 +188,7 @@
 }
 
 
-@media (min-width: 576px) {
+@media (min-width: 480px) {
   .catalog {
     padding-top: 77px;
     padding-bottom: 65px;
@@ -230,12 +230,7 @@
     &__item {
       min-width: 288px;
     }
-    &__list {
-      padding-left: 0;
-      min-height: 293px;
-      column-count: 3;
-      column-gap: 65px;
-    }
+
   }
   .tab {
     &__img {
@@ -246,6 +241,17 @@
     }
     &__info {
       margin-bottom: 9px;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .accordion {
+    &__list {
+      padding-left: 0;
+      min-height: 283px;
+      column-count: 3;
+      column-gap: 65px;
     }
   }
 }

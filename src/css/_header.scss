@@ -281,7 +281,7 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 
-@media (min-width: 576px) {
+@media (min-width: 480px) {
   .header {
     &__row-box {
       align-items: center;
