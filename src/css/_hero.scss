@@ -38,80 +38,6 @@
     color: inherit;
     background-color: var(--color-fill);
   }
-
-  &__swiper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    // animation-name: resize;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
-  &__swiper-slide {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    @include backgroundCenter;
-    background-color: var(--color-black);
-    &_background-one {
-      background-image: url("../img/hero-one-320.jpg");
-        @media (min-resolution: 2dppx) {
-        background-image: url("../img/hero-one-320@2x.jpg");
-      }
-    }
-    &_background-two {
-      background-image: url("../img/hero-two-320.jpg");
-        @media (min-resolution: 2dppx) {
-        background-image: url("../img/hero-two-320@2x.jpg");
-      }
-    }
-    &_background-three {
-      background-image: url("../img/hero-three-320.jpg");
-        @media (min-resolution: 2dppx) {
-        background-image: url("../img/hero-three-320@2x.jpg");
-      }
-    }
-  }
-}
-
-@keyframes resize {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.2);
-  }
-}
-
-@media (min-width: 321px) {
-  .hero {
-    &__swiper-slide {
-      @include backgroundCenter;
-      &_background-one {
-        background-image: url("../img/hero-one-768.jpg");
-          @media (min-resolution: 2dppx) {
-          background-image: url("../img/hero-one-768@2x.jpg");
-        }
-      }
-      &_background-two {
-        background-image: url("../img/hero-two-768.jpg");
-          @media (min-resolution: 2dppx) {
-          background-image: url("../img/hero-two-768@2x.jpg");
-        }
-      }
-      &_background-three {
-        background-image: url("../img/hero-three-768.jpg");
-          @media (min-resolution: 2dppx) {
-          background-image: url("../img/hero-three-768@2x.jpg");
-        }
-      }
-    }
-  }
 }
 
 @media (min-width: 480px) {
@@ -164,58 +90,8 @@
   }
 }
 
-@media (min-width: 769px) {
-  .hero {
-    &__swiper-slide {
-      @include backgroundCenter;
-      &_background-one {
-        background-image: url("../img/hero-one-1024.jpg");
-          @media (min-resolution: 2dppx) {
-          background-image: url("../img/hero-one-1024@2x.jpg");
-        }
-      }
-      &_background-two {
-        background-image: url("../img/hero-two-1024.jpg");
-          @media (min-resolution: 2dppx) {
-          background-image: url("../img/hero-two-1024@2x.jpg");
-        }
-      }
-      &_background-three {
-        background-image: url("../img/hero-three-1024.jpg");
-          @media (min-resolution: 2dppx) {
-          background-image: url("../img/hero-three-1024@2x.jpg");
-        }
-      }
-    }
-  }
-}
-
 @media (min-width: 1025px) {
   .hero {
     min-height: 630px;
-    &__swiper-slide {
-      @include backgroundCenter;
-      &_background-one {
-        background-image: url("../img/hero-one-1920.jpg");
-          @media (min-resolution: 2dppx) {
-          background-image: url("../img/hero-one-1920@2x.jpg");
-        }
-      }
-      &_background-two {
-        background-image: url("../img/hero-two-1920.jpg");
-          @media (min-resolution: 2dppx) {
-          background-image: url("../img/hero-two-1920@2x.jpg");
-        }
-      }
-      &_background-three {
-        background-image: url("../img/hero-three-1920.jpg");
-          @media (min-resolution: 2dppx) {
-          background-image: url("../img/hero-three-1920@2x.jpg");
-        }
-      }
-    }
-    &__swiper {
-      height: 800px;
-    }
   }
 }

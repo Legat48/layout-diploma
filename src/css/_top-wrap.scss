@@ -1,0 +1,157 @@
+@import '_mixin.scss';
+
+.top-wrap {
+  &__swiper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  &__wrapper {
+    max-width: 100%;
+    animation-name: resize;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  &__slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--color-black);
+    &_bg-one {
+      background-image: url("../img/hero-one-320.jpg");
+        @media (min-resolution: 2dppx) {
+        background-image: url("../img/hero-one-320@2x.jpg");
+      }
+    }
+    &_bg-two {
+      background-image: url("../img/hero-two-320.jpg");
+        @media (min-resolution: 2dppx) {
+        background-image: url("../img/hero-two-320@2x.jpg");
+      }
+    }
+    &_bg-three {
+      background-image: url("../img/hero-three-320.jpg");
+        @media (min-resolution: 2dppx) {
+        background-image: url("../img/hero-three-320@2x.jpg");
+      }
+    }
+  }
+}
+
+@keyframes resize {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@media (min-width: 321px) {
+  .top-wrap {
+    &__slide {
+      &_bg-one {
+        background-image: url("../img/hero-one-768.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-one-768@2x.jpg");
+        }
+      }
+      &_bg-two {
+        background-image: url("../img/hero-two-768.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-two-768@2x.jpg");
+        }
+      }
+      &_bg-three {
+        background-image: url("../img/hero-three-768.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-three-768@2x.jpg");
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .top-wrap {
+    &__slide {
+      &_bg-one {
+        background-image: url("../img/hero-one-1024.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-one-1024@2x.jpg");
+        }
+      }
+      &_bg-two {
+        background-image: url("../img/hero-two-1024.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-two-1024@2x.jpg");
+        }
+      }
+      &_bg-three {
+        background-image: url("../img/hero-three-1024.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-three-1024@2x.jpg");
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .top-wrap {
+    &__slide {
+      &_bg-one {
+        background-image: url("../img/hero-one-1920.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-one-1920@2x.jpg");
+        }
+      }
+      &_bg-two {
+        background-image: url("../img/hero-two-1920.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-two-1920@2x.jpg");
+        }
+      }
+      &_bg-three {
+        background-image: url("../img/hero-three-1920.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-three-1920@2x.jpg");
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1025px) {
+  .top-wrap {
+    &__slide {
+      &_bg-one {
+        background-image: url("../img/hero-one-1920.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-one-1920@2x.jpg");
+        }
+      }
+      &_bg-two {
+        background-image: url("../img/hero-two-1920.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-two-1920@2x.jpg");
+        }
+      }
+      &_bg-three {
+        background-image: url("../img/hero-three-1920.jpg");
+          @media (min-resolution: 2dppx) {
+          background-image: url("../img/hero-three-1920@2x.jpg");
+        }
+      }
+    }
+  }
+}

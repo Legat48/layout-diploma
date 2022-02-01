@@ -69,8 +69,8 @@ document.querySelectorAll('.dropdown__scrollbar').forEach((el) => {
   });
 });
 
-// swiper-hero
-const swiperHero = new Swiper('.hero__swiper', {
+// top-wrap-hero
+const swiperHero = new Swiper('.top-wrap__swiper', {
   allowTouchMove: false,
   loop: true,
   effect: 'fade',

@@ -15,6 +15,7 @@
   &__row-box {
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
   &__burger {
     position: relative;
@@ -313,8 +314,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     &__link {
       font-size: 2em;
       line-height: 2em;
-      color: inherit;
-      @include transition;
     }
     &__btn {
       padding: 15px 60px 15px 70px;
@@ -364,6 +363,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       display: flex;
       justify-content: space-between;
     }
+    &__row-up {
+      padding-top: 23px;
+    }
     &__row-down {
       background-color: rgba(0, 0, 0, 0.4);
     }
@@ -375,22 +377,43 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     &__search-toggle {
       display: none;
     }
+    &__logo {
+      margin-right: 5px;
+      width: 195px;
+      height: 40px;
+    }
   }
 
   .nav {
     position: relative;
     z-index: 1;
-    width: auto;
-    &__list {
-      display: flex;
+    width: 100%;
+    &__box {
       flex-direction: row;
-      margin-top: 0;
       padding: 0;
+      background-color: transparent;
+      margin-top: 0;
       width: 100%;
       min-height: auto;
-      background-color: transparent;
       opacity: 1;
-      transform: translateX(0px);
+      transform: translateX(0);
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-top: 10px;
+      margin-right: auto;
+      width: 100%;
+    }
+    &__item:not(:last-child) {
+      margin-right: 1%;
+    }
+
+    &__link {
+      font-weight: 600;
+      font-size: 1.125em;
+      line-height: 1.5em;
     }
   }
   .search {
