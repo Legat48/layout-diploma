@@ -122,3 +122,23 @@
   }
 }
 
+@media (min-width: 1025px) {
+  .progects {
+    padding-top: 57px;
+    &__text {
+      width: calc(1080/1600 * 100%);
+    }
+    &__title-third {
+    }
+  }
+
+  .progects__swiper-box .progects__swiper {
+    margin: 0 46px;
+  }
+  .progects .progects__slide,
+  .progects .progects__slide img {
+    width: 450px;
+    height: 150px;
+  }
+}
+

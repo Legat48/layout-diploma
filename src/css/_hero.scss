@@ -93,5 +93,18 @@
 @media (min-width: 1025px) {
   .hero {
     min-height: 630px;
+    &__box {
+      padding-top: 73px;
+      padding-bottom: 122px;
+      min-height: 630px;
+    }
+    &__title {
+      margin-bottom: 20px;
+      font-size: 4.5em;
+      line-height: 1.125em;
+    }
+    &__text {
+      max-width: 610px;
+    }
   }
 }

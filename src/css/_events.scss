@@ -159,16 +159,96 @@
 }
 
 @media (min-width: 769px) {
+  .events {
+    &__img {
 
+      &_bg-one {
+        background-image: url('../img/events-one-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-one-1024@2x.jpg");
+        }
+      }
+      &_bg-two {
+        background-image: url('../img/events-two-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-two-1024@2x.jpg");
+        }
+      }
+      &_bg-three {
+        background-image: url('../img/events-three-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-three-1024@2x.jpg");
+        }
+      }
+      &_bg-four {
+        background-image: url('../img/events-four-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-four-1024@2x.jpg");
+        }
+      }
+      &_bg-five {
+        background-image: url('../img/events-five-1024.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-five-1024@2x.jpg");
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1025px) {
   .events {
+    &__card {
+      padding: 314px 40px 40px 49px;
+      min-height: 700px;
+    }
+    &__info {
+      margin-right: auto;
+      margin-bottom: 16px;
+      margin-left: 0;
+      text-align: left;
+    }
+    &__card-title {
+      margin-bottom: 1px;
+    }
     &__button-next {
       display: block;
     }
     &__pagination {
       display: none;
+    }
+    &__img {
+      height: 300px;
+      &_bg-one {
+        background-image: url('../img/events-one-1920.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-one-1920@2x.jpg");
+        }
+      }
+      &_bg-two {
+        background-image: url('../img/events-two-1920.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-two-1920@2x.jpg");
+        }
+      }
+      &_bg-three {
+        background-image: url('../img/events-three-1920.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-three-1920@2x.jpg");
+        }
+      }
+      &_bg-four {
+        background-image: url('../img/events-four-1920.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-four-1920@2x.jpg");
+        }
+      }
+      &_bg-five {
+        background-image: url('../img/events-five-1920.jpg');
+        @media (min-resolution: 2dppx) {
+          background-image: url("../img/events-five-1920@2x.jpg");
+        }
+      }
     }
   }
 }

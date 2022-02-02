@@ -20,7 +20,9 @@
     font-size: 0.875em;
     line-height: 1em;
   }
-
+  &__form {
+    margin-bottom: 20px;
+  }
   &__connection {
     display: flex;
     flex-direction: column;
@@ -47,7 +49,7 @@
   }
   &__map {
     padding: 0;
-    width: auto;
+    max-width: 1920px;
     height: 320px;
   }
 }
@@ -56,7 +58,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 20px;
   &__label {
     position: relative;
   }
@@ -156,11 +157,30 @@
 }
 
 @media (min-width: 1014px) {
+  .contacts {
+    &__box  {
+      flex-direction: row;
+      margin-bottom: 13px;
+    }
+    &__form {
+      margin-bottom: 23px;
+      width: calc(909/1600 * 100%);
+    }
+    &__connection {
+      margin-bottom: 0;
+      justify-content: flex-start
+    }
+    &__sub-title {
+      margin-bottom: 11px;
+      line-height: 1em;
+    }
+  }
   .form {
     display: flex;
     flex-direction: row;
+    align-items: center;
     &__label {
-      width: 29.4%;
+      width: calc(277/908 * 100%);
     }
     &__input {
       padding: 15px 22px;

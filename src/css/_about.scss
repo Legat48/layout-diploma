@@ -27,6 +27,10 @@
   }
 }
 
-@media (min-width: 769px) {
-
+@media (min-width: 1025px) {
+  .about {
+    &__text {
+      width: calc(1080/1600 * 100%);
+    }
+  }
 }
