@@ -125,6 +125,12 @@ div .deactivate {
 
 @media (min-width: 1025px) {
   .container {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
+@media (min-width: 1430px) {
+  .container {
     padding-right: 160px;
     padding-left: 160px;
   }

@@ -48,6 +48,8 @@
     height: 50px;
   }
   &__map {
+    margin-right: auto;
+    margin-left: auto;
     padding: 0;
     max-width: 1920px;
     height: 320px;
@@ -157,9 +159,26 @@
 }
 
 @media (min-width: 1014px) {
+  .form {
+    display: flex;
+    flex-direction: row;
+    &__label {
+      width: 29.4%;
+    }
+    &__input {
+      padding: 15px 22px;
+    }
+    &__btn {
+      width: 37.4%;
+    }
+  }
+}
+
+@media (min-width: 1700px) {
   .contacts {
     &__box  {
       flex-direction: row;
+      gap: 15px;
       margin-bottom: 13px;
     }
     &__form {

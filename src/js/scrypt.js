@@ -109,7 +109,7 @@ const swiper = new Swiper('.gallery__swiper', {
       slidesPerGroup: 2,
       spaceBetween: 34,
     },
-    1025: {
+    1430: {
       slidesPerView: 3,
       slidesPerGroup: 6,
       spaceBetween: 50,
@@ -210,7 +210,7 @@ const swiperEvents = new Swiper('.events__swiper', {
       spaceBetween: 24,
     },
 
-    1025: {
+    1430: {
       slidesPerView: 3,
       slidesPerGroup: 3,
       spaceBetween: 55,
@@ -236,7 +236,7 @@ const swiperProgects = new Swiper('.progects__swiper', {
       slidesPerGroup: 2,
       spaceBetween: 50,
     },
-    1025: {
+    1430: {
       slidesPerView: 3,
       slidesPerGroup: 6,
       spaceBetween: 50,

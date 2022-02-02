@@ -4,8 +4,8 @@
   &__title {
     margin-bottom: 12px;
   }
-  &__swiper {
-    // position: relative;
+  &__swiper .events__card {
+    height: auto;
   }
   // ПАЧИМУ КНОПКА СКРЫТА ЧАСТИЧНО, НАД РАЗОБРАТЬСЯ
   &__button-next {
@@ -29,6 +29,7 @@
   }
 
   &__wrapper {
+    flex: 1 1 auto;
     margin-bottom: 20px;
   }
   &__card {
@@ -196,7 +197,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1430px) {
   .events {
     &__card {
       padding: 314px 40px 40px 49px;
