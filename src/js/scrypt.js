@@ -6,7 +6,7 @@
 // headers
 // nav
 // анимация кнопки бургера
-const burgerAnim = (() => {
+(() => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav');
   const search = document.querySelector('#search-toggle');

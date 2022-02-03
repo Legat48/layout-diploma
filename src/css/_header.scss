@@ -72,26 +72,18 @@
     margin-bottom: 25px;
   }
   &__item {
+    position: relative;
     margin-bottom: 0;
   }
   &__link {
+    position: relative;
     font-weight: 600;
     font-size: 1em;
     line-height: 2em;
     color: inherit;
     @include transition;
   }
-  &__link:hover {
-    color: var(--colorOrange);
-  }
-  &__link:focus {
-    color: var(--colorWhite);
-    background-color: var(--colorOrange);
-  }
-  &__link:active {
-    color: #CE4307;
-    background-color: transparent;
-  }
+
   &__btn {
     position: relative;
     z-index: 10;
@@ -100,6 +92,7 @@
     border: 2px solid var(--color-fill);
     border-radius: 100px;
     color: var(--color-light-text);
+    @include transition;
   }
   &__icon {
     position: absolute;
@@ -108,16 +101,56 @@
     width: 13px;
     height: 13px;
   }
+  &__icon>svg>path {
+    @include transition;
+    transition-duration: 0.2s;
+  }
+  &__btn::after,
+  &__link::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    right: -6px;
+    bottom: -4px;
+    left: -6px;
+    background-color: transparent;
+    @include transition;
+  }
+  &__link:hover,
+  &__btn:hover,
+  &__btn:hover svg>path {
+    color: var(--color-light-fill);
+    fill: var(--color-light-fill);
+  }
+  &__link:focus::after,
+  &__btn:focus::after {
+    background-color: var(--color-dark-fill);
+  }
+  &__link:active,
+  &__btn:active,
+  &__btn:hover svg>path {
+    color: var(--color-dark-fill);
+    fill: var(--color-dark-fill);
+  }
+  &__link:hover::after,
+  &__link:active::after,
+  &__btn:hover::after,
+  &__btn:active::after {
+    background-color: transparent;
+  }
 }
 
 .dropdown {
   color: var(--color-light-text);
   &__btn {
     position: relative;
+    z-index: 2;
     padding: 22px 15px 22px 0;
     font-weight: 400;
     font-size: 1.125em;
     color: inherit;
+    @include transition;
   }
   &__icon {
     position: absolute;
@@ -129,10 +162,42 @@
   &__icon-svg {
     width: 12px;
     height: 7px;
-    transition: transform 0.3s;
+    @include transition;
     &_active {
       transform: scale(1, -1);
     }
+  }
+  &__icon-svg>path {
+    @include transition;
+    transition-duration: 0.2s;
+  }
+  &__btn::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 30%;
+    right: -3px;
+    bottom: 22%;
+    left: -3px;
+    background-color: transparent;
+    @include transition;
+  }
+  &__btn:hover,
+  &__btn:hover svg>path {
+    color: var(--color-light-fill);
+    stroke: var(--color-light-fill);
+  }
+  &__btn:focus::after {
+    background-color: var(--color-dark-fill);
+  }
+  &__btn:active,
+  &__btn:hover svg>path {
+    color: var(--color-dark-fill);
+    stroke: var(--color-dark-fill);
+  }
+  &__btn:hover::after,
+  &__btn:active::after {
+    background-color: transparent;
   }
   &__box {
     display: none;
@@ -148,8 +213,11 @@
   }
   &__item {
     padding: 10px 14px;
-    background-position: center;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    @include transition;
     background-repeat: no-repeat;
+    background-position: center;
     &_bg-1-1 {
       background-image: url('../img/header1-1.jpg');
     }
@@ -218,6 +286,13 @@
   &__item:not(:last-child) {
     margin-bottom: 20px;
   }
+  &__item:focus,
+  &__item:hover {
+    outline-color: var(--color-fill);
+  }
+  &__item:active {
+    outline-color: var(--color-fill);
+  }
   &__link {
     color: white;
   }
@@ -241,19 +316,35 @@
     width: 100%;
   }
   &__btn {
+    position: relative;
     margin-right: 3px;
     width: 18px;
     height: 18px;
-    border-color: transparent;
-    outline: none;
+    border: none;
+    @include transition;
   }
+  &__btn::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    border: 2px solid transparent;
+    @include transition;
+  }
+
   &__btn-svg {
     width: 18px;
     height: 18px;
   }
+  &__btn-svg>rect,
+  &__btn-svg>path {
+    @include transition;
+  }
   &__label {
     width: 83%;
-    border-bottom: 1px solid #C4C4C4;
   }
   &__input {
     padding: 5px 10px;
@@ -261,7 +352,30 @@
     outline: none;
     width: 100%;
     color: var(--color-light-text);
+    border-bottom: 1px solid var(--color-gray-fill);
     background-color: transparent;
+    @include transition
+  }
+  &__input::placeholder {
+    color: var(--color-light-text);
+    opacity: 0.85;
+  }
+  &__input:hover {
+    border-bottom: 1px solid var(--color-fill);
+  }
+  &__input:focus {
+    border-bottom: 1px solid var(--color-light-fill);
+  }
+  &__btn-svg:hover>rect,
+  &__btn-svg:hover>path {
+    fill: var(--color-fill)
+  }
+  &__btn:focus::after {
+    border-color: var(--color-fill)
+  }
+  &__btn-svg:active>rect,
+  &__btn-svg:active>path {
+    fill: var(--color-dark-fill)
   }
 }
 
@@ -344,10 +458,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 
 @media (min-width: 769px) {
-  .nav {
-    &__list {
-    }
-  }
   .search {
     position: absolute;
     right: 3%;

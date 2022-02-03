@@ -37,9 +37,9 @@
 :root {
   --color-black: #000;
   --color-white: #FFF;
+  --color-gray-fill: #CACACA;
   --color-very-light-fill: #D1A9F0;
   --color-light-fill: #C283F3;
-  --color-gray-fill: #CACACA;
   --color-fill: #9D5CD0;
   --color-dark-fill: #7943A4;
   --color-light-text: #fff;
@@ -334,31 +334,19 @@ div .deactivate {
 }
 
 .nav__item {
+  position: relative;
   margin-bottom: 0;
 }
 
 .nav__link {
+  position: relative;
   font-weight: 600;
   font-size: 1em;
   line-height: 2em;
   color: inherit;
-  transition-property: border, color, background-color, transform, fill;
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
   transition-duration: 0.3s;
   transition-timing-function: ease;
-}
-
-.nav__link:hover {
-  color: var(--colorOrange);
-}
-
-.nav__link:focus {
-  color: var(--colorWhite);
-  background-color: var(--colorOrange);
-}
-
-.nav__link:active {
-  color: #CE4307;
-  background-color: transparent;
 }
 
 .nav__btn {
@@ -369,6 +357,9 @@ div .deactivate {
   border: 2px solid var(--color-fill);
   border-radius: 100px;
   color: var(--color-light-text);
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }
 
 .nav__icon {
@@ -379,16 +370,61 @@ div .deactivate {
   height: 13px;
 }
 
+.nav__icon > svg > path {
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-duration: 0.2s;
+}
+
+.nav__btn::after, .nav__link::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -2px;
+  right: -6px;
+  bottom: -4px;
+  left: -6px;
+  background-color: transparent;
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.nav__link:hover, .nav__btn:hover,
+.nav__btn:hover svg > path {
+  color: var(--color-light-fill);
+  fill: var(--color-light-fill);
+}
+
+.nav__link:focus::after, .nav__btn:focus::after {
+  background-color: var(--color-dark-fill);
+}
+
+.nav__link:active, .nav__btn:active,
+.nav__btn:hover svg > path {
+  color: var(--color-dark-fill);
+  fill: var(--color-dark-fill);
+}
+
+.nav__link:hover::after, .nav__link:active::after, .nav__btn:hover::after, .nav__btn:active::after {
+  background-color: transparent;
+}
+
 .dropdown {
   color: var(--color-light-text);
 }
 
 .dropdown__btn {
   position: relative;
+  z-index: 2;
   padding: 22px 15px 22px 0;
   font-weight: 400;
   font-size: 1.125em;
   color: inherit;
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }
 
 .dropdown__icon {
@@ -402,11 +438,54 @@ div .deactivate {
 .dropdown__icon-svg {
   width: 12px;
   height: 7px;
-  transition: transform 0.3s;
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }
 
 .dropdown__icon-svg_active {
   transform: scale(1, -1);
+}
+
+.dropdown__icon-svg > path {
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-duration: 0.2s;
+}
+
+.dropdown__btn::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 30%;
+  right: -3px;
+  bottom: 22%;
+  left: -3px;
+  background-color: transparent;
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.dropdown__btn:hover,
+.dropdown__btn:hover svg > path {
+  color: var(--color-light-fill);
+  stroke: var(--color-light-fill);
+}
+
+.dropdown__btn:focus::after {
+  background-color: var(--color-dark-fill);
+}
+
+.dropdown__btn:active,
+.dropdown__btn:hover svg > path {
+  color: var(--color-dark-fill);
+  stroke: var(--color-dark-fill);
+}
+
+.dropdown__btn:hover::after, .dropdown__btn:active::after {
+  background-color: transparent;
 }
 
 .dropdown__box {
@@ -425,8 +504,13 @@ div .deactivate {
 
 .dropdown__item {
   padding: 10px 14px;
-  background-position: center;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .dropdown__item_bg-1-1 {
@@ -513,6 +597,14 @@ div .deactivate {
   margin-bottom: 20px;
 }
 
+.dropdown__item:focus, .dropdown__item:hover {
+  outline-color: var(--color-fill);
+}
+
+.dropdown__item:active {
+  outline-color: var(--color-fill);
+}
+
 .dropdown__link {
   color: white;
 }
@@ -539,11 +631,28 @@ div .deactivate {
 }
 
 .search__btn {
+  position: relative;
   margin-right: 3px;
   width: 18px;
   height: 18px;
-  border-color: transparent;
-  outline: none;
+  border: none;
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.search__btn::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  border: 2px solid transparent;
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }
 
 .search__btn-svg {
@@ -551,9 +660,15 @@ div .deactivate {
   height: 18px;
 }
 
+.search__btn-svg > rect,
+.search__btn-svg > path {
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
 .search__label {
   width: 83%;
-  border-bottom: 1px solid #C4C4C4;
 }
 
 .search__input {
@@ -562,7 +677,38 @@ div .deactivate {
   outline: none;
   width: 100%;
   color: var(--color-light-text);
+  border-bottom: 1px solid var(--color-gray-fill);
   background-color: transparent;
+  transition-property: border, outline, color, background-color, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.search__input::placeholder {
+  color: var(--color-light-text);
+  opacity: 0.85;
+}
+
+.search__input:hover {
+  border-bottom: 1px solid var(--color-fill);
+}
+
+.search__input:focus {
+  border-bottom: 1px solid var(--color-light-fill);
+}
+
+.search__btn-svg:hover > rect,
+.search__btn-svg:hover > path {
+  fill: var(--color-fill);
+}
+
+.search__btn:focus::after {
+  border-color: var(--color-fill);
+}
+
+.search__btn-svg:active > rect,
+.search__btn-svg:active > path {
+  fill: var(--color-dark-fill);
 }
 
 /* scrollbar */
