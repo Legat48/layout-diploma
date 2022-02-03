@@ -33,10 +33,25 @@
     padding: 10px 16px;
     border: 3px solid var(--color-fill);
     border-radius: 100px;
+    outline: 2px solid transparent;
+    outline-offset: 5px;
     font-weight: bold;
     font-size: 0.75em;
     color: inherit;
     background-color: var(--color-fill);
+    @include transition;
+  }
+  &__button:focus {
+    outline-color: var(--color-light-fill);
+  }
+  &__button:hover {
+    border-color: var(--color-light-fill);
+    outline-color: transparent;
+  }
+  &__button:active {
+    border-color: var(--color-light-fill);
+    outline-color: transparent;
+    background-color: var(--color-dark-fill);
   }
 }
 

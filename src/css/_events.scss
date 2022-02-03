@@ -4,30 +4,47 @@
   &__title {
     margin-bottom: 12px;
   }
+  &__swiper-box {
+    position: relative;
+  }
   &__swiper .events__card {
     height: auto;
   }
-  // ПАЧИМУ КНОПКА СКРЫТА ЧАСТИЧНО, НАД РАЗОБРАТЬСЯ
   &__button-next {
     position: absolute;
-    top: 50%;
+    top: 45%;
     right: -25px;
     z-index: 100;
     display: none;
+    border: 1px solid transparent;
+    border-radius: 100px;
     width: 50px;
     height: 50px;
+    background-color: var(--color-light-gray-fill);
+    @include transition;
   }
   &__button-next::after {
     content: '';
     position: absolute;
     top: 33%;
-    left: 29%;
-    width: 12px;
-    height: 7px;
+    left: 24%;
+    width: 29px;
+    height: 19px;
     background-image: url('../img/arrow-right.svg');
-    @include backgroundCenter
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    @include transition;
   }
 
+  &__button-next:hover,
+  &__button-next:hover {
+    background-color: var(--color-light-fill);
+  }
+  &__button-next:active {
+    background-color: var(--color-light-fill);
+    border-color: var(--color-fill);
+  }
   &__wrapper {
     flex: 1 1 auto;
     margin-bottom: 20px;
@@ -102,10 +119,43 @@
     line-height: 2em;
   }
   &__link {
+    position: relative;
     margin-right: auto;
     padding: 4px 6px;
     border-bottom: 1px solid var(--color-fill);
     color: var(--color-fill);
+    @include transition;
+  }
+  &__link::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    right: -6px;
+    bottom: -4px;
+    left: -6px;
+    background-color: transparent;
+    @include transition;
+  }
+  &__link:hover {
+    color: var(--color-light-fill);
+  }
+  &__link:focus {
+    color: var(--color-light-text);
+    border-color: var(--color-light-text);
+  }
+  &__link:focus::after {
+    background-color: var(--color-dark-fill);
+  }
+  &__link:active {
+    color: var(--color-text);
+    border-color: var(--color-text);
+  }
+  &__link:hover,
+  &__link:active,
+  &__link:hover::after,
+  &__link:active::after {
+    background-color: transparent;
   }
 }
 .events__swiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
@@ -200,7 +250,7 @@
 @media (min-width: 1430px) {
   .events {
     &__card {
-      padding: 314px 40px 40px 49px;
+      padding: 314px 60px 40px 49px;
       min-height: 700px;
     }
     &__info {

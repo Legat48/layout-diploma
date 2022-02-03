@@ -44,11 +44,18 @@
     height: 100%;
     outline: 1px solid #CACACA;
     outline-offset: -1px;
+    @include transition;
   }
-  &__slide img {
+  &__slide-link>img {
     opacity: 0.6;
     filter: grayscale(100%);
+    @include transition;
   }
+  &__slide-link:hover>img {
+    opacity: 1;
+    filter: none;
+  }
+
   &__button {
     position: relative;
     margin-top: auto;
@@ -84,7 +91,6 @@
       margin-bottom: 21px;
       font-size: 1.5em;
     }
-
   }
 }
 

@@ -123,8 +123,11 @@
     color: var(--color-light-fill);
     fill: var(--color-light-fill);
   }
+  &__link:focus,
+  &__btn:focus,
   &__link:focus::after,
   &__btn:focus::after {
+    color: var(--color-light-text);
     background-color: var(--color-dark-fill);
   }
   &__link:active,
