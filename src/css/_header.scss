@@ -41,12 +41,29 @@
     width: 18px;
     height: 18px;
     background-color: transparent;
+    @include transition;
   }
   &__toggle-svg {
     display: none;
     width: 18px;
     height: 18px;
+    @include transition;
   }
+  &__search-toggle rect,
+  &__search-toggle path {
+    @include transition;
+  }
+  &__search-toggle:focus rect,
+  &__search-toggle:focus path,
+  &__search-toggle:hover rect,
+  &__search-toggle:hover path {
+    fill: var(--color-fill);
+  }
+  &__search-toggle:active rect,
+  &__search-toggle:active path {
+    fill: var(--color-dark-fill);
+  }
+
 }
 .nav {
   position: absolute;
@@ -101,9 +118,8 @@
     width: 13px;
     height: 13px;
   }
-  &__icon>svg>path {
+  &__icon path {
     @include transition;
-    transition-duration: 0.2s;
   }
   &__btn::after,
   &__link::after {
@@ -117,9 +133,13 @@
     background-color: transparent;
     @include transition;
   }
+  &__btn::after {
+    border-radius: 100px;
+  }
+
   &__link:hover,
   &__btn:hover,
-  &__btn:hover svg>path {
+  &__btn:hover svg path {
     color: var(--color-light-fill);
     fill: var(--color-light-fill);
   }
@@ -132,7 +152,7 @@
   }
   &__link:active,
   &__btn:active,
-  &__btn:hover svg>path {
+  &__btn:hover path {
     color: var(--color-dark-fill);
     fill: var(--color-dark-fill);
   }
@@ -170,7 +190,7 @@
       transform: scale(1, -1);
     }
   }
-  &__icon-svg>path {
+  &__icon-svg path {
     @include transition;
     transition-duration: 0.2s;
   }
@@ -186,7 +206,7 @@
     @include transition;
   }
   &__btn:hover,
-  &__btn:hover svg>path {
+  &__btn:hover svg path {
     color: var(--color-light-fill);
     stroke: var(--color-light-fill);
   }
@@ -194,7 +214,7 @@
     background-color: var(--color-dark-fill);
   }
   &__btn:active,
-  &__btn:hover svg>path {
+  &__btn:hover svg path {
     color: var(--color-dark-fill);
     stroke: var(--color-dark-fill);
   }
@@ -209,18 +229,21 @@
     width: 300px;
     height: 300px;
     background-color: rgba(0, 0, 0, 0.6);;
+    @include transition;
   }
   &__scrollbar {
     width: 220px;
     height: 220px;
   }
   &__item {
+    position: relative;
     padding: 10px 14px;
     outline: 2px solid transparent;
     outline-offset: -2px;
     @include transition;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: var(--color-dark-fill);
     &_bg-1-1 {
       background-image: url('../img/header1-1.jpg');
     }
@@ -286,6 +309,17 @@
       background-image: url('../img/header5-4.jpg');
     }
   }
+  &__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+    opacity: 0;
+    @include transition;
+  }
   &__item:not(:last-child) {
     margin-bottom: 20px;
   }
@@ -296,12 +330,16 @@
   &__item:active {
     outline-color: var(--color-fill);
   }
+
+  &__item:active::before {
+    opacity: 1;
+  }
   &__link {
     color: white;
   }
 }
 .search {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
@@ -311,7 +349,7 @@
   min-height: 75px;
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
-  transform: translateY(-100px);
+  transform: translateY(-200px);
   &__box {
     display: flex;
     margin-top: 2px;
@@ -342,8 +380,8 @@
     width: 18px;
     height: 18px;
   }
-  &__btn-svg>rect,
-  &__btn-svg>path {
+  &__btn-svg rect,
+  &__btn-svg path {
     @include transition;
   }
   &__label {
@@ -369,31 +407,31 @@
   &__input:focus {
     border-bottom: 1px solid var(--color-light-fill);
   }
-  &__btn-svg:hover>rect,
-  &__btn-svg:hover>path {
+  &__btn-svg:hover rect,
+  &__btn-svg:hover path {
     fill: var(--color-fill)
   }
   &__btn:focus::after {
     border-color: var(--color-fill)
   }
-  &__btn-svg:active>rect,
-  &__btn-svg:active>path {
+  &__btn-svg:active rect,
+  &__btn-svg:active path {
     fill: var(--color-dark-fill)
   }
 }
 
 /* scrollbar */
-.simplebar-content-wrapper {
+.dropdown .simplebar-content-wrapper {
   overflow: auto;
 }
-.simplebar-track.simplebar-vertical {
+.dropdown .simplebar-track.simplebar-vertical {
   top: 0;
   right: -20px;
   width: 2px;
   background-color: black;
 }
 
-.simplebar-scrollbar::before {
+.dropdown .simplebar-scrollbar::before {
   left: 0;
   right: 0;
   background-color: white;;
@@ -462,7 +500,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 @media (min-width: 769px) {
   .search {
-    position: absolute;
     right: 3%;
     left: auto;
     width: 314px;
@@ -474,6 +511,12 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       width: 27px;
       height: 27px;
     }
+  }
+}
+
+@media (min-width: 1025px) {
+  .search {
+    right: 8%;
   }
 }
 
@@ -551,6 +594,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       padding-left: 20px;
       font-size: 1.125em;
       border: transparent;
+      border-radius: 0;
+    }
+    &__btn::after {
       border-radius: 0;
     }
     &__icon {

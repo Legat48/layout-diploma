@@ -12,8 +12,28 @@
     font-size: 1em;
     line-height: 2em;
   }
+
   &__link {
     color: var(--color-fill);
+    border-bottom: 1px solid transparent;
+    @include transition;
+  }
+
+  &__link:hover {
+    color: var(--color-light-fill);
+    border-color: var(--color-light-fill);
+  }
+  &__link:focus {
+    color: var(--color-light-text);
+    background-color: var(--color-fill);
+  }
+  &__link:active {
+    color: var(--color-text);
+    border-color: var(--color-text);
+  }
+  &__link:hover,
+  &__link:active {
+    background-color: transparent;
   }
   &__title-third {
     margin-bottom: 9px;
@@ -47,6 +67,7 @@
     @include transition;
   }
   &__slide-link>img {
+    object-fit: contain;
     opacity: 0.6;
     filter: grayscale(100%);
     @include transition;
@@ -56,16 +77,20 @@
     filter: none;
   }
 
+  &__slide-link:focus {
+    outline-color: var(--color-fill);
+  }
+
   &__button {
     position: relative;
     margin-top: auto;
     margin-bottom: auto;
-    border: none;
-  }
-  &__button,
-  &__button svg{
+    border: 2px solid transparent;
+    border-radius: 100px;
     width: 30px;
     height: 30px;
+    background-color: var(--color-dark-gray-fill);
+    @include transition;
   }
 }
 // переписывание классов библиотеки
@@ -134,8 +159,6 @@
     &__text {
       width: calc(1080/1600 * 100%);
     }
-    &__title-third {
-    }
   }
 
   .progects__swiper-box .progects__swiper {
@@ -143,7 +166,6 @@
   }
   .progects .progects__slide,
   .progects .progects__slide img {
-    width: 450px;
     height: 150px;
   }
 }

@@ -112,7 +112,8 @@ const fontsProd = () => {
 // компиляция и минификация CSS и перенос в готовый проект
 const stylesProd = () => {
     return src('dist/**/*.css')
-    .pipe(concat('style.css'))
+    // временно отключил
+    // .pipe(concat('style.css'))
     .pipe(autoprefixer({
         cascade:false
     }))

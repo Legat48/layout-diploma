@@ -137,15 +137,17 @@
     background-color: transparent;
     @include transition;
   }
-  &__link:hover {
-    color: var(--color-light-fill);
-  }
   &__link:focus {
     color: var(--color-light-text);
     border-color: var(--color-light-text);
   }
   &__link:focus::after {
     background-color: var(--color-dark-fill);
+  }
+  &__link:hover {
+    color: var(--color-light-fill);
+    border-color: var(--color-light-fill);
+
   }
   &__link:active {
     color: var(--color-text);

@@ -155,7 +155,7 @@ div .deactivate {
   width: 100%;
   height: var(--burger-line-height);
   background-color: currentColor;
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .burger::before {
@@ -174,28 +174,41 @@ div .deactivate {
   height: var(--burger-line-height);
   background-color: currentColor;
   transform: translateY(-50%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .burger--active::before {
   top: 50%;
   transform: rotate(45deg);
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .burger--active::after {
   top: 50%;
   transform: rotate(-45deg);
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .burger--active .burger__line {
   transform: scale(0);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .burger:focus::after {
   opacity: 1;
+}
+
+.burger:hover span {
+  width: 60%;
+}
+
+.burger:hover::after {
+  width: 30%;
+}
+
+.burger--active:hover::after,
+.burger--active:hover span {
+  width: 100%;
 }
 
 .js-validate-error-label {
@@ -203,7 +216,11 @@ div .deactivate {
   font-size: 12px;
   line-height: 14px;
   font-weight: 400;
-  color: #FF5C00;
+  color: #D11616;
+}
+
+div .js-validate-error-field {
+  border-color: #D11616;
 }
 
 .contacts__map {
@@ -228,9 +245,23 @@ div .deactivate {
   background-color: transparent;
 }
 
-.marker:focus path,
-.marker:hover path {
+.marker path {
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.marker:focus path:first-child,
+.marker:hover path:first-child {
+  fill: var(--color-light-fill);
+}
+
+.marker:active path:first-child {
   fill: var(--color-fill);
+}
+
+.marker:active path:last-child {
+  fill: var(--color-light-text);
 }
 
 .tippy-box[data-theme~='castom-tooltip'] {
@@ -300,12 +331,37 @@ div .deactivate {
   width: 18px;
   height: 18px;
   background-color: transparent;
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .header__toggle-svg {
   display: none;
   width: 18px;
   height: 18px;
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.header__search-toggle rect,
+.header__search-toggle path {
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.header__search-toggle:focus rect,
+.header__search-toggle:focus path,
+.header__search-toggle:hover rect,
+.header__search-toggle:hover path {
+  fill: var(--color-fill);
+}
+
+.header__search-toggle:active rect,
+.header__search-toggle:active path {
+  fill: var(--color-dark-fill);
 }
 
 .nav {
@@ -372,11 +428,10 @@ div .deactivate {
   height: 13px;
 }
 
-.nav__icon > svg > path {
+.nav__icon path {
   transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
-  transition-duration: 0.2s;
 }
 
 .nav__btn::after, .nav__link::after {
@@ -393,8 +448,12 @@ div .deactivate {
   transition-timing-function: ease-in-out;
 }
 
+.nav__btn::after {
+  border-radius: 100px;
+}
+
 .nav__link:hover, .nav__btn:hover,
-.nav__btn:hover svg > path {
+.nav__btn:hover svg path {
   color: var(--color-light-fill);
   fill: var(--color-light-fill);
 }
@@ -405,7 +464,7 @@ div .deactivate {
 }
 
 .nav__link:active, .nav__btn:active,
-.nav__btn:hover svg > path {
+.nav__btn:hover path {
   color: var(--color-dark-fill);
   fill: var(--color-dark-fill);
 }
@@ -450,7 +509,7 @@ div .deactivate {
   transform: scale(1, -1);
 }
 
-.dropdown__icon-svg > path {
+.dropdown__icon-svg path {
   transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -472,7 +531,7 @@ div .deactivate {
 }
 
 .dropdown__btn:hover,
-.dropdown__btn:hover svg > path {
+.dropdown__btn:hover svg path {
   color: var(--color-light-fill);
   stroke: var(--color-light-fill);
 }
@@ -482,7 +541,7 @@ div .deactivate {
 }
 
 .dropdown__btn:active,
-.dropdown__btn:hover svg > path {
+.dropdown__btn:hover svg path {
   color: var(--color-dark-fill);
   stroke: var(--color-dark-fill);
 }
@@ -498,6 +557,9 @@ div .deactivate {
   width: 300px;
   height: 300px;
   background-color: rgba(0, 0, 0, 0.6);
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .dropdown__scrollbar {
@@ -506,6 +568,7 @@ div .deactivate {
 }
 
 .dropdown__item {
+  position: relative;
   padding: 10px 14px;
   outline: 2px solid transparent;
   outline-offset: -2px;
@@ -514,6 +577,7 @@ div .deactivate {
   transition-timing-function: ease-in-out;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: var(--color-dark-fill);
 }
 
 .dropdown__item_bg-1-1 {
@@ -596,6 +660,20 @@ div .deactivate {
   background-image: url("../img/header5-4.jpg");
 }
 
+.dropdown__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+  opacity: 0;
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
 .dropdown__item:not(:last-child) {
   margin-bottom: 20px;
 }
@@ -608,12 +686,16 @@ div .deactivate {
   outline-color: var(--color-fill);
 }
 
+.dropdown__item:active::before {
+  opacity: 1;
+}
+
 .dropdown__link {
   color: white;
 }
 
 .search {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
@@ -623,7 +705,7 @@ div .deactivate {
   min-height: 75px;
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
-  transform: translateY(-100px);
+  transform: translateY(-200px);
 }
 
 .search__box {
@@ -663,8 +745,8 @@ div .deactivate {
   height: 18px;
 }
 
-.search__btn-svg > rect,
-.search__btn-svg > path {
+.search__btn-svg rect,
+.search__btn-svg path {
   transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -700,8 +782,8 @@ div .deactivate {
   border-bottom: 1px solid var(--color-light-fill);
 }
 
-.search__btn-svg:hover > rect,
-.search__btn-svg:hover > path {
+.search__btn-svg:hover rect,
+.search__btn-svg:hover path {
   fill: var(--color-fill);
 }
 
@@ -709,24 +791,24 @@ div .deactivate {
   border-color: var(--color-fill);
 }
 
-.search__btn-svg:active > rect,
-.search__btn-svg:active > path {
+.search__btn-svg:active rect,
+.search__btn-svg:active path {
   fill: var(--color-dark-fill);
 }
 
 /* scrollbar */
-.simplebar-content-wrapper {
+.dropdown .simplebar-content-wrapper {
   overflow: auto;
 }
 
-.simplebar-track.simplebar-vertical {
+.dropdown .simplebar-track.simplebar-vertical {
   top: 0;
   right: -20px;
   width: 2px;
   background-color: black;
 }
 
-.simplebar-scrollbar::before {
+.dropdown .simplebar-scrollbar::before {
   left: 0;
   right: 0;
   background-color: white;
@@ -800,7 +882,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @media (min-width: 769px) {
   .search {
-    position: absolute;
     right: 3%;
     left: auto;
     width: 314px;
@@ -811,6 +892,12 @@ input[type="search"]::-webkit-search-results-decoration {
   .search__btn-svg, .search__btn {
     width: 27px;
     height: 27px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .search {
+    right: 8%;
   }
 }
 
@@ -883,6 +970,9 @@ input[type="search"]::-webkit-search-results-decoration {
     padding-left: 20px;
     font-size: 1.125em;
     border: transparent;
+    border-radius: 0;
+  }
+  .nav__btn::after {
     border-radius: 0;
   }
   .nav__icon {
@@ -1490,6 +1580,9 @@ input[type="search"]::-webkit-search-results-decoration {
   background-color: #B0B0B0;
   opacity: 0.85;
   cursor: auto;
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .gallery__swiper-nav-box .gallery__pagination {
@@ -1513,7 +1606,9 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 8px;
   width: 8px;
   transform: rotate(135deg);
-  transition: transform 0.3s;
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .choices[data-type*=select-one].is-open:after {
@@ -1545,7 +1640,6 @@ input[type="search"]::-webkit-search-results-decoration {
   line-height: 32px;
   color: var(--color-light-text);
   background-color: transparent;
-  transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .is-focused .choices__inner,
@@ -1592,6 +1686,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
   color: var(--color-light-text);
   background-color: rgba(255, 255, 255, 0.2);
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .checkbox {
@@ -1657,6 +1754,101 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .checkbox__input:checked + span::before {
   opacity: 1;
+}
+
+.modal.deactivate .modal__overlay {
+  transform: scale(0.4, 0.2);
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1);
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-duration: 6s;
+}
+
+.modal__box {
+  position: relative;
+  padding: 217px 20px 20px;
+  width: 290px;
+  height: 100%;
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+.modal__btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 20;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background-color: transparent;
+}
+
+.modal__btn path {
+  height: 100%;
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.modal__btn:hover path,
+.modal__btn:focus path {
+  fill: var(--color-fill);
+}
+
+.modal__btn:active path {
+  fill: var(--color-dark-fill);
+}
+
+.modal__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.modal__img img {
+  height: 200px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.modal__title {
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.modal__title-info {
+  display: block;
+  font-size: 0.875em;
+}
+
+.modal__info {
+  margin-bottom: 12px;
+  font-size: 0.725em;
+  color: #969696;
+}
+
+.modal__text {
+  font-size: 1em;
+  line-height: 2em;
 }
 
 @media (min-width: 321px) {
@@ -1769,6 +1961,21 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   .choices {
     margin-bottom: 49px;
+  }
+  .modal__box {
+    padding: 115px 35px 115px 350px;
+    width: 668px;
+    height: 600px;
+  }
+  .modal__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .modal__img img {
+    width: 300px;
+    height: 100%;
   }
 }
 
@@ -1974,8 +2181,22 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 @media (min-width: 1025px) {
+  .choices__list--dropdown,
+  .is-open .choices__list--dropdown {
+    background-color: transparent;
+  }
   .choices {
     max-width: 100%;
+  }
+  .modal__box {
+    padding: 115px 50px 115px 450px;
+    width: 900px;
+    height: 500px;
+    color: var(--color-text);
+    background-color: var(--color-white);
+  }
+  .modal__img img {
+    width: 400px;
   }
 }
 
@@ -2640,10 +2861,6 @@ input[type="search"]::-webkit-search-results-decoration {
   transition-timing-function: ease-in-out;
 }
 
-.events__link:hover {
-  color: var(--color-light-fill);
-}
-
 .events__link:focus {
   color: var(--color-light-text);
   border-color: var(--color-light-text);
@@ -2651,6 +2868,11 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .events__link:focus::after {
   background-color: var(--color-dark-fill);
+}
+
+.events__link:hover {
+  color: var(--color-light-fill);
+  border-color: var(--color-light-fill);
 }
 
 .events__link:active {
@@ -2870,6 +3092,29 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .progects__link {
   color: var(--color-fill);
+  border-bottom: 1px solid transparent;
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.progects__link:hover {
+  color: var(--color-light-fill);
+  border-color: var(--color-light-fill);
+}
+
+.progects__link:focus {
+  color: var(--color-light-text);
+  background-color: var(--color-fill);
+}
+
+.progects__link:active {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.progects__link:hover, .progects__link:active {
+  background-color: transparent;
 }
 
 .progects__title-third {
@@ -2911,6 +3156,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .progects__slide-link > img {
+  object-fit: contain;
   opacity: 0.6;
   filter: grayscale(100%);
   transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
@@ -2923,17 +3169,22 @@ input[type="search"]::-webkit-search-results-decoration {
   filter: none;
 }
 
+.progects__slide-link:focus {
+  outline-color: var(--color-fill);
+}
+
 .progects__button {
   position: relative;
   margin-top: auto;
   margin-bottom: auto;
-  border: none;
-}
-
-.progects__button,
-.progects__button svg {
+  border: 2px solid transparent;
+  border-radius: 100px;
   width: 30px;
   height: 30px;
+  background-color: var(--color-dark-gray-fill);
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .progects__swiper-box .progects__swiper {
@@ -3002,7 +3253,6 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   .progects .progects__slide,
   .progects .progects__slide img {
-    width: 450px;
     height: 150px;
   }
 }
@@ -3056,14 +3306,44 @@ input[type="search"]::-webkit-search-results-decoration {
   display: flex;
 }
 
+.contacts__item {
+  width: 50px;
+  height: 50px;
+}
+
 .contacts__item:not(:last-child) {
   margin-right: 20px;
 }
 
-.contacts__link,
-.contacts__link > svg {
-  width: 50px;
-  height: 50px;
+.contacts__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.contacts__link_one {
+  background-image: url("../img/whatsapp.svg");
+}
+
+.contacts__link_two {
+  background-image: url("../img/telegram.svg");
+}
+
+.contacts__link:focus, .contacts__link:hover {
+  opacity: 0.5;
+}
+
+.contacts__link:active {
+  opacity: 1;
+  border-color: var(--color-fill);
 }
 
 .contacts__map {
@@ -3093,10 +3373,21 @@ input[type="search"]::-webkit-search-results-decoration {
   border: 1px solid var(--color-text);
   border-radius: 100px;
   width: 100%;
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .form__input::placeholder {
   color: var(--color-gray-text);
+}
+
+.form__input:hover, .form__input:focus {
+  background-color: var(--color-light-gray-fill);
+}
+
+.form__input:active {
+  background-color: transparent;
 }
 
 .form__btn {
@@ -3104,19 +3395,40 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 12px 33px;
   border: 2px solid var(--color-fill);
   border-radius: 100px;
+  outline: 2px solid transparent;
+  outline-offset: 5px;
   font-weight: 600;
   font-size: 0.725em;
   line-height: 1em;
   color: var(--color-fill);
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .form__btn_full-text {
   display: none;
 }
 
+.form__btn:focus {
+  outline-color: var(--color-light-fill);
+}
+
+.form__btn:hover {
+  color: var(--color-light-text);
+  background-color: var(--color-light-fill);
+  outline-color: transparent;
+}
+
+.form__btn:active {
+  border-color: var(--color-light-fill);
+  outline-color: transparent;
+  background-color: var(--color-dark-fill);
+}
+
 @media (min-width: 480px) {
   .contacts {
-    border: 1px solid #CACACA;
+    border: 1px solid var(--color-gray-fill);
   }
   .contacts__descr {
     margin-bottom: 10px;
@@ -3130,8 +3442,7 @@ input[type="search"]::-webkit-search-results-decoration {
     font-weight: 600;
     font-size: 1.5em;
   }
-  .contacts__link,
-  .contacts__link > svg {
+  .contacts__link {
     width: 40px;
     height: 40px;
   }
@@ -3142,7 +3453,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @media (min-width: 750px) {
   .contacts {
-    border: 1px solid #CACACA;
     padding-top: 40px;
   }
   .contacts__address {
@@ -3151,8 +3461,7 @@ input[type="search"]::-webkit-search-results-decoration {
   .contacts__connection {
     margin-bottom: 37px;
   }
-  .contacts__link,
-  .contacts__link > svg {
+  .contacts__item {
     width: 40px;
     height: 40px;
   }
@@ -3255,9 +3564,28 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 50px;
 }
 
+.footer__svg path {
+  transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.footer__link:focus path,
+.footer__link:hover path {
+  fill: var(--color-white);
+}
+
+.footer__link:active path {
+  fill: var(--color-fill);
+}
+
 .footer__logo {
   width: 97px;
   height: 22px;
+  background-image: url("../img/logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 @media (min-width: 480px) {

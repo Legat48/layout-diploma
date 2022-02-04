@@ -34,9 +34,9 @@ const searchAnim = (() => {
     searchSvgClosed.classList.toggle('active');
     e.currentTarget.classList.toggle('active');
     if (search.classList.contains('active')) {
-      gsap.fromTo('.search', { y: -100, opacity: 0 }, { duration: 0.6, y: 0, opacity: 1 });
+      gsap.fromTo('.search', { y: -160, opacity: 0.8 }, { duration: 1, y: 0, opacity: 1 });
     } else if ((!search.classList.contains('active'))) {
-      gsap.to('.search', { duration: 0.6, y: -100, opacity: 0 });
+      gsap.fromTo('.search', { y: 0, opacity: 1 }, { duration: 1, y: -160, opacity: 0.8 });
     }
   });
 })();
@@ -69,7 +69,7 @@ document.querySelectorAll('.dropdown__scrollbar').forEach((el) => {
   });
 });
 
-// top-wrap-hero
+// top-wrap-swiper
 const swiperHero = new Swiper('.top-wrap__swiper', {
   allowTouchMove: false,
   loop: true,
@@ -142,7 +142,7 @@ const swiper = new Swiper('.gallery__swiper', {
   },
 });
 // select-gallery
-const exampleSelect = (() => {
+document.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll('.select');
   elements.forEach((element) => {
     const choices = new Choices(element, {
@@ -152,7 +152,44 @@ const exampleSelect = (() => {
       itemSelectText: '',
     });
   });
-})();
+});
+
+
+// modal gallery
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.gallery__slide').forEach((modalLink) => {
+    modalLink.addEventListener('click', (event) => {
+      const { path } = event.currentTarget.dataset;
+      const modalObg = document.querySelector(`[data-target="${path}"]`);
+      const btn = modalObg.querySelector('.modal__btn');
+      document.querySelectorAll('.modal').forEach((tabContent) => {
+        tabContent.classList.add('deactivate');
+      });
+      modalObg.classList.remove('deactivate');
+      // закрытие на нажатие фона
+      modalObg.addEventListener('click', (e) => {
+        const modalOverlay = modalObg.querySelector('.modal__overlay');
+        if (e.target === modalOverlay) {
+          modalObg.classList.add('deactivate');
+        }
+      });
+      // закрытие на нажатие кнопки
+      btn.addEventListener('click', () => {
+        modalObg.classList.add('deactivate');
+      });
+      // анимация появления окна
+      if (!modalObg.classList.contains('deactivate')) {
+        gsap.fromTo('.modal__box', { scaleX:0.6, scaleY:0.4, opacity: 0.8 }, { duration: 0.6, scaleX:1, scaleY:1, opacity: 1 });
+      }
+    });
+  });
+});
+// modal scroll
+document.querySelectorAll('.modal__box').forEach((el) => {
+  new SimpleBar(el, {
+    scrollbarMaxSize: 40,
+  });
+});
 
 // catalog
 // tab
@@ -220,7 +257,6 @@ const swiperEvents = new Swiper('.events__swiper', {
 
 // swiper-progects
 const swiperProgects = new Swiper('.progects__swiper', {
-  loop: true,
   navigation: {
     prevEl: '.progects__button_prev',
     nextEl: '.progects__button_next',
@@ -238,7 +274,7 @@ const swiperProgects = new Swiper('.progects__swiper', {
     },
     1430: {
       slidesPerView: 3,
-      slidesPerGroup: 6,
+      slidesPerGroup: 3,
       spaceBetween: 50,
     },
   },

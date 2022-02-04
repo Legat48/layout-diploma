@@ -19,7 +19,7 @@
   width: 100%;
   height: var(--burger-line-height);
   background-color: currentColor;
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 .burger::before {
   top: 0;
@@ -35,24 +35,35 @@
   height: var(--burger-line-height);
   background-color: currentColor;
   transform: translateY(-50%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 .burger--active::before {
   top: 50%;
   transform: rotate(45deg);
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 .burger--active::after {
   top: 50%;
   transform: rotate(-45deg);
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 .burger--active .burger__line {
   transform: scale(0);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 .burger:focus::after {
   opacity: 1;
+}
+
+.burger:hover span {
+  width: 60%;
+}
+.burger:hover::after {
+  width: 30%;
+}
+.burger--active:hover::after,
+.burger--active:hover span {
+  width: 100%;
 }
 
 // класс всплывающего предупреждения
@@ -61,7 +72,10 @@
   font-size: 12px;
   line-height: 14px;
   font-weight: 400;
-  color: #FF5C00;
+  color: #D11616;
+}
+div .js-validate-error-field {
+  border-color: #D11616;
 }
 
 .contacts__map {
@@ -87,10 +101,20 @@
   outline: none;
   background-color: transparent;
 }
+.marker path {
+  @include transition;
+}
 
-.marker:focus path,
-.marker:hover path {
+.marker:focus path:first-child,
+.marker:hover path:first-child {
+  fill: var(--color-light-fill);
+}
+
+.marker:active path:first-child {
   fill: var(--color-fill);
+}
+.marker:active path:last-child {
+  fill: var(--color-light-text);
 }
 
 .tippy-box[data-theme~='castom-tooltip'] {
