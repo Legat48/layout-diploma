@@ -31,6 +31,13 @@
     background-position: center;
     background-size: contain;
   }
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+  }
   &__dropdown {
     display: none;
   }
@@ -49,37 +56,41 @@
     height: 18px;
     @include transition;
   }
+  &__search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    padding: 40px 57px 20px;
+    width: 100vw;
+    min-height: 75px;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0.8;
+    transform: translateY(-160px);
+  }
   &__search-toggle rect,
   &__search-toggle path {
     @include transition;
   }
   &__search-toggle:focus rect,
-  &__search-toggle:focus path,
-  &__search-toggle:hover rect,
-  &__search-toggle:hover path {
+  &__search-toggle:focus path {
     fill: var(--color-fill);
   }
   &__search-toggle:active rect,
   &__search-toggle:active path {
     fill: var(--color-dark-fill);
   }
-
 }
 .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100vw;
   color: var(--color-light-text);
   &__box {
     display: flex;
     flex-direction: column;
+    margin-top: 2px;
     padding: 48px 21px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    margin-top: 2px;
     min-height: 355px;
+    background-color: rgba(0, 0, 0, 0.9);
     opacity: 0;
     transform: translateX(-1000px);
   }
@@ -136,13 +147,6 @@
   &__btn::after {
     border-radius: 100px;
   }
-
-  &__link:hover,
-  &__btn:hover,
-  &__btn:hover svg path {
-    color: var(--color-light-fill);
-    fill: var(--color-light-fill);
-  }
   &__link:focus,
   &__btn:focus,
   &__link:focus::after,
@@ -151,14 +155,11 @@
     background-color: var(--color-dark-fill);
   }
   &__link:active,
-  &__btn:active,
-  &__btn:hover path {
+  &__btn:active {
     color: var(--color-dark-fill);
     fill: var(--color-dark-fill);
   }
-  &__link:hover::after,
   &__link:active::after,
-  &__btn:hover::after,
   &__btn:active::after {
     background-color: transparent;
   }
@@ -206,7 +207,7 @@
     @include transition;
   }
   &__btn:hover,
-  &__btn:hover svg path {
+  &__btn:hover path {
     color: var(--color-light-fill);
     stroke: var(--color-light-fill);
   }
@@ -214,7 +215,7 @@
     background-color: var(--color-dark-fill);
   }
   &__btn:active,
-  &__btn:hover svg path {
+  &__btn:hover path {
     color: var(--color-dark-fill);
     stroke: var(--color-dark-fill);
   }
@@ -256,7 +257,6 @@
     &_bg-1-4 {
       background-image: url('../img/header1-4.jpg');
     }
-
     &_bg-2-1 {
       background-image: url('../img/header2-1.jpg');
     }
@@ -269,7 +269,6 @@
     &_bg-2-4 {
       background-image: url('../img/header2-4.jpg');
     }
-
     &_bg-3-1 {
       background-image: url('../img/header3-1.jpg');
     }
@@ -295,7 +294,6 @@
     &_bg-4-4 {
       background-image: url('../img/header4-4.jpg');
     }
-
     &_bg-5-1 {
       background-image: url('../img/header5-1.jpg');
     }
@@ -339,17 +337,7 @@
   }
 }
 .search {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
   display: flex;
-  padding: 40px 57px 20px;
-  width: 100vw;
-  min-height: 75px;
-  background-color: rgba(0, 0, 0, 0.9);
-  opacity: 0;
-  transform: translateY(-200px);
   &__box {
     display: flex;
     margin-top: 2px;
@@ -375,7 +363,6 @@
     border: 2px solid transparent;
     @include transition;
   }
-
   &__btn-svg {
     width: 18px;
     height: 18px;
@@ -390,10 +377,10 @@
   &__input {
     padding: 5px 10px;
     border: transparent;
+    border-bottom: 1px solid var(--color-gray-fill);
     outline: none;
     width: 100%;
     color: var(--color-light-text);
-    border-bottom: 1px solid var(--color-gray-fill);
     background-color: transparent;
     @include transition
   }
@@ -430,13 +417,12 @@
   width: 2px;
   background-color: black;
 }
-
 .dropdown .simplebar-scrollbar::before {
   left: 0;
   right: 0;
   background-color: white;;
 }
-
+// отключение стандартной стилистики импута
 input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
 input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
 input[type="search"]::-webkit-search-decoration,
@@ -463,6 +449,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       width: 187px;
       height: 42px;
     }
+    &__nav {
+      width: 100%;
+    }
     &__search-toggle,
     &__toggle-svg {
       width: 27px;
@@ -470,7 +459,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
   }
   .nav {
-    width: 100%;
     &__box {
       padding: 96px 49px;
     }
@@ -483,7 +471,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       font-size: 1.125em;
     }
     &__icon {
-    left: 27%;
+      left: 27%;
     }
   }
   .search {
@@ -497,12 +485,35 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
   }
 }
-
 @media (min-width: 769px) {
+  .header {
+    &__search {
+      right: 3%;
+      left: auto;
+      width: 314px;
+    }
+    &__search-toggle:hover rect,
+    &__search-toggle:hover path {
+      fill: var(--color-fill);
+    }
+  }
+  .nav {
+    &__link:hover,
+    &__btn:hover,
+    &__btn:hover path {
+      color: var(--color-light-fill);
+      fill: var(--color-light-fill);
+    }
+    &__btn:hover path {
+      color: var(--color-dark-fill);
+      fill: var(--color-dark-fill);
+    }
+    &__link:hover::after,
+    &__btn:hover::after {
+      background-color: transparent;
+    }
+  }
   .search {
-    right: 3%;
-    left: auto;
-    width: 314px;
     &__btn {
       margin-right: 20px;
     }
@@ -515,8 +526,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 
 @media (min-width: 1025px) {
-  .search {
-    right: 8%;
+  .header {
+    &__search {
+      right: 8%;
+    }
   }
 }
 
@@ -535,6 +548,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       background-color: rgba(0, 0, 0, 0.4);
     }
     &__nav {
+      position: relative;
+      z-index: 1;
       width: calc(1250/1600 * 100%);
     }
     &__logo {
@@ -555,12 +570,18 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
     &__search {
       margin-left: auto;
+      position: relative;
+      left: 0;
+      padding: 0;
+      width: auto;
+      min-height: auto;
+      background-color: transparent;
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
 
   .nav {
-    position: relative;
-    z-index: 1;
     &__box {
       flex-direction: row;
       padding: 0;
@@ -603,16 +624,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       top: 10%;
       left: 0;
     }
-  }
-  .search {
-    position: relative;
-    left: 0;
-    padding: 0;
-    width: auto;
-    min-height: auto;
-    background-color: transparent;
-    opacity: 1;
-    transform: translateY(0px);
   }
 }
 

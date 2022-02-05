@@ -4,14 +4,15 @@
 /* eslint-disable no-unused-vars */
 
 // headers
-// nav
-// анимация кнопки бургера
-(() => {
+// анимация nav
+document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav');
   const search = document.querySelector('#search-toggle');
   burger.addEventListener('click', (e) => {
+    // переключение бургера
     e.currentTarget.classList.toggle('burger--active');
+    // появление и уход меню навигации
     if (burger.classList.contains('burger--active')) {
       clearTimeout(setTimeout(()=>{nav.style.zIndex = -1;}, 0))
       search.style.zIndex = 1;
@@ -23,24 +24,25 @@
       setTimeout(()=>{nav.style.zIndex = -1;}, 300)
     }
   });
-})();
-// // search
-const searchAnim = (() => {
-  const search = document.querySelector('#search-toggle');
-  const searchSvgOpen = document.getElementById('toggle-open');
-  const searchSvgClosed = document.getElementById('toggle-closed');
-  search.addEventListener('click', (e) => {
-    searchSvgOpen.classList.toggle('active');
-    searchSvgClosed.classList.toggle('active');
+});
+// search
+document.addEventListener('DOMContentLoaded', () => {
+  const btnToggleSearch = document.querySelector('#search-toggle');
+  const btnSvgOpen = document.getElementById('toggle-open');
+  const btnSvgClosed = document.getElementById('toggle-closed');
+  btnToggleSearch.addEventListener('click', (e) => {
+    btnSvgOpen.classList.toggle('active');
+    btnSvgClosed.classList.toggle('active');
+    // появление поиска
     e.currentTarget.classList.toggle('active');
-    if (search.classList.contains('active')) {
+    // анимация поиска
+    if (btnToggleSearch.classList.contains('active')) {
       gsap.fromTo('.search', { y: -160, opacity: 0.8 }, { duration: 1, y: 0, opacity: 1 });
-    } else if ((!search.classList.contains('active'))) {
+    } else if ((!btnToggleSearch.classList.contains('active'))) {
       gsap.fromTo('.search', { y: 0, opacity: 1 }, { duration: 1, y: -160, opacity: 0.8 });
     }
   });
-})();
-
+});
 // dropdown
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.dropdown__btn').forEach((btn) => {
@@ -60,15 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
 // scrollbar
-
 document.querySelectorAll('.dropdown__scrollbar').forEach((el) => {
   new SimpleBar(el, {
     scrollbarMaxSize: 40,
   });
 });
-
 // top-wrap-swiper
 const swiperHero = new Swiper('.top-wrap__swiper', {
   allowTouchMove: false,
@@ -79,7 +78,6 @@ const swiperHero = new Swiper('.top-wrap__swiper', {
     delay: 10000,
   },
 });
-
 // gallery
 // swiper-gallery
 const swiper = new Swiper('.gallery__swiper', {
@@ -94,10 +92,9 @@ const swiper = new Swiper('.gallery__swiper', {
     type: 'fraction',
   },
   navigation: {
-    nextEl: '.gallery__button-next',
-    prevEl: '.gallery__button-prev',
+    nextEl: '.gallery__btn-next',
+    prevEl: '.gallery__btn-prev',
   },
-
   breakpoints: {
     750: {
       slidesPerView: 2,
@@ -154,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
 // modal gallery
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.gallery__slide').forEach((modalLink) => {
@@ -190,7 +186,6 @@ document.querySelectorAll('.modal__box').forEach((el) => {
     scrollbarMaxSize: 40,
   });
 });
-
 // catalog
 // tab
 document.addEventListener('DOMContentLoaded', () => {
@@ -205,16 +200,16 @@ document.addEventListener('DOMContentLoaded', () => {
         tabContent.classList.add('deactivate');
       });
       document.querySelector(`[data-target="${path}"]`).classList.remove('deactivate');
+      gsap.fromTo('.tab__item', { opacity: 0 }, { duration: 0.8, opacity: 1 });
     });
   });
 });
 // accordion
-(() => {
+document.addEventListener('DOMContentLoaded', () => {
   new Accordion('.js-accordion-container', {
     openOnInit: [0],
   });
-})();
-
+});
 // swiper-events
 const swiperEvents = new Swiper('.events__swiper', {
   slidesPerView: 1,
@@ -228,7 +223,7 @@ const swiperEvents = new Swiper('.events__swiper', {
   watchSlidesProgress: true,
   watchSlidesVisibility: true,
   navigation: {
-    nextEl: '.events__button-next',
+    nextEl: '.events__btn-next',
   },
   pagination: {
     el: '.events__pagination',
@@ -240,26 +235,23 @@ const swiperEvents = new Swiper('.events__swiper', {
       slidesPerGroup: 2,
       spaceBetween: 34,
     },
-
     992: {
       slidesPerView: 3,
       slidesPerGroup: 3,
       spaceBetween: 24,
     },
-
     1430: {
       slidesPerView: 3,
       slidesPerGroup: 3,
-      spaceBetween: 55,
+      spaceBetween: 52,
     },
   },
 });
-
 // swiper-progects
 const swiperProgects = new Swiper('.progects__swiper', {
   navigation: {
-    prevEl: '.progects__button_prev',
-    nextEl: '.progects__button_next',
+    prevEl: '.progects__btn_prev',
+    nextEl: '.progects__btn_next',
   },
   breakpoints: {
     576: {
@@ -304,16 +296,13 @@ const swiperProgects = new Swiper('.progects__swiper', {
     },
   },
 });
-
 // tooltip
-
-(() => {
+document.addEventListener('DOMContentLoaded', () => {
   tippy('.js-tooltip', {
     maxWidth: 264,
     theme: 'castom-tooltip',
   });
-})();
-
+});
 // contacts
 // contacts form
 const selector = document.querySelector("input[type='tel']");
@@ -326,7 +315,6 @@ new JustValidate('.form', {
       minLength: 2,
       maxLength: 24,
     },
-
     tel: {
       required: true,
       strength: { custom: '[^_]$' },
@@ -341,7 +329,6 @@ new JustValidate('.form', {
     tel: 'Укажите ваш телефон',
   },
 });
-
 // contacts map
 ymaps.ready(init);
 function init() {
@@ -366,16 +353,13 @@ function init() {
   });
   myMap.geoObjects.add(myPlacemark);
 }
-
 // плавный скролл
 document.querySelectorAll('.js-scroll-link').forEach(link => {
   link.addEventListener('click', function(e) {
-      e.preventDefault();
-
       const href = this.getAttribute('href').substring(1);
       const scrollTarget = document.getElementById(href);
       const elementPosition = scrollTarget.getBoundingClientRect().top;
-
+      e.preventDefault();
       window.scrollBy({
           top: elementPosition,
           behavior: 'smooth'

@@ -54,18 +54,7 @@
 .burger:focus::after {
   opacity: 1;
 }
-
-.burger:hover span {
-  width: 60%;
-}
-.burger:hover::after {
-  width: 30%;
-}
-.burger--active:hover::after,
-.burger--active:hover span {
-  width: 100%;
-}
-
+// валидация формы
 // класс всплывающего предупреждения
 .js-validate-error-label {
   background: transparent;
@@ -77,24 +66,14 @@
 div .js-validate-error-field {
   border-color: #D11616;
 }
-
-.contacts__map {
-  padding: 0;
-  width: auto;
-  height: 320px;
-}
-
 [class*="ground-pane"] {
   filter: grayscale(1);
 }
-
 // tooltip
-
 .tooltip {
   position: relative;
   display: inline-block;
 }
-
 .marker {
   padding: 0;
   border: 0;
@@ -104,33 +83,50 @@ div .js-validate-error-field {
 .marker path {
   @include transition;
 }
-
-.marker:focus path:first-child,
-.marker:hover path:first-child {
+.marker:focus path:first-child {
   fill: var(--color-light-fill);
 }
-
 .marker:active path:first-child {
   fill: var(--color-fill);
 }
 .marker:active path:last-child {
   fill: var(--color-light-text);
 }
-
 .tippy-box[data-theme~='castom-tooltip'] {
-  max-width: 163px;
   padding: 7px 17px 8px 14px;
   border-radius: 0;
+  max-width: 163px;
   text-align: center;
   font-size: 1em;
   line-height: 2em;
   color: var(--color-light-text);
   background-color: var(--color-fill);
 }
-
-.tippy-box[data-theme~='castom-tooltip'][data-placement^='top'] > .tippy-arrow::before,
-.tippy-box[data-theme~='castom-tooltip'][data-placement^='right'] > .tippy-arrow::before,
-.tippy-box[data-theme~='castom-tooltip'][data-placement^='bottom'] > .tippy-arrow::before,
-.tippy-box[data-theme~='castom-tooltip'][data-placement^='left'] > .tippy-arrow::before {
+.tippy-box[data-theme~='castom-tooltip'][data-placement^='top'] > .tippy-arrow::before {
   border-top-color: var(--color-fill);
+}
+.tippy-box[data-theme~='castom-tooltip'][data-placement^='right'] > .tippy-arrow::before {
+  border-right-color: var(--color-fill);
+}
+.tippy-box[data-theme~='castom-tooltip'][data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: var(--color-fill);
+}
+.tippy-box[data-theme~='castom-tooltip'][data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: var(--color-fill);
+}
+
+@media (min-width: 769px) {
+  .burger:hover span {
+    width: 60%;
+  }
+  .burger:hover::after {
+    width: 30%;
+  }
+  .burger--active:hover::after,
+  .burger--active:hover span {
+    width: 100%;
+  }
+  .marker:focus path:first-child {
+    fill: var(--color-light-fill);
+  }
 }

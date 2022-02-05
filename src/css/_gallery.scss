@@ -44,6 +44,12 @@
     display: flex;
     justify-content: center;
   }
+  &__swiper-nav-box .gallery__pagination {
+    position: relative;
+    bottom: 0;
+    padding-top: 6px;
+    width: auto;
+  }
   &__swiper {
     margin-bottom: 20px;
     width: 100%;
@@ -120,18 +126,15 @@
     opacity: 0;
     transform: scale(0.5);
   }
-  &__slide:hover::before {
-    opacity: 1;
-    transform: scale(1);
-  }
+
   &__slide:active:after,
   &__slide:active::before {
     border-color: var(--color-light-fill);
     opacity: 1;
     transform: scale(1);
   }
-  &__button-next,
-  &__button-prev {
+  &__btn-next,
+  &__btn-prev {
     border: 2px solid transparent;
     border-radius: 100px;
     width: 30px;
@@ -139,46 +142,29 @@
     background-color: var(--color-dark-gray-fill);
     @include transition;
   }
-  &__button-next:focus,
-  &__button-prev:focus {
+  &__btn-next:focus,
+  &__btn-prev:focus {
     border-color: var(--color-black);
   }
-  &__button-next:hover,
-  &__button-prev:hover {
-    background-color: var(--color-fill);
-    border-color: transparent
-  }
-  &__button-next:active,
-  &__button-prev:active {
+  &__btn-next:active,
+  &__btn-prev:active {
     background-color: var(--color-fill);
     border-color: var(--color-black);
   }
-
   &__pagination {
     margin: 0 18px;
   }
-
-  &__modal {
-  }
 }
-.swiper-button-disabled,
-.swiper-button-disabled:hover,
-.swiper-button-disabled:focus,
-.swiper-button-disabled:active {
+.swiper-btn-disabled,
+.swiper-btn-disabled:hover,
+.swiper-btn-disabled:focus,
+.swiper-btn-disabled:active {
   border-color: transparent;
   background-color: #B0B0B0;
   opacity: 0.85;
   cursor: auto;
   @include transition;
 }
-//для пересиливания пагинации слайдера
-.gallery__swiper-nav-box .gallery__pagination {
-  position: relative;
-  bottom: 0;
-  padding-top: 6px;
-  width: auto;
-}
-
 // gallery-selects
 // так как селектор кастомный, приходится использовать стили
 // из библиотеки
@@ -257,7 +243,6 @@
 }
 .choices__list--dropdown .choices__item:not(:first-child),
 .choices__list--dropdown .choices__item + .choices__item {
-  // padding-top: 3px;
   border-top: 1px solid transparent;
 }
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
@@ -285,10 +270,10 @@
     position: absolute;
     top: 9%;
     left: 0;
+    border: 1px solid var(--color-light-text);
     width: 12px;
     height: 12px;
     text-align: center;
-    border: 1px solid var(--color-light-text);
     @include transition;
   }
   &__input + span::before {
@@ -303,16 +288,13 @@
     opacity: 0;
     color: var(--color-light-fill);
   }
-  &__label:focus,
-  &__label:hover {
+  &__label:focus {
     color: var(--color-light-fill);
   }
-  &__label:focus>span {
+  &__label:focus span {
     border-color: var(--color-fill);
   }
-  &__input:checked + span,
-  &__label:hover span,
-  &__input + span:hover {
+  &__input:checked + span {
     border-color: var(--color-light-fill);
   }
   &__input:checked + span::before {
@@ -331,6 +313,7 @@
     z-index: 10;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
@@ -362,14 +345,12 @@
     height: 100%;
     @include transition;
   }
-  &__btn:hover path,
-  &__btn:focus path{
+  &__btn:focus path {
     fill: var(--color-fill);
   }
   &__btn:active path {
     fill: var(--color-dark-fill);
   }
-
   &__img {
     position: absolute;
     top: 0;
@@ -479,7 +460,6 @@
   .choices {
     margin-bottom: 49px;
   }
-
   .modal {
     &__box {
       padding: 115px 35px 115px 350px;
@@ -487,9 +467,7 @@
       height: 600px;
     }
     &__img {
-      position: absolute;
-      top: 0;
-      right: 0;
+      right: auto;
       bottom: 0;
     }
     &__img img {
@@ -503,7 +481,6 @@
   .gallery {
     background-image: url('../img/gallery-bg-1024.jpg');
     &__slide {
-      height: 315px;
       &_bg-one {
         background-image: url('../img/gallery-one-1024.jpg');
         @media (min-resolution: 2dppx) {
@@ -541,6 +518,32 @@
         }
       }
     }
+    &__slide:hover::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+    &__btn-next:hover,
+    &__btn-prev:hover {
+      background-color: var(--color-fill);
+      border-color: transparent
+    }
+  }
+  .gallery .gallery__slide {
+    min-height: 315px;
+  }
+  .checkbox {
+    &__label:hover {
+      color: var(--color-light-fill);
+    }
+    &__label:hover span,
+    &__input + span:hover {
+      border-color: var(--color-light-fill);
+    }
+  }
+  .modal {
+    &__btn:hover path {
+      fill: var(--color-fill);
+    }
   }
 }
 @media (min-width: 1014px) {
@@ -556,14 +559,14 @@
       min-width: 280px;
     }
     &__checkbox {
-      margin-bottom: 53px
+      margin-bottom: 46px;
     }
     &__swiper-box {
       margin-top: 28px;
       max-width: 594px;
     }
     &__swiper-nav-box {
-      margin-bottom: 22px;
+      margin-bottom: 30px;
     }
     &__pagination {
       margin: 0 19px;
@@ -573,8 +576,6 @@
     margin-bottom: auto;
     max-width: 280px;
   }
-
-
 }
 
 @media (min-width: 1025px) {
@@ -648,8 +649,6 @@
       padding: 115px 50px 115px 450px;
       width: 900px;
       height: 500px;
-      color: var(--color-text);
-      background-color: var(--color-white);
     }
     &__img img {
       width: 400px;

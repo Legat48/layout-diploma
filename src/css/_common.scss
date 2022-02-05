@@ -1,6 +1,4 @@
 @import '_mixin.scss';
-
-/* open-sans-regular - latin_cyrillic */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -9,7 +7,6 @@
       url('../fonts/open-sans-v23-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
       url('../fonts/open-sans-v23-latin_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* open-sans-italic - latin_cyrillic */
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
@@ -18,7 +15,6 @@
       url('../fonts/open-sans-v23-latin_cyrillic-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
       url('../fonts/open-sans-v23-latin_cyrillic-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* open-sans-600 - latin_cyrillic */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -27,7 +23,6 @@
       url('../fonts/open-sans-v23-latin_cyrillic-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
       url('../fonts/open-sans-v23-latin_cyrillic-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* open-sans-700 - latin_cyrillic */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -36,7 +31,6 @@
       url('../fonts/open-sans-v23-latin_cyrillic-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
       url('../fonts/open-sans-v23-latin_cyrillic-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-
 :root {
   // цвет
   --color-black: #000;
@@ -76,16 +70,9 @@ h1,h2,h3,h4,p,ul,li {
 div .active {
   display: block;
 }
-
 div .deactivate {
   display: none;
 }
-
-
-.sprite {
-  display: none;
-}
-
 .container {
   width: 100%;
   max-width: 1920px;
@@ -99,20 +86,15 @@ div .deactivate {
   font-size: 1.75em;
   line-height: 38px;
 }
-
-.button {
+.btn {
   border-color: transparent;
   outline: none;
   background-color: transparent;
   cursor: pointer;
 }
-
 .top-wrap {
   position: relative;
 }
-
-
-
 @media (min-width: 480px) {
   .container {
     padding-right: 50px;

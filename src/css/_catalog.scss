@@ -13,10 +13,6 @@
   &__accordion {
     margin-bottom: 50px;
   }
-
-  &__tab {
-
-  }
 }
 
 .accordion {
@@ -46,10 +42,7 @@
   &__unit:last-child {
     border-bottom: 1px solid var(--color-gray-fill);
   }
-  &__btn:hover {
-    color: var(--color-fill);
-  }
-  &__btn:focus>.accordion__descr {
+  &__btn:focus .accordion__descr {
     color: var(--color-white);
     background-color: var(--color-fill);
   }
@@ -68,7 +61,7 @@
     width: 30px;
     height: 30px;
     border: 2px solid transparent;
-    border-radius: 30px;
+    border-radius: 100px;
     background-color: var(--color-light-gray-fill);
     transition: background-color.3s, 0.6s ease, transform 0.3s, 0.6s ease;
   }
@@ -84,11 +77,10 @@
     @include backgroundCenter;
     @include transition;
   }
-  &__btn:hover>.accordion__icon,
-  &__btn:focus>.accordion__icon {
+  &__btn:focus .accordion__icon {
     background-color: var(--color-light-fill);
   }
-  &__btn:active>.accordion__icon {
+  &__btn:active .accordion__icon {
     background-color: var(--color-light-fill);
     border-color: var(--color-fill);
   }
@@ -118,11 +110,6 @@
   &__link:focus {
     color: var(--color-light-text);
     background-color: var(--color-fill);
-  }
-  &__link:hover {
-    border-color: var(--color-light-fill);
-    color: var(--color-light-fill);
-    background-color: transparent;
   }
   &__link:active {
     border-color: transparent;
@@ -174,11 +161,6 @@
       color: var(--color-light-text);
       background-color: var(--color-fill);
     }
-    &-link:hover {
-      border-color: var(--color-light-fill);
-      color: var(--color-light-fill);
-      background-color: transparent;
-    }
     &-link:active {
       border-color: transparent;
       color: var(--color-dark-fill);
@@ -187,27 +169,22 @@
   }
 }
 
-.accordion__btn:hover,
 .is-active.question:first-child .accordion__btn,
 .is-active.question .accordion__btn {
   border-top:1px solid var(--color-fill);
 }
-.accordion__btn:hover::before,
 .is-active.accordion__unit:first-child .accordion__btn::before,
 .is-active.accordion__unit .accordion__btn::before {
   border-bottom:1px solid var(--color-fill);
 }
-.accordion__unit:last-child:hover {
-  border-bottom:1px solid transparent;
-}
 .is-active.accordion__unit:last-child {
   border-bottom:1px solid var(--color-gray-fill);
 }
-.is-active>.accordion__btn>.accordion__icon {
+.is-active .accordion__icon {
   background-color: var(--color-light-fill);
   border-color: var(--color-fill);
 }
-.is-active>.accordion__btn>.accordion__icon::after {
+.is-active .accordion__icon::after {
   transform: scale(1, -1);
 }
 
@@ -263,11 +240,6 @@
     color: var(--color-light-text);
     background-color: var(--color-fill);
   }
-  &__link:hover {
-    border-color: var(--color-light-fill);
-    color: var(--color-light-fill);
-    background-color: transparent;
-  }
   &__link:active {
     border-color: transparent;
     color: var(--color-dark-fill);
@@ -300,10 +272,8 @@
     }
     &__icon {
       top: 28%;
-      right: 0;
       width: 50px;
       height: 50px;
-      border-radius: 50px;
     }
     &__icon::after {
       top: 38%;
@@ -375,11 +345,40 @@
       column-count: 1;
       column-gap: 84px;
     }
+    &__btn:hover {
+      color: var(--color-fill);
+      border-top:1px solid var(--color-fill);
+    }
+    &__btn:hover::before {
+      border-bottom:1px solid var(--color-fill);
+    }
+    &__btn:hover .accordion__icon {
+      background-color: var(--color-light-fill);
+    }
+    &__link:hover {
+      border-color: var(--color-light-fill);
+      color: var(--color-light-fill);
+      background-color: transparent;
+    }
+    &__plug-link:hover {
+      border-color: var(--color-light-fill);
+      color: var(--color-light-fill);
+      background-color: transparent;
+    }
+    &__unit:last-child:hover {
+      border-bottom:1px solid transparent;
+    }
   }
+
   .tab {
     &__img {
       margin-bottom: 20px;
       min-height: 274px;
+    }
+    &__link:hover {
+      border-color: var(--color-light-fill);
+      color: var(--color-light-fill);
+      background-color: transparent;
     }
   }
 }
@@ -402,7 +401,6 @@
     &__accordion {
       width: calc(800/1600 * 100%);
     }
-
     &__tab {
       width: calc(750/1600 * 100%);
     }

@@ -1,7 +1,7 @@
 @import '_mixin.scss';
 
 .footer {
-  padding-top: 16px;
+  padding-top: 20px;
   padding-bottom: 20px;
   background-color: var(--color-black);
   &__box {
@@ -23,8 +23,7 @@
   &__svg path {
     @include transition;
   }
-  &__link:focus path,
-  &__link:hover path {
+  &__link:focus path {
     fill: var(--color-white);
   }
   &__link:active path {
@@ -46,12 +45,8 @@
     padding-bottom: 40px;
     &__box {
       flex-direction: row-reverse;
-      justify-content: space-between;
-      align-items: center;
     }
     &__list {
-      display: flex;
-      justify-content: space-between;
       margin-bottom: 0;
       width: auto;
     }
@@ -76,7 +71,13 @@
     }
   }
 }
-
+@media (min-width: 769px) {
+  .footer {
+    &__link:hover path {
+      fill: var(--color-white);
+    }
+  }
+}
 @media (min-width: 1025px) {
   .footer {
     padding-top: 48px;

@@ -2,7 +2,7 @@
 
 .progects {
   padding-top: 37px;
-  padding-bottom: 46px;
+  padding-bottom: 49px;
   color: var(--color-text);
   &__title {
     margin-bottom: 12px;
@@ -12,27 +12,18 @@
     font-size: 1em;
     line-height: 2em;
   }
-
   &__link {
-    color: var(--color-fill);
     border-bottom: 1px solid transparent;
+    color: var(--color-fill);
     @include transition;
-  }
-
-  &__link:hover {
-    color: var(--color-light-fill);
-    border-color: var(--color-light-fill);
   }
   &__link:focus {
     color: var(--color-light-text);
     background-color: var(--color-fill);
   }
   &__link:active {
-    color: var(--color-text);
     border-color: var(--color-text);
-  }
-  &__link:hover,
-  &__link:active {
+    color: var(--color-text);
     background-color: transparent;
   }
   &__title-third {
@@ -61,36 +52,34 @@
     bottom: 0;
     display: flex;
     justify-content: center;
-    height: 100%;
     outline: 1px solid #CACACA;
     outline-offset: -1px;
+    height: 100%;
     @include transition;
   }
-  &__slide-link>img {
+  &__slide-link img {
     object-fit: contain;
     opacity: 0.6;
     filter: grayscale(100%);
     @include transition;
   }
-  &__slide-link:hover>img {
-    opacity: 1;
-    filter: none;
-  }
-
   &__slide-link:focus {
     outline-color: var(--color-fill);
   }
-
-  &__button {
+  &__btn {
     position: relative;
     margin-top: auto;
     margin-bottom: auto;
     border: 2px solid transparent;
     border-radius: 100px;
-    width: 30px;
+    width: 32px;
     height: 30px;
     background-color: var(--color-dark-gray-fill);
     @include transition;
+  }
+  &__slide img {
+    height: 100%;
+    object-fit: contain;
   }
 }
 // переписывание классов библиотеки
@@ -98,13 +87,11 @@
   margin: 0 17px;
   padding: 0 1px;
 }
-
 .progects .progects__slide,
 .progects .progects__slide img {
   width: 195px;
   height: 65px;
 }
-
 @media (min-width: 480px) {
   .progects {
     padding-top: 64px;
@@ -120,12 +107,6 @@
 }
 
 @media (min-width: 750px) {
-  .progects {
-    &__slide img {
-      height: 100%;
-      object-fit: contain;
-    }
-  }
   .progects__swiper-box .progects__swiper {
     margin: 0 23px;
   }
@@ -144,8 +125,16 @@
     &__title-third {
       margin-bottom: 15px;
     }
+    &__link:hover {
+      border-color: var(--color-light-fill);
+      color: var(--color-light-fill);
+      background-color: transparent;
+    }
+    &__slide-link:hover img {
+      opacity: 1;
+      filter: none;
+    }
   }
-
   .progects .progects__slide,
   .progects .progects__slide img {
     width: 384px;
@@ -160,7 +149,6 @@
       width: calc(1080/1600 * 100%);
     }
   }
-
   .progects__swiper-box .progects__swiper {
     margin: 0 46px;
   }

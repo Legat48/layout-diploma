@@ -10,7 +10,18 @@
   &__swiper .events__card {
     height: auto;
   }
-  &__button-next {
+  &__swiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  &__swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 10px 7.5px 0;
+  }
+  &__swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+  &__swiper  .swiper-pagination-bullet-active {
+    background-color: #666666;
+  }
+  &__btn-next {
     position: absolute;
     top: 45%;
     right: -25px;
@@ -23,10 +34,10 @@
     background-color: var(--color-light-gray-fill);
     @include transition;
   }
-  &__button-next::after {
+  &__btn-next::after {
     content: '';
     position: absolute;
-    top: 33%;
+    top: 30%;
     left: 24%;
     width: 29px;
     height: 19px;
@@ -37,11 +48,10 @@
     @include transition;
   }
 
-  &__button-next:hover,
-  &__button-next:hover {
+  &__btn-next:focus {
     background-color: var(--color-light-fill);
   }
-  &__button-next:active {
+  &__btn-next:active {
     background-color: var(--color-light-fill);
     border-color: var(--color-fill);
   }
@@ -147,7 +157,6 @@
   &__link:hover {
     color: var(--color-light-fill);
     border-color: var(--color-light-fill);
-
   }
   &__link:active {
     color: var(--color-text);
@@ -160,34 +169,21 @@
     background-color: transparent;
   }
 }
-.events__swiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-.events__swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 10px 7.5px 0;
-}
-
-.events__swiper .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-}
-
-.events__swiper  .swiper-pagination-bullet-active {
-  background-color: #666666;
-}
-
 .events .events__pagination {
   position: relative;
 }
 
 @media (min-width: 480px) {
   .events {
+    &__swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+      margin: 20px 8px 0;
+    }
     &__card {
       padding: 215px 18px 50px 35px;
+      min-height: 583px;
     }
     &__info {
     margin-bottom: 5px;
-    }
-    &__card {
-      min-height: 583px;
     }
     &__card-title {
       margin-right: 10px;
@@ -198,9 +194,6 @@
     &__link {
       padding: 4px 0px;
     }
-  }
-  .events__swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 20px 8px 0;
   }
 }
 @media (min-width: 750px) {
@@ -214,7 +207,6 @@
 @media (min-width: 769px) {
   .events {
     &__img {
-
       &_bg-one {
         background-image: url('../img/events-one-1024.jpg');
         @media (min-resolution: 2dppx) {
@@ -246,6 +238,17 @@
         }
       }
     }
+    &__btn-next:hover {
+      background-color: var(--color-light-fill);
+    }
+    &__link:hover {
+      color: var(--color-light-fill);
+      border-color: var(--color-light-fill);
+    }
+    &__link:hover,
+    &__link:hover::after {
+      background-color: transparent;
+    }
   }
 }
 
@@ -264,7 +267,7 @@
     &__card-title {
       margin-bottom: 1px;
     }
-    &__button-next {
+    &__btn-next {
       display: block;
     }
     &__pagination {
