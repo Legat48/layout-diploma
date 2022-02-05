@@ -41,10 +41,10 @@
       <div class="header__row-up">
         <div class="container">
           <div class="header__row-box">
-            <button class="burger header__burger" id="burger" aria-label="Меню">
+            <button class="burger header__burger" id="burger" aria-label="открыть или закрыть меню">
               <span class="burger__line"></span>
             </button>
-            <a class="header__logo" aria-label="Логотип"></a>
+            <a class="header__logo" aria-label="Логотип" tabindex="-1"></a>
             <nav class="header__nav nav">
               <div class="nav__box">
                 <ul class="nav__list">
@@ -80,7 +80,7 @@
                   </li>
                 </ul>
                 <button class="nav__btn btn">
-                  <span class="nav__icon">
+                  <span class="nav__icon" aria-hidden="true">
                     <svg width="14" height="13" fill="none" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M5.62 9.093L6.64 10.11 10.25 6.5 6.639 2.889 5.62 3.907l1.863 1.87H.5v1.445h6.984L5.62 9.092zM12.057 0H1.944C1.143 0 .5.65.5 1.444v2.89h1.444v-2.89h10.112v10.112H1.944v-2.89H.5v2.89C.5 12.35 1.143 13 1.944 13h10.112c.794 0 1.444-.65 1.444-1.444V1.444C13.5.65 12.85 0 12.056 0z"
@@ -92,7 +92,7 @@
               </div>
             </nav>
 
-            <button class="header__search-toggle" id="search-toggle" aria-label="Найти на сайте" tabindex="1">
+            <button class="header__search-toggle" id="search-toggle" aria-label="Найти на сайте">
               <svg class="header__toggle-svg active" id="toggle-open" width="23" height="22" viewBox="0 0 23 22"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="6.8678" height="1.71695"
@@ -120,7 +120,7 @@
           <div class="header__row-box">
             <ul class="header__dropdown dropdown">
               <li class="dropdown__element">
-                <button class="dropdown__btn btn" data-path="dropdown-one" tabindex="1">
+                <button class="dropdown__btn btn" data-path="dropdown-one">
                   Реализм
                   <span class="dropdown__icon">
                     <svg class="dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
@@ -132,32 +132,32 @@
                 <div class="dropdown__box" data-target="dropdown-one">
                   <div class="dropdown__scrollbar">
                     <ul class="dropdown__list">
-                      <li class="dropdown__item dropdown__item_bg-1-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-1-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Тинторетто
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-1-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-1-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Фридрих
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-1-3" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-1-3" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Леонардо
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-1-4" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-1-4" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Верроккьо
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-1-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-1-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Тинторетто
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-1-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-1-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Фридрих
                         </a>
@@ -168,7 +168,7 @@
               </li>
 
               <li class="dropdown__element">
-                <button class="dropdown__btn btn" data-path="dropdown-two" tabindex="1">
+                <button class="dropdown__btn btn" data-path="dropdown-two" tabindex="0">
                   Импрессионизм
                   <span class="dropdown__icon">
                     <svg class="dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
@@ -180,32 +180,32 @@
                 <div class="dropdown__box" data-target="dropdown-two">
                   <div class="dropdown__scrollbar">
                     <ul class="dropdown__list">
-                      <li class="dropdown__item dropdown__item_bg-2-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-2-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Моне
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-2-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-2-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Сислей
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-2-3" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-2-3" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Мане
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-2-4" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-2-4" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Ренуар
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-2-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-2-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Моне
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-2-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-2-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Сислей
                         </a>
@@ -216,7 +216,7 @@
               </li>
 
               <li class="dropdown__element">
-                <button class="dropdown__btn btn" data-path="dropdown-three" tabindex="1">
+                <button class="dropdown__btn btn" data-path="dropdown-three">
                   Постимпрессионизм
                   <span class="dropdown__icon">
                     <svg class="dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
@@ -228,32 +228,32 @@
                 <div class="dropdown__box" data-target="dropdown-three">
                   <div class="dropdown__scrollbar">
                     <ul class="dropdown__list">
-                      <li class="dropdown__item dropdown__item_bg-3-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-3-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Ван Гог
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-3-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-3-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Сезанн
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-3-3" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-3-3" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Гоген
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-3-4" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-3-4" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Сёра
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-3-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-3-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Ван Гог
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-3-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-3-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Сезанн
                         </a>
@@ -264,7 +264,7 @@
               </li>
 
               <li class="dropdown__element">
-                <button class="dropdown__btn btn" data-path="dropdown-four" tabindex="1">
+                <button class="dropdown__btn btn" data-path="dropdown-four">
                   Авангард
                   <span class="dropdown__icon">
                     <svg class="dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
@@ -276,32 +276,32 @@
                 <div class="dropdown__box" data-target="dropdown-four">
                   <div class="dropdown__scrollbar">
                     <ul class="dropdown__list">
-                      <li class="dropdown__item dropdown__item_bg-4-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-4-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Кандинский
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-4-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-4-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Маринетти
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-4-3" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-4-3" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Малевич
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-4-4" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-4-4" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Пикассо
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-4-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-4-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Кандинский
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-4-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-4-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Маринетти
                         </a>
@@ -312,7 +312,7 @@
               </li>
 
               <li class="dropdown__element">
-                <button class="dropdown__btn btn" data-path="dropdown-five" tabindex="1">
+                <button class="dropdown__btn btn" data-path="dropdown-five" >
                   Футуризм
                   <span class="dropdown__icon">
                     <svg class="dropdown__icon-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
@@ -324,32 +324,32 @@
                 <div class="dropdown__box" data-target="dropdown-five">
                   <div class="dropdown__scrollbar">
                     <ul class="dropdown__list">
-                      <li class="dropdown__item dropdown__item_bg-5-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-5-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Карра
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-5-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-5-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Прателла
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-5-3" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-5-3" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Северини
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-5-4" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-5-4" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Балла
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-5-1" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-5-1" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Карра
                         </a>
                       </li>
-                      <li class="dropdown__item dropdown__item_bg-5-2" tabindex="1">
+                      <li class="dropdown__item dropdown__item_bg-5-2" tabindex="0">
                         <a href="#" class="dropdown__link js-scroll-link">
                           Прателла
                         </a>
@@ -361,7 +361,7 @@
             </ul>
 
             <form class="header__search search">
-              <button class="search__btn btn" id="searchBtn" type="submit" tabindex="1">
+              <button class="search__btn btn" id="searchBtn" type="submit" aria-label="Начать поиск">
                 <svg class="search__btn-svg" aria-label="Найти" width="23" height="22" viewBox="0 0 23 22" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <rect width="6.8678" height="1.71695"
@@ -372,7 +372,7 @@
                 </svg>
               </button>
               <label class="search__label" for="search-input">
-                <input class="search__input" id="search-input" placeholder="Поиск по сайту" type="search" tabindex="1">
+                <input class="search__input" id="search-input" placeholder="Поиск по сайту" type="search">
               </label>
             </form>
           </div>
@@ -441,7 +441,7 @@
             <label class="gallery__label" for="gallery-select">
               Фильтр:
             </label>
-            <select class="gallery__selects select" id="gallery-select" name="gallery-select" tabindex="1">
+            <select class="gallery__selects select" id="gallery-select" name="gallery-select" tabindex="0">
               <option value="1">
                 Живопись
               </option>
@@ -454,10 +454,10 @@
             </select>
 
             <div class="gallery__checkbox checkbox">
-              <ul class="checkbox__list">
-                <li class="checkbox__item">
-                  <label class="checkbox__label" for="XIX" tabindex="1">
-                    <input class="checkbox__input" id="XIX" type="checkbox" name="XIX" required tabindex="0">
+              <ul class="checkbox__list" aria-label="Выбрать интересующий переуд времени">
+                <li class="checkbox__item" aria-label="отметить">
+                  <label class="checkbox__label" for="XIX" tabindex="0" >
+                    <input class="checkbox__input" id="XIX" type="checkbox" name="XIX" required>
                     XIX век
                     <span></span>
                   </label>
@@ -465,8 +465,8 @@
 
                 <li class="checkbox__item">
                   <div class="checkbox">
-                    <label class="checkbox__label" for="XX" tabindex="1">
-                      <input class="checkbox__input" id="XX" type="checkbox" name="XX" required tabindex="0">
+                    <label class="checkbox__label" for="XX" tabindex="0">
+                      <input class="checkbox__input" id="XX" type="checkbox" name="XX" required>
                       XX век
                       <span></span>
                     </label>
@@ -475,9 +475,8 @@
 
                 <li class="checkbox__item">
                   <div class="checkbox">
-                    <label class="checkbox__label" for="modernity" tabindex="1">
-                      <input class="checkbox__input" id="modernity" type="checkbox" name="modernity" required
-                        tabindex="0">
+                    <label class="checkbox__label" for="modernity" tabindex="0">
+                      <input class="checkbox__input" id="modernity" type="checkbox" name="modernity" required>
                       Современность
                       <span></span>
                     </label>
@@ -487,18 +486,18 @@
             </div>
           </div>
 
-          <div class="gallery__swiper-box">
+          <div class="gallery__swiper-box" >
             <div class="gallery__swiper swiper">
               <div class="gallery__wrapper swiper-wrapper">
-                <div class="gallery__slide gallery__slide_bg-one swiper-slide" data-path="modal-one"></div>
-                <div class="gallery__slide gallery__slide_bg-two swiper-slide" data-path="modal-two"></div>
-                <div class="gallery__slide gallery__slide_bg-three swiper-slide" data-path="modal-three"></div>
-                <div class="gallery__slide gallery__slide_bg-four swiper-slide" data-path="modal-four"></div>
-                <div class="gallery__slide gallery__slide_bg-five swiper-slide" data-path="modal-five"></div>
-                <div class="gallery__slide gallery__slide_bg-six swiper-slide" data-path="modal-six"></div>
+                <div class="gallery__slide gallery__slide_bg-one swiper-slide" data-path="modal-one" aria-label="Неизвестная картина"></div>
+                <div class="gallery__slide gallery__slide_bg-two swiper-slide" data-path="modal-two" aria-label="Картина женщина с граблями"></div>
+                <div class="gallery__slide gallery__slide_bg-three swiper-slide" data-path="modal-three" aria-label="Неизвестная картина"></div>
+                <div class="gallery__slide gallery__slide_bg-four swiper-slide" data-path="modal-four" aria-label="Неизвестная картина"></div>
+                <div class="gallery__slide gallery__slide_bg-five swiper-slide" data-path="modal-five" aria-label="Неизвестная картина"></div>
+                <div class="gallery__slide gallery__slide_bg-six swiper-slide" data-path="modal-six" aria-label="Неизвестная картина"></div>
               </div>
             </div>
-            <div class="gallery__swiper-nav-box">
+            <div class="gallery__swiper-nav-box" aria-hidden="true">
               <button class="gallery__btn-prev btn">
                 <svg width="30" height="26" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 20L11 15L16 10" stroke="white" />
@@ -518,7 +517,7 @@
           <div class="gallery__modal modal deactivate" data-target="modal-one">
             <div class="modal__overlay">
               <article class="modal__box">
-                <button class="modal__btn">
+                <button class="modal__btn" aria-label="закрыть окно">
                   <svg class="modal__btn-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -562,7 +561,7 @@
           <div class="gallery__modal modal deactivate" data-target="modal-two">
             <div class="modal__overlay">
               <article class="modal__box">
-                <button class="modal__btn">
+                <button class="modal__btn" aria-label="закрыть окно">
                   <svg class="modal__btn-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -607,7 +606,7 @@
           <div class="gallery__modal modal deactivate" data-target="modal-three">
             <div class="modal__overlay">
               <article class="modal__box">
-                <button class="modal__btn">
+                <button class="modal__btn" aria-label="закрыть окно">
                   <svg class="modal__btn-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -651,7 +650,7 @@
           <div class="gallery__modal modal deactivate" data-target="modal-four">
             <div class="modal__overlay">
               <article class="modal__box">
-                <button class="modal__btn">
+                <button class="modal__btn" aria-label="закрыть окно">
                   <svg class="modal__btn-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -695,7 +694,7 @@
           <div class="gallery__modal modal deactivate" data-target="modal-five">
             <div class="modal__overlay">
               <article class="modal__box">
-                <button class="modal__btn">
+                <button class="modal__btn" aria-label="закрыть окно">
                   <svg class="modal__btn-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -739,7 +738,7 @@
           <div class="gallery__modal modal deactivate" data-target="modal-six">
             <div class="modal__overlay">
               <article class="modal__box">
-                <button class="modal__btn">
+                <button class="modal__btn" aria-label="закрыть окно">
                   <svg class="modal__btn-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1130,7 +1129,7 @@
           События
         </h2>
         <div class="events__swiper-box">
-          <button class="events__btn-next btn" tabindex="1" aria-label="Пролистать свайпер"></button>
+          <button class="events__btn-next btn" aria-label="Пролистать свайпер"></button>
           <div class="events__swiper swiper">
             <ul class="events__wrapper swiper-wrapper">
               <li class="events__card swiper-slide">
@@ -1217,7 +1216,7 @@
                 </a>
               </li>
             </ul>
-            <div class="events__pagination swiper-pagination"></div>
+            <div class="events__pagination swiper-pagination" aria-hidden="true"></div>
           </div>
         </div>
       </div>
@@ -1237,7 +1236,7 @@
           <span class="tooltip">
             <button class="marker js-tooltip"
               data-tippy-content="Пример современных тенденций - современная методология разработки"
-              aria-label="Тултип" tabindex="1">
+              aria-label="Открыть подробности">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M15.5 8C15.5 12.1421 12.1421 15.5 8 15.5C3.85786 15.5 0.5 12.1421 0.5 8C0.5 3.85786 3.85786 0.5 8 0.5C12.1421 0.5 15.5 3.85786 15.5 8Z"
@@ -1254,7 +1253,7 @@
           <span class="tooltip">
             <button class="marker js-tooltip"
               data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции"
-              aria-label="Тултип" tabindex="1">
+              aria-label="Открыть подробности">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M15.5 8C15.5 12.1421 12.1421 15.5 8 15.5C3.85786 15.5 0.5 12.1421 0.5 8C0.5 3.85786 3.85786 0.5 8 0.5C12.1421 0.5 15.5 3.85786 15.5 8Z"
@@ -1267,8 +1266,7 @@
           </span>
           в разрезе маркетинговых и финансовых
           <span class="tooltip">
-            <button class="marker js-tooltip" data-tippy-content="В стремлении повысить качество" aria-label="Тултип"
-              tabindex="1">
+            <button class="marker js-tooltip" data-tippy-content="В стремлении повысить качество" aria-label="Открыть подробности">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M15.5 8C15.5 12.1421 12.1421 15.5 8 15.5C3.85786 15.5 0.5 12.1421 0.5 8C0.5 3.85786 3.85786 0.5 8 0.5C12.1421 0.5 15.5 3.85786 15.5 8Z"
@@ -1283,7 +1281,7 @@
           неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям,
           которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости.
           Подробнее:
-          <a href="#" class="progects__link" tabindex="1">
+          <a href="#" class="progects__link">
             blanchard-art.ru/projects/about
           </a>
         </p>
@@ -1291,7 +1289,7 @@
           Партнёры проектов:
         </h3>
         <div class="progects__swiper-box">
-          <button class="progects__btn progects__btn_prev btn">
+          <button class="progects__btn progects__btn_prev btn" aria-hidden="листать свайпер вперед">
             <svg width="30" height="26" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 20L11 15L16 10" stroke="white" />
             </svg>
@@ -1345,7 +1343,7 @@
               </li>
             </ul>
           </div>
-          <button class="progects__btn progects__btn_next btn">
+          <button class="progects__btn progects__btn_next btn" aria-hidden="листать свайпер вперед">
             <svg width="30" height="26" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 20L19 15L14 10" stroke="white" />
             </svg>
@@ -1395,7 +1393,7 @@
           </div>
         </div>
       </div>
-      <div class="contacts__map" id="map"></div>
+      <div class="contacts__map" id="map" aria-hidden="карта с меткой"></div>
     </section>
   </main>
   <footer class="footer">
@@ -1435,7 +1433,7 @@
           </a>
         </li>
       </ul>
-      <a class="footer__logo" aria-label="Логотип"></a>
+      <a class="footer__logo" aria-label="Логотип" tabindex="-1"></a>
     </div>
   </footer>
 </body>
