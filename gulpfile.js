@@ -131,7 +131,7 @@ const stylesProd = () => {
 // минификация JS и перенос в продакшен
 const scriptsProd = () => {
     return src([
-        'dist/**/*.js',
+        'dist/js/*.js',
     ])
     .pipe(babel({
         presets: ['@babel/env']
@@ -139,7 +139,7 @@ const scriptsProd = () => {
     .pipe(terser({
         toplevel:true /*удаление неиспользуемых функций и переменных из кода*/
     }).on('error', notify.onError()))
-    .pipe(dest('prod'))
+    .pipe(dest('prod/js'))
 }
 // минификация HTML
 const htmlProd = () => {

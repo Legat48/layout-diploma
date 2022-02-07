@@ -7,7 +7,7 @@
 // анимация nav
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.nav');
+  const nav = document.querySelector('.header__nav');
   const search = document.querySelector('#search-toggle');
   burger.addEventListener('click', (e) => {
     // переключение бургера
@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(setTimeout(()=>{nav.style.zIndex = -1;}, 0))
       search.style.zIndex = 1;
       nav.style.zIndex = 2;
-      gsap.fromTo('.nav__box', { x: -1000, opacity: 0 }, { duration: 0.6, x: 0, opacity: 1 });
+      gsap.fromTo('.header__nav', { xPercent: -100, opacity: 0.8 }, { duration: 1, scaleX: 1, xPercent: -0, opacity: 1 });
     } else if ((!burger.classList.contains('burger--active'))) {
       search.style.zIndex = 4;
-      gsap.fromTo('.nav__box', { x: 0, opacity: 1 }, { duration: 0.6, x: -1000 });
-      setTimeout(()=>{nav.style.zIndex = -1;}, 300)
+      gsap.fromTo('.header__nav', { xPercent: 0, opacity: 1 }, { duration: 1, scaleX: 0, xPercent: -100, opacity: 0.8 });
+      setTimeout(()=>{nav.style.zIndex = -1;}, 600)
     }
   });
 });
@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     e.currentTarget.classList.toggle('active');
     // анимация поиска
     if (btnToggleSearch.classList.contains('active')) {
-      gsap.fromTo('.search', { y: -160, opacity: 0.8 }, { duration: 1, y: 0, opacity: 1 });
+      gsap.fromTo('.header__search', { scaleX: 0, xPercent: -50, opacity: 0.8 }, { duration: 0.6, scaleX: 1, xPercent: -0, opacity: 1 });
     } else if ((!btnToggleSearch.classList.contains('active'))) {
-      gsap.fromTo('.search', { y: 0, opacity: 1 }, { duration: 1, y: -160, opacity: 0.8 });
+      gsap.fromTo('.header__search', { scaleX: 1, xPercent: 0, opacity: 1 }, { duration: 0.6, scaleX: 0, xPercent: -50, opacity: 0.8 });
     }
   });
 });
