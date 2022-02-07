@@ -550,6 +550,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       position: relative;
       z-index: 1;
       width: calc(1250/1600 * 100%);
+      opacity: 1;
     }
     &__logo {
       margin-right: 5px;
@@ -588,8 +589,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       margin-top: 0;
       width: 100%;
       min-height: auto;
-      opacity: 1;
-      transform: translateX(0);
     }
     &__list {
       display: flex;
