@@ -250,8 +250,8 @@ const swiperEvents = new Swiper('.events__swiper', {
 // swiper-progects
 const swiperProgects = new Swiper('.progects__swiper', {
   navigation: {
-    prevEl: '.progects__btn_prev',
-    nextEl: '.progects__btn_next',
+    prevEl: '.progects__btn-prev',
+    nextEl: '.progects__btn-next',
   },
   breakpoints: {
     576: {
