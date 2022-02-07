@@ -99,6 +99,12 @@ watch('src/js/**/*.js', scripts);
 
 // ТАСКИ ДЛЯ ПЕРЕНОСА В ПАПКУ ГОТОВОГО ПРОЕКТА
 
+// минификация и перенос ресурсов  в рабочую папку
+const resoursesProd = () => {
+  return src('src/resourses/**')
+  .pipe(dest('prod/resourses'))
+}
+
 // перенос изображений в готовый проект
 const imageProd = () => {
     return src('dist/img/**')
@@ -120,7 +126,7 @@ const stylesProd = () => {
     .pipe(cleanCss({
         level: 2
     }))
-    .pipe(dest('prod/css'))
+    .pipe(dest('prod'))
 }
 // минификация JS и перенос в продакшен
 const scriptsProd = () => {
@@ -149,10 +155,5 @@ exports.images = images; /*обработать изображение*/
 exports.svgSprites = svgSprites; /*создать спрайт*/
 
 // ОБЩАЯ КОМАНДА ДЛЯ ЗАПУСКА GULP
-exports.default = series(clean, resourses, fonts, svgSprites, images, htmlDist, styles, scripts, imageProd, stylesProd, scriptsProd, htmlProd, fontsProd, watchFiles)
-// порядок действий которые выполняет сборщик:
-// очистка=>перенос ресурсов и шрифтов=>создание спрайта обработка изображений=>
-// =>перенос необработаного html в разработку компиляция JS и CSS в папку разработки=>
-// =>перенос изображений и шрифтов в папку готового проекта =>
-// =>компиляция, минификация и перенос всех HTML,CSS и JS в папку готового проекта
-// =>запуск лайфсервера с отслеживанием изменений в src
+exports.default = series(clean, resourses, fonts, svgSprites, images, htmlDist, styles, scripts, resoursesProd, imageProd, stylesProd, scriptsProd, htmlProd, fontsProd, watchFiles)
+
