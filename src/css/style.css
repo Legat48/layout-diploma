@@ -1667,7 +1667,6 @@ input[type="search"]::-webkit-search-results-decoration {
   border-color: var(--color-fill);
 }
 
-.is-focused .choices__inner,
 .choices__list--dropdown,
 .is-open .choices__list--dropdown {
   top: 103%;

@@ -227,7 +227,6 @@
   color: var(--color-light-text);
   background-color: transparent;
 }
-
 .is-open .choices__inner {
   border: 1px solid var(--color-light-text);
 }
@@ -235,7 +234,6 @@
 .is-open .choices__inner:focus  {
   border-color: var(--color-fill);
 }
-.is-focused .choices__inner,
 .choices__list--dropdown,
 .is-open .choices__list--dropdown {
   top: 103%;
