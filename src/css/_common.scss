@@ -95,6 +95,28 @@ div .deactivate {
 .top-wrap {
   position: relative;
 }
+// паттерн для скрытия
+div .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+div .swiper-btn-disabled,
+div .swiper-btn-disabled:hover,
+div .swiper-btn-disabled:focus,
+div .swiper-btn-disabled:active {
+  border-color: transparent;
+  background-color: #B0B0B0;
+  opacity: 0.85;
+  cursor: auto;
+  @include transition;
+}
 @media (min-width: 480px) {
   .container {
     padding-right: 50px;
@@ -113,7 +135,7 @@ div .deactivate {
     padding-left: 100px;
   }
 }
-@media (min-width: 1430px) {
+@media (min-width: 1480px) {
   .container {
     padding-right: 160px;
     padding-left: 160px;

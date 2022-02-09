@@ -51,13 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const dropdownBox = document.querySelector(`[data-target="${path}"]`);
       // переворачиваем стрелочку при клике
       const icon = btn.querySelector('.dropdown__icon-svg');
-      icon.classList.toggle('dropdown__icon-svg_active');
       // закрываем все списки и переключаем нажатый
       document.querySelectorAll('.dropdown__box').forEach((el) => {
         if (dropdownBox !== el) {
           el.classList.remove('active');
         }
       });
+      document.querySelectorAll('.dropdown__icon-svg').forEach((j) => {
+        if (icon !== j) {
+          j.classList.remove('dropdown__icon-svg_active');
+        }
+      })
+      icon.classList.toggle('dropdown__icon-svg_active');
       dropdownBox.classList.toggle('active');
     });
   });
@@ -106,7 +111,7 @@ const swiper = new Swiper('.gallery__swiper', {
       slidesPerGroup: 2,
       spaceBetween: 34,
     },
-    1430: {
+    1480: {
       slidesPerView: 3,
       slidesPerGroup: 6,
       spaceBetween: 50,
@@ -200,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tabContent.classList.add('deactivate');
       });
       document.querySelector(`[data-target="${path}"]`).classList.remove('deactivate');
+      // анимация для появления
       gsap.fromTo('.tab__item', { opacity: 0 }, { duration: 0.8, opacity: 1 });
     });
   });
@@ -240,7 +246,7 @@ const swiperEvents = new Swiper('.events__swiper', {
       slidesPerGroup: 3,
       spaceBetween: 24,
     },
-    1430: {
+    1480: {
       slidesPerView: 3,
       slidesPerGroup: 3,
       spaceBetween: 52,
@@ -249,52 +255,32 @@ const swiperEvents = new Swiper('.events__swiper', {
 });
 // swiper-progects
 const swiperProgects = new Swiper('.progects__swiper', {
+  slidesPerView: 1,
+  grid: {
+    rows: 1,
+    fill: 'row',
+  },
+  // spaceBetween: 20,
   navigation: {
-    prevEl: '.progects__btn-prev',
-    nextEl: '.progects__btn-next',
+    prevEl: '.progects__btn_prev',
+    nextEl: '.progects__btn_next',
+    disabledClass: 'swiper-btn-disabled',
   },
   breakpoints: {
-    576: {
+    750: {
       slidesPerView: 2,
-      slidesPerGroup: 2,
       spaceBetween: 34,
     },
     769: {
       slidesPerView: 2,
-      slidesPerGroup: 2,
       spaceBetween: 50,
     },
-    1430: {
+    1480: {
       slidesPerView: 3,
-      slidesPerGroup: 3,
       spaceBetween: 50,
     },
   },
-  a11y: false,
-  keyboard: true,
-  watchSlidesProgress: true,
-  watchSlidesVisibility: true,
-  slideVisibleClass: 'slide-visible',
-  on: {
-    init() {
-      this.slides.forEach((slide) => {
-        if (!slide.classList.contains('slide-visible')) {
-          slide.tabIndex = '-1';
-        } else {
-          slide.tabIndex = '';
-        }
-      });
-    },
-    slideChange() {
-      this.slides.forEach((slide) => {
-        if (!slide.classList.contains('slide-visible')) {
-          slide.tabIndex = '-1';
-        } else {
-          slide.tabIndex = '';
-        }
-      });
-    },
-  },
+
 });
 // tooltip
 document.addEventListener('DOMContentLoaded', () => {

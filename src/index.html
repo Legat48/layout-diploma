@@ -31,7 +31,7 @@
   <script defer src="resourses/swiper-bundle.min.js"></script>
   <script defer src="resourses/popper.min.js"></script>
   <script defer src="resourses/tippy-bundle.umd.min.js"></script>
-  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU" type="text/javascript"></script>
+  <!-- <script defer src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script> -->
   <script defer src="js/scrypt.js"></script>
 </head>
 
@@ -455,30 +455,30 @@
 
             <div class="gallery__checkbox checkbox">
               <ul class="checkbox__list" aria-label="Выбрать интересующий переуд времени">
-                <li class="checkbox__item" aria-label="отметить">
-                  <label class="checkbox__label" for="XIX" tabindex="0" >
-                    <input class="checkbox__input" id="XIX" type="checkbox" name="XIX" required>
-                    XIX век
-                    <span></span>
+                <li class="checkbox__item">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input visually-hidden" type="checkbox" name="XX" required>
+                    <span class="checkbox__text">XIX век</span>
+                    <span class="checkbox__icon"></span>
                   </label>
                 </li>
 
                 <li class="checkbox__item">
                   <div class="checkbox">
-                    <label class="checkbox__label" for="XX" tabindex="0">
-                      <input class="checkbox__input" id="XX" type="checkbox" name="XX" required>
-                      XX век
-                      <span></span>
+                    <label class="checkbox__label">
+                      <input class="checkbox__input visually-hidden" type="checkbox" name="XX" required>
+                      <span class="checkbox__text">XX век</span>
+                      <span class="checkbox__icon"></span>
                     </label>
                   </div>
                 </li>
 
                 <li class="checkbox__item">
                   <div class="checkbox">
-                    <label class="checkbox__label" for="modernity" tabindex="0">
-                      <input class="checkbox__input" id="modernity" type="checkbox" name="modernity" required>
-                      Современность
-                      <span></span>
+                    <label class="checkbox__label">
+                      <input class="checkbox__input visually-hidden" type="checkbox" name="XX" required>
+                      <span class="checkbox__text">Современность</span>
+                      <span class="checkbox__icon"></span>
                     </label>
                   </div>
                 </li>
@@ -488,14 +488,14 @@
 
           <div class="gallery__swiper-box" >
             <div class="gallery__swiper swiper">
-              <div class="gallery__wrapper swiper-wrapper">
-                <div class="gallery__slide gallery__slide_bg-one swiper-slide" data-path="modal-one" aria-label="Неизвестная картина"></div>
-                <div class="gallery__slide gallery__slide_bg-two swiper-slide" data-path="modal-two" aria-label="Картина женщина с граблями"></div>
-                <div class="gallery__slide gallery__slide_bg-three swiper-slide" data-path="modal-three" aria-label="Неизвестная картина"></div>
-                <div class="gallery__slide gallery__slide_bg-four swiper-slide" data-path="modal-four" aria-label="Неизвестная картина"></div>
-                <div class="gallery__slide gallery__slide_bg-five swiper-slide" data-path="modal-five" aria-label="Неизвестная картина"></div>
-                <div class="gallery__slide gallery__slide_bg-six swiper-slide" data-path="modal-six" aria-label="Неизвестная картина"></div>
-              </div>
+              <ul class="gallery__wrapper swiper-wrapper">
+                <li class="gallery__slide gallery__slide_bg-one swiper-slide" data-path="modal-one"></li>
+                <li class="gallery__slide gallery__slide_bg-two swiper-slide" data-path="modal-two"></li>
+                <li class="gallery__slide gallery__slide_bg-three swiper-slide" data-path="modal-three"></li>
+                <li class="gallery__slide gallery__slide_bg-four swiper-slide" data-path="modal-four"></li>
+                <li class="gallery__slide gallery__slide_bg-five swiper-slide" data-path="modal-five"></li>
+                <li class="gallery__slide gallery__slide_bg-six swiper-slide" data-path="modal-six"></li>
+              </ul>
             </div>
             <div class="gallery__swiper-nav-box" aria-hidden="true">
               <button class="gallery__btn-prev btn">
@@ -1281,59 +1281,39 @@
           Партнёры проектов:
         </h3>
         <div class="progects__swiper-box">
-          <button class="progects__btn-prev btn" aria-hidden="листать свайпер вперед">
-          </button>
+          <button class="progects__btn progects__btn_prev btn" aria-label="листать свайпер вперед"></button>
           <div class="progects__swiper swiper">
-            <ul class="progects__wrapper swiper-wrapper">
-              <li class="progects__slide swiper-slide">
-                <a href="#" class="progects__slide-link">
-                  <img src="img/progects-one.svg" alt="Проект партнера">
-                </a>
-              </li>
-              <li class="progects__slide swiper-slide">
-                <a href="#" class="progects__slide-link">
-                  <img src="img/progects-two.svg" alt="Проект партнера">
-                </a>
-              </li>
-              <li class="progects__slide swiper-slide">
-                <a href="#" class="progects__slide-link">
-                  <img src="img/progects-three.svg" alt="Проект партнера">
-                </a>
-              </li>
-              <li class="progects__slide swiper-slide">
-                <a href="#" class="progects__slide-link">
-                  <img src="img/progects-four.svg" alt="Проект партнера">
-                </a>
-              </li>
-              <li class="progects__slide swiper-slide">
-                <a href="#" class="progects__slide-link">
-                  <img src="img/progects-five.svg" alt="Проект партнера">
-                </a>
-              </li>
-              <li class="progects__slide swiper-slide">
-                <a href="#" class="progects__slide-link">
-                  <img src="img/progects-six.svg" alt="Проект партнера">
-                </a>
-              </li>
-              <li class="progects__slide swiper-slide">
-                <a href="#" class="progects__slide-link">
-                  <img src="img/progects-seven.svg" alt="Проект партнера">
-                </a>
-              </li>
-              <li class="progects__slide swiper-slide">
-                <a href="#" class="progects__slide-link">
-                  <img src="img/progects-eight.svg" alt="Проект партнера">
-                </a>
-              </li>
-              <li class="progects__slide swiper-slide">
-                <a href="#" class="progects__slide-link">
-                  <img src="img/progects-nine.svg" alt="Проект партнера">
-                </a>
-              </li>
-            </ul>
+            <div class="progects__wrapper swiper-wrapper">
+              <a href="#" class="progects__slide swiper-slide">
+                <img class="progects__img" src="img/progects-one.svg" alt="Проект партнера">
+              </a>
+              <a href="#" class="progects__slide swiper-slide">
+                <img class="progects__img" src="img/progects-two.svg" alt="Проект партнера">
+              </a>
+              <a href="#" class="progects__slide swiper-slide">
+                <img class="progects__img" src="img/progects-three.svg" alt="Проект партнера">
+              </a>
+              <a href="#" class="progects__slide swiper-slide">
+                <img class="progects__img" src="img/progects-four.svg" alt="Проект партнера">
+              </a>
+              <a href="#" class="progects__slide swiper-slide">
+                <img class="progects__img" src="img/progects-five.svg" alt="Проект партнера">
+              </a>
+              <a href="#" class="progects__slide swiper-slide">
+                <img class="progects__img" src="img/progects-six.svg" alt="Проект партнера">
+              </a>
+              <a href="#" class="progects__slide swiper-slide">
+                <img class="progects__img" src="img/progects-seven.svg" alt="Проект партнера">
+              </a>
+              <a href="#" class="progects__slide swiper-slide">
+                <img class="progects__img" src="img/progects-eight.svg" alt="Проект партнера">
+              </a>
+              <a href="#" class="progects__slide swiper-slide">
+                <img class="progects__img" src="img/progects-nine.svg" alt="Проект партнера">
+              </a>
+            </div>
           </div>
-          <button class="progects__btn-next btn" aria-hidden="листать свайпер вперед">
-          </button>
+          <button class="progects__btn progects__btn_next btn" aria-label="листать свайпер вперед"></button>
         </div>
       </div>
     </section>
@@ -1379,7 +1359,7 @@
           </div>
         </div>
       </div>
-      <div class="contacts__map" id="map" aria-hidden="карта с меткой"></div>
+      <!-- <div class="contacts__map" id="map"></div> -->
     </section>
   </main>
   <footer class="footer">

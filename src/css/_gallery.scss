@@ -172,16 +172,7 @@
     margin: 0 18px;
   }
 }
-.swiper-btn-disabled,
-.swiper-btn-disabled:hover,
-.swiper-btn-disabled:focus,
-.swiper-btn-disabled:active {
-  border-color: transparent;
-  background-color: #B0B0B0;
-  opacity: 0.85;
-  cursor: auto;
-  @include transition;
-}
+
 // gallery-selects
 // так как селектор кастомный, приходится использовать стили
 // из библиотеки
@@ -275,12 +266,11 @@
     font-size: 1em;
     line-height: 1em;
     cursor: pointer;
+  }
+  &__input ~ span {
     @include transition;
   }
-  &__input {
-    display: none;
-  }
-  &__input + span {
+  &__icon {
     position: absolute;
     top: 9%;
     left: 0;
@@ -288,9 +278,8 @@
     width: 12px;
     height: 12px;
     text-align: center;
-    @include transition;
   }
-  &__input + span::before {
+  &__icon::before {
     content: '';
     position: absolute;
     top: 3px;
@@ -300,17 +289,21 @@
     border-radius: 100px;
     opacity: 0;
     background-color: var(--color-light-fill);
+    @include transition;
   }
-  &__label:focus {
-    color: var(--color-light-fill);
+  &__input:focus ~ .checkbox__text {
+    color: var(--color-fill);
   }
-  &__label:focus span {
+  &__input:focus ~ .checkbox__icon {
     border-color: var(--color-fill);
   }
-  &__input:checked + span {
+  &__input:checked ~ .checkbox__icon {
     border-color: var(--color-light-fill);
   }
-  &__input:checked + span::before {
+  &__input:checked ~ .checkbox__text {
+    color: var(--color-light-fill);
+  }
+  &__input:checked ~ .checkbox__icon::before {
     opacity: 1;
   }
 }
@@ -549,11 +542,10 @@
     min-height: 315px;
   }
   .checkbox {
-    &__label:hover {
+    &__input:hover ~ .checkbox__text {
       color: var(--color-light-fill);
     }
-    &__label:hover span,
-    &__input + span:hover {
+    &__input:hover ~ .checkbox__icon {
       border-color: var(--color-light-fill);
     }
   }
