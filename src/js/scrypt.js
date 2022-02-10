@@ -99,14 +99,25 @@ const swiper = new Swiper('.gallery__swiper', {
   navigation: {
     nextEl: '.gallery__btn-next',
     prevEl: '.gallery__btn-prev',
+    disabledClass: 'swiper-btn-disabled',
   },
   breakpoints: {
+    480: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 14,
+    },
     750: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 34,
     },
     769: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 34,
+    },
+    1014: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 34,
@@ -236,7 +247,7 @@ const swiperEvents = new Swiper('.events__swiper', {
     clickable: true,
   },
   breakpoints: {
-    750: {
+    568: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 34,
@@ -260,7 +271,6 @@ const swiperProgects = new Swiper('.progects__swiper', {
     rows: 1,
     fill: 'row',
   },
-  // spaceBetween: 20,
   navigation: {
     prevEl: '.progects__btn_prev',
     nextEl: '.progects__btn_next',

@@ -58,7 +58,9 @@
 html body {
   font-family: 'Open Sans', sans-serif;
 }
-
+body {
+  min-width: 320px;
+}
 img,
 svg {
   width: 100%;

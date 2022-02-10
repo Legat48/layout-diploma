@@ -36,7 +36,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    width: 100vw;
+    width: 100%;
     opacity: 0;
   }
   &__dropdown {
@@ -70,7 +70,7 @@
     left: 0;
     z-index: 3;
     padding: 26px 57px 20px;
-    width: 100vw;
+    width: 100%;
     min-height: 75px;
     background-color: rgba(0, 0, 0, 0.9);
     opacity: 0.8;
@@ -119,6 +119,7 @@
   }
   &__icon {
     display: inline-flex;
+    margin-right: 4px;
     width: 13px;
     height: 13px;
   }
@@ -472,7 +473,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     &__search {
       right: 3%;
       left: auto;
-      width: 329px;
+      width: 380px;
     }
     &__toggle-svg_closed {
       transform: scale(0.8) translateX(-5px);
@@ -491,7 +492,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
   }
   .search {
-    padding-left: 0;
     padding-right: 73px;
     &__btn {
       margin-right: 12px;
@@ -510,6 +510,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
   }
   .nav {
+    &__box {
+      padding-left: 100px;
+    }
     &__link:hover,
     &__btn:hover,
     &__btn:hover path {

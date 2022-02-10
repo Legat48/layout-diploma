@@ -291,9 +291,6 @@
       padding-top: 26px;
       padding-bottom: 20px;
     }
-    &__item {
-      min-width: 288px;
-    }
     &__list {
       column-count: 2;
       column-gap: 65px;
@@ -302,7 +299,6 @@
   .tab {
     &__img {
       margin-bottom: 22px;
-      min-height: 419px;
     }
     &__title {
       margin-bottom: 4px;
@@ -379,7 +375,6 @@
   .tab {
     &__img {
       margin-bottom: 20px;
-      min-height: 274px;
     }
     &__link:hover {
       border-color: var(--color-light-fill);
@@ -437,9 +432,6 @@
     }
   }
   .tab {
-    &__img {
-      min-height: 470px;
-    }
     &__link:hover {
       border-color: var(--color-light-fill);
       color: var(--color-light-fill);

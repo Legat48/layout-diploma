@@ -114,6 +114,7 @@
     font-weight: 600;
     font-size: 0.725em;
     line-height: 1em;
+    white-space: nowrap;
     color: var(--color-fill);
     @include transition;
   }
@@ -178,7 +179,8 @@
   .form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px 20px;
+    column-gap: 12px;
+    row-gap: 20px;
     &__label {
       margin: 0;
     }
@@ -231,7 +233,6 @@
   .contacts {
     &__box  {
       flex-direction: row;
-      gap: 15px;
       margin-bottom: 13px;
     }
     &__form {

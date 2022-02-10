@@ -67,17 +67,8 @@
     padding: 218px 18px 50px 22px;
     border: 1px solid #CACACA;
     min-height: 683px;
-  }
-  &__img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background-position: top center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 0;
     &_bg-one {
       background-image: url('../img/events-one-320.jpg');
       @media (min-resolution: 2dppx) {
@@ -108,6 +99,19 @@
         background-image: url("../img/events-five-320@2x.jpg");
       }
     }
+  }
+  &__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: inherit;
   }
   &__info {
     margin-left: auto;
@@ -206,7 +210,7 @@
 
 @media (min-width: 769px) {
   .events {
-    &__img {
+    &__card {
       &_bg-one {
         background-image: url('../img/events-one-1024.jpg');
         @media (min-resolution: 2dppx) {
@@ -261,24 +265,6 @@
     &__card {
       padding: 314px 60px 40px 49px;
       min-height: 700px;
-    }
-    &__info {
-      margin-right: auto;
-      margin-bottom: 16px;
-      margin-left: 0;
-      text-align: left;
-    }
-    &__card-title {
-      margin-bottom: 1px;
-    }
-    &__btn-next {
-      display: block;
-    }
-    &__pagination {
-      display: none;
-    }
-    &__img {
-      height: 300px;
       &_bg-one {
         background-image: url('../img/events-one-1920.jpg');
         @media (min-resolution: 2dppx) {
@@ -309,6 +295,24 @@
           background-image: url("../img/events-five-1920@2x.jpg");
         }
       }
+    }
+    &__card::before {
+      height: 300px;
+    }
+    &__info {
+      margin-right: auto;
+      margin-bottom: 16px;
+      margin-left: 0;
+      text-align: left;
+    }
+    &__card-title {
+      margin-bottom: 1px;
+    }
+    &__btn-next {
+      display: block;
+    }
+    &__pagination {
+      display: none;
     }
   }
 }
