@@ -56,33 +56,25 @@
   }
   &__toggle-svg {
     display: none;
-    width: 18px;
-    height: 18px;
+    width: 100%;
+    height: 100%;
     @include transition;
+    &_closed {
+      width: 15px;
+      height: 15px;
+    }
   }
   &__search {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 3;
-    padding: 40px 57px 20px;
+    padding: 26px 57px 20px;
     width: 100vw;
     min-height: 75px;
     background-color: rgba(0, 0, 0, 0.9);
     opacity: 0.8;
     transform: scaleX(0) translateX(-50%);
-  }
-  &__search-toggle rect,
-  &__search-toggle path {
-    @include transition;
-  }
-  &__search-toggle:focus rect,
-  &__search-toggle:focus path {
-    fill: var(--color-fill);
-  }
-  &__search-toggle:active rect,
-  &__search-toggle:active path {
-    fill: var(--color-dark-fill);
   }
 }
 .nav {
@@ -91,7 +83,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 2px;
-    padding: 48px 21px;
+    padding: 43px 16px;
     width: 100%;
     min-height: 355px;
     background-color: rgba(0, 0, 0, 0.9);
@@ -113,13 +105,12 @@
     color: inherit;
     @include transition;
   }
-
   &__btn {
     position: relative;
     z-index: 10;
     align-items: center;
     margin-right: auto;
-    padding: 11px 20px 11px 35px;
+    padding: 11px 22px;
     border: 2px solid var(--color-fill);
     border-radius: 100px;
     white-space:nowrap;
@@ -131,8 +122,9 @@
     width: 13px;
     height: 13px;
   }
-  &__icon path {
+  &__btn path {
     @include transition;
+    transition-duration: 0.08s;
   }
   &__btn::after,
   &__link::after {
@@ -161,6 +153,8 @@
     color: var(--color-dark-fill);
     fill: var(--color-dark-fill);
   }
+  &__link:focus,
+  &__btn:focus,
   &__link:active::after,
   &__btn:active::after {
     background-color: transparent;
@@ -211,18 +205,12 @@
     background-color: transparent;
     @include transition;
   }
-  &__btn:hover,
-  &__btn:hover path {
-    color: var(--color-light-fill);
-    stroke: var(--color-light-fill);
-  }
+
   &__btn:focus::after {
     background-color: var(--color-dark-fill);
   }
-  &__btn:active,
-  &__btn:hover path {
+  &__btn:active{
     color: var(--color-dark-fill);
-    stroke: var(--color-dark-fill);
   }
   &__btn:hover::after,
   &__btn:active::after {
@@ -327,14 +315,12 @@
   &__item:not(:last-child) {
     margin-bottom: 20px;
   }
-  &__item:focus,
-  &__item:hover {
+  &__item:focus {
     outline-color: var(--color-fill);
   }
   &__item:active {
     outline-color: var(--color-fill);
   }
-
   &__item:active::before {
     opacity: 1;
   }
@@ -345,12 +331,7 @@
 }
 .search {
   display: flex;
-  &__box {
-    display: flex;
-    margin-top: 2px;
-    padding: 48px 21px;
-    width: 100%;
-  }
+  align-items: flex-end;
   &__btn {
     position: relative;
     margin-right: 3px;
@@ -385,28 +366,21 @@
     padding: 5px 10px;
     border: transparent;
     border-bottom: 1px solid var(--color-gray-fill);
+    border-radius: 0;
     outline: none;
     width: 100%;
     color: var(--color-light-text);
     background-color: transparent;
-    @include transition
+    @include transition;
+    // фикс для сафари
+    -webkit-appearance: none;
   }
   &__input::placeholder {
     color: var(--color-light-text);
     opacity: 0.85;
   }
-  &__input:hover {
-    border-bottom: 1px solid var(--color-fill);
-  }
   &__input:focus {
     border-bottom: 1px solid var(--color-light-fill);
-  }
-  &__btn {
-    margin-right: 20px;
-  }
-  &__btn-svg:hover rect,
-  &__btn-svg:hover path {
-    fill: var(--color-fill)
   }
   &__btn:focus::after {
     border-color: var(--color-fill)
@@ -473,8 +447,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       padding: 96px 49px;
     }
     &__link {
-      font-size: 2em;
-      line-height: 2em;
+      font-size: 1.5em;
+      line-height: 2.65em;
     }
     &__btn {
       padding: 15px 60px 15px 70px;
@@ -482,10 +456,14 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
   }
   .search {
-    &__btn-svg,
-    &__btn  {
-      width: 27px;
-      height: 27px;
+    padding: 35px 51px 20px;
+    &__btn {
+      margin-right: 11px;
+    }
+    &__btn,
+    &__btn-svg {
+      width: 29px;
+      height: 29px;
     }
   }
 }
@@ -494,7 +472,37 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     &__search {
       right: 3%;
       left: auto;
-      width: 314px;
+      width: 329px;
+    }
+    &__toggle-svg_closed {
+      transform: scale(0.8) translateX(-5px);
+    }
+  }
+  .nav {
+    &__box {
+      padding-bottom: 54px;
+      min-height: 768px;
+    }
+    &__list {
+      margin-bottom: auto;
+    }
+    &__btn {
+      padding: 17px 90px;
+    }
+  }
+  .search {
+    padding-left: 0;
+    padding-right: 73px;
+    &__btn {
+      margin-right: 12px;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .header {
+    &__search {
+      right: 8%;
     }
     &__search-toggle:hover rect,
     &__search-toggle:hover path {
@@ -508,31 +516,31 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       color: var(--color-light-fill);
       fill: var(--color-light-fill);
     }
-    &__btn:hover path {
-      color: var(--color-dark-fill);
-      fill: var(--color-dark-fill);
-    }
     &__link:hover::after,
     &__btn:hover::after {
       background-color: transparent;
     }
   }
-  .search {
-    &__btn {
-      margin-right: 20px;
+  .dropdown {
+    &__item:hover {
+      outline-color: var(--color-fill);
     }
-    &__btn-svg,
-    &__btn  {
-      width: 27px;
-      height: 27px;
+    &__btn:hover,
+    &__btn:hover path {
+      color: var(--color-light-fill);
+      stroke: var(--color-light-fill);
+    }
+    &__btn:hover path {
+      stroke: var(--color-dark-fill);
     }
   }
-}
-
-@media (min-width: 1025px) {
-  .header {
-    &__search {
-      right: 8%;
+  .search {
+    &__input:hover {
+      border-bottom: 1px solid var(--color-fill);
+    }
+    &__btn-svg:hover rect,
+    &__btn-svg:hover path {
+      fill: var(--color-fill)
     }
   }
 }

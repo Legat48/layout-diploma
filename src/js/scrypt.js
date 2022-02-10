@@ -264,7 +264,7 @@ const swiperProgects = new Swiper('.progects__swiper', {
   navigation: {
     prevEl: '.progects__btn_prev',
     nextEl: '.progects__btn_next',
-    disabledClass: 'swiper-btn-disabled',
+    disabledClass: 'swiper-btn-disabled-light',
   },
   breakpoints: {
     750: {
@@ -338,6 +338,8 @@ function init() {
     iconImageSize: [20, 20],
   });
   myMap.geoObjects.add(myPlacemark);
+  // отключить зум
+  myMap.behaviors.disable('scrollZoom');
 }
 // плавный скролл
 document.querySelectorAll('.js-scroll-link').forEach(link => {

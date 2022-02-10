@@ -117,6 +117,17 @@ div .swiper-btn-disabled:active {
   cursor: auto;
   @include transition;
 }
+
+div .swiper-btn-disabled-light,
+div .swiper-btn-disabled-light:hover,
+div .swiper-btn-disabled-light:focus,
+div .swiper-btn-disabled-light:active {
+  border-color: transparent;
+  background-color: var(--color-light-gray-fill);
+  opacity: 1;
+  cursor: auto;
+  @include transition;
+}
 @media (min-width: 480px) {
   .container {
     padding-right: 50px;

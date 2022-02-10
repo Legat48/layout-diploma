@@ -99,15 +99,6 @@
   }
 }
 
-@media (min-width: 769px) {
-  .hero {
-    &__btn:hover {
-      border-color: var(--color-light-fill);
-      outline-color: transparent;
-    }
-  }
-}
-
 @media (min-width: 1025px) {
   .hero {
     min-height: 630px;
@@ -123,6 +114,10 @@
     }
     &__text {
       max-width: 610px;
+    }
+    &__btn:hover {
+      border-color: var(--color-light-fill);
+      outline-color: transparent;
     }
   }
 }

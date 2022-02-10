@@ -195,7 +195,22 @@
     }
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 1014px) {
+  .form {
+    display: flex;
+    flex-direction: row;
+    &__label {
+      width: 29.4%;
+    }
+    &__input {
+      padding: 15px 22px;
+    }
+    &__btn {
+      width: 37.4%;
+    }
+  }
+}
+@media (min-width: 1025px) {
   .contacts {
     &__link:hover {
       opacity: 0.5;
@@ -212,22 +227,6 @@
     }
   }
 }
-@media (min-width: 1014px) {
-  .form {
-    display: flex;
-    flex-direction: row;
-    &__label {
-      width: 29.4%;
-    }
-    &__input {
-      padding: 15px 22px;
-    }
-    &__btn {
-      width: 37.4%;
-    }
-  }
-}
-
 @media (min-width: 1700px) {
   .contacts {
     &__box  {

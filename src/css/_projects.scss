@@ -39,9 +39,10 @@
     min-height: 65px;
   }
   &__swiper {
+    margin: 0 10px;
     width: calc(195/290 * 100%);
-    overflow: hidden;
     height: 65px;
+    overflow: hidden;
   }
   &__slide {
     display: flex;
@@ -51,6 +52,7 @@
     border: 1px solid #CACACA;
     min-height: 65px;
     @include transition;
+    cursor: pointer;
   }
   &__img {
     width: auto;
@@ -65,6 +67,13 @@
   &__slide:focus {
     border-color: var(--color-fill);
   }
+  &__slide:active {
+    border-color: var(--color-fill);
+  }
+  &__slide:active img {
+    opacity: 1;
+    filter: none;
+  }
   &__btn {
     position: relative;
     margin-top: auto;
@@ -73,32 +82,39 @@
     border-radius: 100px;
     width: 30px;
     height: 30px;
-    background-color: var(--color-dark-gray-fill);
+    background-color: var(--color-light-gray-fill);
     @include transition;
   }
   &__btn_next::after,
   &__btn_prev::after {
     content: '';
     position: absolute;
-    top: 30%;
-    left: 36%;
+    top: 27%;
+    left: 35%;
     width: 8px;
     height: 12px;
     @include backgroundCenter;
   }
+  &__btn_next::after {
+    left: 39%;
+  }
   &__btn_prev::after {
-    background-image: url('../img/arrow-white-right.svg');
+    background-image: url('../img/arrow-left.svg');
   }
   &__btn_next::after {
-    background-image: url('../img/arrow-white-left.svg');
+    background-image: url('../img/arrow-right.svg');
   }
   &__btn:focus {
-    border-color: var(--color-black);
+    border-color: var(--color-fill);
   }
   &__btn:active{
-    background-color: var(--color-fill);
-    border-color: var(--color-black);
+    border-color: var(--color-fill);
+    background-color: var(--color-very-light-fill);
   }
+}
+.swiper-btn-disabled-light.progects__btn_next::after,
+.swiper-btn-disabled-light.progects__btn_prev::after {
+  opacity: 0.3;
 }
 @media (min-width: 480px) {
   .progects {
@@ -130,6 +146,11 @@
       width: calc(818/924 * 100%);
       height: 128px;
     }
+  }
+}
+
+@media (min-width: 1025px) {
+  .progects {
     &__link:hover {
       border-color: var(--color-light-fill);
       color: var(--color-light-fill);
@@ -138,6 +159,9 @@
     &__slide:hover img {
       opacity: 1;
       filter: none;
+    }
+    &__btn:hover {
+      background-color: var(--color-very-light-fill);
     }
   }
 }

@@ -27,6 +27,12 @@
 .burger::after {
   top: calc(100% - var(--burger-line-height));
 }
+.burger span {
+  width: 80%;
+}
+.burger::after {
+  width: 60%;
+}
 .burger__line {
   position: absolute;
   left: 0;
@@ -37,6 +43,9 @@
   transform: translateY(-50%);
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
+.burger--active {
+  transform: scale(0.7) translateX(-6px);
+}
 .burger--active::before {
   top: 50%;
   transform: rotate(45deg);
@@ -44,6 +53,7 @@
 }
 .burger--active::after {
   top: 50%;
+  width: 100%;
   transform: rotate(-45deg);
   transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, width 0.3s ease-in-out;
 }
@@ -51,6 +61,7 @@
   transform: scale(0);
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
+
 .burger:focus::after {
   opacity: 1;
 }
@@ -72,7 +83,8 @@ div .js-validate-error-field {
 // tooltip
 .tooltip {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  max-width: 16px;
 }
 .marker {
   padding: 0;
@@ -115,6 +127,12 @@ div .js-validate-error-field {
   border-left-color: var(--color-fill);
 }
 
+
+@media (min-width: 480px) {
+  .burger--active {
+    transform: scale(1) translateX(-2px);
+  }
+}
 @media (min-width: 769px) {
   .burger:hover span {
     width: 60%;
@@ -130,3 +148,5 @@ div .js-validate-error-field {
     fill: var(--color-light-fill);
   }
 }
+// плавный скролл
+body, .smooth-container { scroll-behavior: smooth }

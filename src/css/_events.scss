@@ -238,6 +238,10 @@
         }
       }
     }
+  }
+}
+@media (min-width: 1025px) {
+  .events {
     &__btn-next:hover {
       background-color: var(--color-light-fill);
     }

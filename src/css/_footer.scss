@@ -71,13 +71,7 @@
     }
   }
 }
-@media (min-width: 769px) {
-  .footer {
-    &__link:hover path {
-      fill: var(--color-white);
-    }
-  }
-}
+
 @media (min-width: 1025px) {
   .footer {
     padding-top: 48px;
@@ -88,6 +82,9 @@
     }
     &__item:not(:last-child) {
       margin-right: 20px;
+    }
+    &__link:hover path {
+      fill: var(--color-white);
     }
   }
 }

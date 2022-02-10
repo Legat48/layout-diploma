@@ -50,9 +50,10 @@
     transform: translate(-50%, -50%) scaleX(1);
   }
   &__descr {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 18px;
     line-height: 2em;
+    font-family: 'Open Sans', sans-serif;
   }
   &__icon {
     position: absolute;
@@ -145,15 +146,19 @@
       background-color: #B7B7B7;
     }
     &-title {
+      margin-top: auto;
       font-weight: 600;
       font-size: 1.125em;
       line-height: 2em;
     }
     &-text {
-      margin-bottom: auto;
+      margin-bottom: 5px;
     }
     &-link {
       margin-right: auto;
+      margin-bottom: auto;
+      line-height: 2em;
+
       color: var(--color-fill);
       @include transition;
     }
@@ -406,9 +411,39 @@
       width: calc(750/1600 * 100%);
     }
   }
+  .accordion {
+    &__btn:hover {
+      color: var(--color-fill);
+      border-top:1px solid var(--color-fill);
+    }
+    &__btn:hover::before {
+      border-bottom:1px solid var(--color-fill);
+    }
+    &__btn:hover .accordion__icon {
+      background-color: var(--color-light-fill);
+    }
+    &__link:hover {
+      border-color: var(--color-light-fill);
+      color: var(--color-light-fill);
+      background-color: transparent;
+    }
+    &__plug-link:hover {
+      border-color: var(--color-light-fill);
+      color: var(--color-light-fill);
+      background-color: transparent;
+    }
+    &__unit:last-child:hover {
+      border-bottom:1px solid transparent;
+    }
+  }
   .tab {
     &__img {
       min-height: 470px;
+    }
+    &__link:hover {
+      border-color: var(--color-light-fill);
+      color: var(--color-light-fill);
+      background-color: transparent;
     }
   }
 }
