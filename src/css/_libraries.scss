@@ -14,6 +14,7 @@
 }
 .burger::before, .burger::after {
   content: "";
+  z-index: 3;
   position: absolute;
   left: 0;
   width: 100%;
@@ -57,13 +58,27 @@
   transform: rotate(-45deg);
   transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, width 0.3s ease-in-out;
 }
-.burger--active .burger__line {
-  transform: scale(0);
-  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
-}
+// .burger--active .burger__line {
+//   transform: scale(0);
+//   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+// }
 
 .burger:focus::after {
   opacity: 1;
+}
+
+.header__row-box .burger--active .burger__line {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 26px;
+  border-radius: 5px;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+
 }
 // валидация формы
 // класс всплывающего предупреждения
@@ -131,6 +146,18 @@ div .js-validate-error-field {
 @media (min-width: 480px) {
   .burger--active {
     transform: scale(1) translateX(-2px);
+  }
+  .header__row-box .burger--active .burger__line {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: rgba($color: #000000, $alpha: 0.8);
   }
 }
 @media (min-width: 769px) {

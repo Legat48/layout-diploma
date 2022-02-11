@@ -9,22 +9,67 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.header__nav');
   const search = document.querySelector('#search-toggle');
-  burger.addEventListener('click', (e) => {
+  const navLink = document.querySelectorAll('.nav__link');
+  const mediaFullDesktop = window.matchMedia('(min-width: 1480px)')
+  function navAnim() {
     // переключение бургера
-    e.currentTarget.classList.toggle('burger--active');
+    burger.classList.toggle('burger--active');
     // появление и уход меню навигации
     if (burger.classList.contains('burger--active')) {
       clearTimeout(setTimeout(()=>{nav.style.zIndex = -1;}, 0))
       search.style.zIndex = 1;
       nav.style.zIndex = 2;
-      gsap.fromTo('.header__nav', { xPercent: -100, opacity: 0.8 }, { duration: 1, scaleX: 1, xPercent: -0, opacity: 1 });
+      gsap.fromTo('.header__nav', { xPercent: -100, opacity: 0.8 }, { duration: 1, scaleX: 1, xPercent: 0, opacity: 1 });
     } else if ((!burger.classList.contains('burger--active'))) {
       search.style.zIndex = 4;
       gsap.fromTo('.header__nav', { xPercent: 0, opacity: 1 }, { duration: 1, scaleX: 0, xPercent: -100, opacity: 0.8 });
       setTimeout(()=>{nav.style.zIndex = -1;}, 600)
     }
-  });
+  }
+  // Проработка функций при загрузке страницы в первый раз
+  // вызов анимации при нажатии кнопки
+  burger.addEventListener('click', navAnim);
+  // вызов анимации при переходе по ссылке
+  navLink.forEach((el) => {
+    el.addEventListener('click', () => {
+      if (burger.classList.contains('burger--active')) {
+        navAnim();
+      }
+    });
+  })
+  // проверка по медиазапросу, на изменения (переворот экрана, уменьшат окно браузера и тд)
+  if (matchMedia) {
+    // измеения экрана
+    mediaFullDesktop.addEventListener('change', () => {
+      // если больше 1480px, то вызов IIFE, в которой сбрасываются все значения навигации что накиданы анимацией
+      if (mediaFullDesktop.matches) {
+        (function() {
+          nav.style.zIndex = 1;
+          search.style.zIndex = 1;
+          gsap.fromTo('.header__nav', { xPercent: -100, opacity: 0.8 }, { duration: 0, scaleX: 1, xPercent: 0, opacity: 1 });
+        }());
+      } else {
+        // иначе возвращаем состояние которое было у страницы
+        if ((!burger.classList.contains('burger--active'))) {
+          search.style.zIndex = 4;
+          nav.style.zIndex = -1;
+          gsap.fromTo('.header__nav', { xPercent: 0, opacity: 1 }, { duration: 0, scaleX: 0, xPercent: -100, opacity: 0.8 });
+        }
+        // вызов анимации при нажатии кнопки
+        burger.addEventListener('click', navAnim);
+        // вызов анимации при переходе по ссылке
+        navLink.forEach((el) => {
+          el.addEventListener('click', () => {
+            if (burger.classList.contains('burger--active')) {
+              navAnim();
+            }
+          });
+        })
+      }
+    })
+  }
 });
+
 // search
 document.addEventListener('DOMContentLoaded', () => {
   const btnToggleSearch = document.querySelector('#search-toggle');
@@ -57,6 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
           el.classList.remove('active');
         }
       });
+      // document.addEventListener('click', (el) => {
+      //   console.log(el != dropdownBox)
+      // })
       document.querySelectorAll('.dropdown__icon-svg').forEach((j) => {
         if (icon !== j) {
           j.classList.remove('dropdown__icon-svg_active');
@@ -64,8 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       icon.classList.toggle('dropdown__icon-svg_active');
       dropdownBox.classList.toggle('active');
+       // const modalOverlay = modalObg.querySelector('.modal__overlay');
+       // if (e.target === modalOverlay) {
+       //   modalObg.classList.add('deactivate');
+       // }
+      });
     });
-  });
+  // закрытие на нажатие не внутри дропдауна
 });
 // scrollbar
 document.querySelectorAll('.dropdown__scrollbar').forEach((el) => {
