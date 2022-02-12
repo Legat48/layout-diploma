@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (event) => {
       const { path } = event.currentTarget.dataset;
       const dropdownBox = document.querySelector(`[data-target="${path}"]`);
+      const dropdownItem = dropdownBox.querySelector('.dropdown__item')
       // переворачиваем стрелочку при клике
       const icon = btn.querySelector('.dropdown__icon-svg');
       // закрываем все списки и переключаем нажатый
@@ -102,9 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
           el.classList.remove('active');
         }
       });
-      // document.addEventListener('click', (el) => {
-      //   console.log(el != dropdownBox)
-      // })
       document.querySelectorAll('.dropdown__icon-svg').forEach((j) => {
         if (icon !== j) {
           j.classList.remove('dropdown__icon-svg_active');
@@ -112,13 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       icon.classList.toggle('dropdown__icon-svg_active');
       dropdownBox.classList.toggle('active');
-       // const modalOverlay = modalObg.querySelector('.modal__overlay');
-       // if (e.target === modalOverlay) {
-       //   modalObg.classList.add('deactivate');
-       // }
       });
     });
-  // закрытие на нажатие не внутри дропдауна
+    // закрытие доропдауна на нажатие не внутри дропдауна и не на кнопку
+    document.addEventListener('click', (i) => {
+      if (!i.target.classList.contains('dropdown__item')
+      && !i.target.classList.contains('dropdown__box')
+      && !i.target.classList.contains('dropdown__btn')) {
+        document.querySelectorAll('.dropdown__box').forEach((el) => {
+          el.classList.remove('active');
+        });
+        document.querySelectorAll('.dropdown__icon-svg').forEach((j) => {
+          j.classList.remove('dropdown__icon-svg_active');
+        })
+      }
+    })
 });
 // scrollbar
 document.querySelectorAll('.dropdown__scrollbar').forEach((el) => {
