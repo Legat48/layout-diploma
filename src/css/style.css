@@ -59,6 +59,7 @@ html body {
 }
 
 body {
+  position: relative;
   min-width: 320px;
 }
 
@@ -102,6 +103,16 @@ div .deactivate {
 
 .top-wrap {
   position: relative;
+}
+
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 
 div .visually-hidden {

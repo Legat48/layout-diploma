@@ -59,6 +59,7 @@ html body {
   font-family: 'Open Sans', sans-serif;
 }
 body {
+  position: relative;
   min-width: 320px;
 }
 img,
@@ -96,6 +97,16 @@ div .deactivate {
 }
 .top-wrap {
   position: relative;
+}
+// отключить скролл
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 // паттерн для скрытия
 div .visually-hidden {

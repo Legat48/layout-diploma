@@ -228,6 +228,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // modal gallery
 document.addEventListener('DOMContentLoaded', () => {
+ const body = document.querySelector('body')
+  function disableScroll() {
+    let pagePosition = window.scrollY;
+    body.classList.add('disable-scroll');
+    body.dataset.position = pagePosition;
+    body.style.top = -pagePosition + 'px'
+  }
+  function enableScroll() {
+    let pagePosition = parseInt(body.dataset.position, 10);
+    body.style.top = 'auto';
+    body.classList.remove('disable-scroll');
+    if (isNaN(pagePosition)) {
+      pagePosition = window.scrollY;
+    }
+    console.log(pagePosition)
+    console.log(isNaN(pagePosition))
+    console.log(window.scrollY)
+    window.scroll({top: pagePosition, left: 0});
+    body.removeAttribute('data-position');
+  }
   document.querySelectorAll('.gallery__slide').forEach((modalLink) => {
     modalLink.addEventListener('click', (event) => {
       const { path } = event.currentTarget.dataset;
@@ -236,16 +256,19 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.modal').forEach((tabContent) => {
         tabContent.classList.add('deactivate');
       });
+      disableScroll()
       modalObg.classList.remove('deactivate');
       // закрытие на нажатие фона
       modalObg.addEventListener('click', (e) => {
         const modalOverlay = modalObg.querySelector('.modal__overlay');
         if (e.target === modalOverlay) {
+          enableScroll()
           modalObg.classList.add('deactivate');
         }
       });
       // закрытие на нажатие кнопки
       btn.addEventListener('click', () => {
+        enableScroll()
         modalObg.classList.add('deactivate');
       });
       // анимация появления окна
@@ -385,8 +408,8 @@ new JustValidate('.form', {
   },
 });
 // contacts map
-ymaps.ready(init);
 function init() {
+  myMapLoad = true;
   const myMap = new ymaps.Map('map', {
     center: [55.758468, 37.601088],
     zoom: 15,
@@ -422,4 +445,42 @@ document.querySelectorAll('.js-scroll-link').forEach(link => {
           behavior: 'smooth'
       });
   });
+});
+// частично отложенная загрузка карты
+document.addEventListener('DOMContentLoaded', () => {
+  // Получаем нужный элемент
+const element = document.querySelector('#map');
+let myMapLoad = false;
+const Visible = function (target) {
+  // Все позиции элемента
+  const targetPosition = {
+      top: window.pageYOffset + target.getBoundingClientRect().top,
+      left: window.pageXOffset + target.getBoundingClientRect().left,
+      right: window.pageXOffset + target.getBoundingClientRect().right,
+      bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+    },
+    // Получаем позиции окна
+    windowPosition = {
+      top: window.pageYOffset,
+      left: window.pageXOffset,
+      right: window.pageXOffset + document.documentElement.clientWidth,
+      bottom: window.pageYOffset + document.documentElement.clientHeight
+    };
+  if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+    targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+    targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+    targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+    // Если элемент полностью видно, то запускаем следующий код
+    ymaps.ready(init);
+    console.log('Карта подгрузилась');
+  }
+};
+// Запускаем функцию при прокрутке страницы
+window.addEventListener('scroll', function() {
+  if (myMapLoad !== true) {
+    Visible (element);
+  }
+});
+// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+Visible (element);
 });
