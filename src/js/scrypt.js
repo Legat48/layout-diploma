@@ -472,6 +472,8 @@ const Visible = function (target) {
     targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
     // Если элемент полностью видно, то запускаем следующий код
     ymaps.ready(init);
+    // даем понять что карта загружена
+    myMapLoad = true;
     console.log('Карта подгрузилась');
   }
 };
@@ -481,6 +483,6 @@ window.addEventListener('scroll', function() {
     Visible (element);
   }
 });
-// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+//запустим функцию сразу. А то вдруг, элемент изначально видно
 Visible (element);
 });
