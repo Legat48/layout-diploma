@@ -82,8 +82,6 @@
   &__box {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
     margin-top: 2px;
     padding: 43px 16px;
     width: 100%;
@@ -599,7 +597,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       margin-top: 0;
       width: 100%;
       height: auto;
-      overflow-y: hidden;
     }
     &__list {
       display: flex;

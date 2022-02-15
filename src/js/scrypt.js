@@ -69,6 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 });
+// scrollbar nav
+document.querySelectorAll('.nav').forEach((el) => {
+  new SimpleBar(el, {
+    scrollbarMaxSize: 40,
+  });
+});
 
 // search
 document.addEventListener('DOMContentLoaded', () => {

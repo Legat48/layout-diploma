@@ -476,8 +476,6 @@ body, .smooth-container {
 .nav__box {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-  overflow-x: hidden;
   margin-top: 2px;
   padding: 43px 16px;
   width: 100%;
@@ -1059,7 +1057,6 @@ input[type="search"]::-webkit-search-results-decoration {
     margin-top: 0;
     width: 100%;
     height: auto;
-    overflow-y: hidden;
   }
   .nav__list {
     display: flex;
@@ -3285,6 +3282,7 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 0;
   max-width: 1920px;
   height: 320px;
+  max-height: 70vh;
 }
 
 .form {
