@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
       new SimpleBar(navScroll, {
         scrollbarMaxSize: 20,
       });
+      document.querySelector('.nav__box').classList.remove('overflow-hidden');
+    } else {
+      document.querySelector('.nav__box').classList.add('overflow-hidden');
     }
   })
   // Проработка функций при загрузке страницы в первый раз

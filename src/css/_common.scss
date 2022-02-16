@@ -120,6 +120,10 @@ div .visually-hidden {
   overflow: hidden;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 div .swiper-btn-disabled,
 div .swiper-btn-disabled:hover,
 div .swiper-btn-disabled:focus,
@@ -164,4 +168,5 @@ div .swiper-btn-disabled-light:active {
     padding-right: 160px;
     padding-left: 160px;
   }
+
 }
