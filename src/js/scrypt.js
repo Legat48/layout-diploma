@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.header__nav');
   const search = document.querySelector('#search-toggle');
   const navLink = document.querySelectorAll('.nav__link');
+  const navScroll = document.querySelector('.nav__scroll');
   const mediaFullDesktop = window.matchMedia('(min-width: 1480px)')
   function navAnim() {
     // переключение бургера
@@ -26,6 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(()=>{nav.style.zIndex = -1;}, 600)
     }
   }
+
+  if (!mediaFullDesktop.matches) {
+    // scrollbar nav
+    new SimpleBar(navScroll, {
+      scrollbarMaxSize: 20,
+    });
+  }
+  mediaFullDesktop.addEventListener('change', () => {
+    // если меньше 1480px
+    if (!mediaFullDesktop.matches) {
+      new SimpleBar(navScroll, {
+        scrollbarMaxSize: 20,
+      });
+    }
+  })
   // Проработка функций при загрузке страницы в первый раз
   // вызов анимации при нажатии кнопки
   burger.addEventListener('click', navAnim);
@@ -37,17 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   })
+
   // проверка по медиазапросу, на изменения (переворот экрана, уменьшат окно браузера и тд)
   if (matchMedia) {
     // измеения экрана
     mediaFullDesktop.addEventListener('change', () => {
       // если больше 1480px, то вызов IIFE, в которой сбрасываются все значения навигации что накиданы анимацией
       if (mediaFullDesktop.matches) {
-        (function() {
-          nav.style.zIndex = 1;
-          search.style.zIndex = 1;
-          gsap.fromTo('.header__nav', { xPercent: -100, opacity: 0.8 }, { duration: 0, scaleX: 1, xPercent: 0, opacity: 1 });
-        }());
+        nav.style.zIndex = 1;
+        search.style.zIndex = 1;
+        gsap.fromTo('.header__nav', { xPercent: -100, opacity: 0.8 }, { duration: 0, scaleX: 1, xPercent: 0, opacity: 1 });
       } else {
         // иначе возвращаем состояние которое было у страницы
         if ((!burger.classList.contains('burger--active'))) {
@@ -68,13 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
+
 });
-// scrollbar nav
-document.querySelectorAll('.nav').forEach((el) => {
-  new SimpleBar(el, {
-    scrollbarMaxSize: 40,
-  });
-});
+
 
 // search
 document.addEventListener('DOMContentLoaded', () => {
@@ -132,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
 });
-// scrollbar
+// scrollbar dropdown
 document.querySelectorAll('.dropdown__scrollbar').forEach((el) => {
   new SimpleBar(el, {
     scrollbarMaxSize: 40,
@@ -279,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       // анимация появления окна
       if (!modalObg.classList.contains('deactivate')) {
-        gsap.fromTo('.modal__box', { scaleX:0.6, scaleY:0.4, opacity: 0.8 }, { duration: 0.6, scaleX:1, scaleY:1, opacity: 1 });
+        gsap.fromTo('.modal__box', { scaleX:0.5, scaleY:0.5, opacity: 0.8 }, { duration: 0.6, scaleX:1, scaleY:1, opacity: 1 });
       }
     });
   });
@@ -412,6 +423,24 @@ new JustValidate('.form', {
     },
     tel: 'Укажите ваш телефон',
   },
+  submitHandler: function(thisForm) {
+    let formData = new FormData(thisForm);
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log('Отправлено');
+        }
+      }
+    }
+
+    xhr.open('POST', 'mail.php', true);
+    xhr.send(formData);
+
+    thisForm.reset();
+  }
 });
 // contacts map
 function init() {

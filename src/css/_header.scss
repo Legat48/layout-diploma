@@ -79,6 +79,9 @@
 }
 .nav {
   color: var(--color-light-text);
+  &__scroll {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
   &__box {
     display: flex;
     flex-direction: column;
@@ -86,7 +89,6 @@
     padding: 43px 16px;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
   }
   &__list {
     display: flex;
@@ -617,6 +619,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       line-height: 1.5em;
     }
     &__btn {
+      margin-top: 0;
       margin-right: 0;
       padding: 0;
       font-size: 1.125em;
@@ -626,6 +629,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     &__btn::after {
       border-radius: 0;
     }
+  }
+  .nav div .simplebar-content-wrapper {
+    overflow: hidden;
   }
 }
 
