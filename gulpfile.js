@@ -27,6 +27,11 @@ const resourses = () => {
     return src('src/resourses/**')
     .pipe(dest('dist/resourses'))
 }
+// перенос PHP ресурсов в рабочую папку
+const resoursesPHP = () => {
+  return src('src/**/*.php')
+  .pipe(dest('dist'))
+}
 // перенос шрифтов в рабочую папку
 const fonts = () => {
   return src('src/fonts/**')
@@ -99,12 +104,16 @@ watch('src/js/**/*.js', scripts);
 
 // ТАСКИ ДЛЯ ПЕРЕНОСА В ПАПКУ ГОТОВОГО ПРОЕКТА
 
-// минификация и перенос ресурсов  в рабочую папку
+// минификация и перенос ресурсов в готовый проект
 const resoursesProd = () => {
   return src('src/resourses/**')
   .pipe(dest('prod/resourses'))
 }
-
+// перенос PHP ресурсов в готовый проект
+const resoursesPHPProd = () => {
+  return src('src/**/*.php')
+  .pipe(dest('prod'))
+}
 // перенос изображений в готовый проект
 const imageProd = () => {
     return src('dist/img/**')
@@ -155,5 +164,5 @@ exports.images = images; /*обработать изображение*/
 exports.svgSprites = svgSprites; /*создать спрайт*/
 
 // ОБЩАЯ КОМАНДА ДЛЯ ЗАПУСКА GULP
-exports.default = series(clean, resourses, fonts, svgSprites, images, htmlDist, styles, scripts, resoursesProd, imageProd, stylesProd, scriptsProd, htmlProd, fontsProd, watchFiles)
+exports.default = series(clean, resourses, resoursesPHP, fonts, svgSprites, images, htmlDist, styles, scripts, resoursesProd, resoursesPHPProd, imageProd, stylesProd, scriptsProd, htmlProd, fontsProd, watchFiles)
 
