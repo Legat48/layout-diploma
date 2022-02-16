@@ -32,15 +32,15 @@ try {
 
   // Настройки вашей почты
   $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-  $mail->Username   = 'daletters01@gmail.com'; // Логин на почте
-  $mail->Password   = 'dbuwfladxwilmekh'; // Пароль на почте
+  $mail->Username   = ''; // Логин на почте (скрыто)
+  $mail->Password   = ''; // Пароль на почте (скрыто)
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('daletters@mail.ru', 'Заявка на обратный звонок с сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('', 'Заявка на обратный звонок с сайта'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('daletters01@gmail.com');
+  $mail->addAddress('');
   // Отправка сообщения
   $mail->isHTML(true);
   $mail->Subject = $title;
