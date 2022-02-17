@@ -288,30 +288,27 @@ div .js-validate-error-field {
   position: relative;
   display: inline-flex;
   max-width: 16px;
-}
-
-.marker {
   padding: 0;
   border: 0;
   outline: none;
   background-color: transparent;
 }
 
-.marker path {
+.tooltip path {
   transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
 
-.marker:focus path:first-child {
+.tooltip:focus path:first-child {
   fill: var(--color-light-fill);
 }
 
-.marker:active path:first-child {
+.tooltip:active path:first-child {
   fill: var(--color-fill);
 }
 
-.marker:active path:last-child {
+.tooltip:active path:last-child {
   fill: var(--color-light-text);
 }
 
@@ -371,7 +368,10 @@ div .js-validate-error-field {
   .burger--active:hover span {
     width: 100%;
   }
-  .marker:focus path:first-child {
+}
+
+@media (min-width: 1025px) {
+  .tooltip:hover path:first-child {
     fill: var(--color-light-fill);
   }
 }
@@ -478,6 +478,7 @@ body, .smooth-container {
 }
 
 .nav__scroll {
+  padding-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -503,6 +504,7 @@ body, .smooth-container {
 
 .nav__link {
   position: relative;
+  z-index: 2;
   font-weight: 600;
   font-size: 1em;
   line-height: 2em;
@@ -659,14 +661,12 @@ body, .smooth-container {
 
 .dropdown__scrollbar {
   width: 220px;
-  height: 220px;
+  max-height: 220px;
 }
 
 .dropdown__item {
   position: relative;
-  padding: 10px 14px;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+  min-height: 40px;
   transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -756,7 +756,24 @@ body, .smooth-container {
   background-image: url("../img/header5-4.jpg");
 }
 
-.dropdown__item::before {
+.dropdown__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.dropdown__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px 14px;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  font-size: 0.875em;
+  color: white;
+}
+
+.dropdown__link::before {
   content: '';
   position: absolute;
   top: 0;
@@ -770,25 +787,16 @@ body, .smooth-container {
   transition-timing-function: ease-in-out;
 }
 
-.dropdown__item:not(:last-child) {
-  margin-bottom: 20px;
-}
-
-.dropdown__item:focus {
+.dropdown__link:focus {
   outline-color: var(--color-fill);
 }
 
-.dropdown__item:active {
+.dropdown__link:active {
   outline-color: var(--color-fill);
 }
 
-.dropdown__item:active::before {
+.dropdown__link:active::before {
   opacity: 1;
-}
-
-.dropdown__link {
-  font-size: 0.875em;
-  color: white;
 }
 
 .search {
@@ -1056,6 +1064,9 @@ input[type="search"]::-webkit-search-results-decoration {
     background-color: transparent;
     opacity: 1;
     transform: translateY(0px);
+  }
+  .nav__scroll {
+    padding-bottom: 0;
   }
   .nav__box {
     flex-direction: row;
@@ -2607,7 +2618,7 @@ input[type="search"]::-webkit-search-results-decoration {
   background-color: #666666;
 }
 
-.events__btn-next {
+.events__btn-next, .events__btn-prev {
   position: absolute;
   top: 45%;
   right: -25px;
@@ -2623,7 +2634,12 @@ input[type="search"]::-webkit-search-results-decoration {
   transition-timing-function: ease-in-out;
 }
 
-.events__btn-next::after {
+.events__btn-prev {
+  right: auto;
+  left: -25px;
+}
+
+.events__btn-next::after, .events__btn-prev::after {
   content: '';
   position: absolute;
   top: 30%;
@@ -2637,6 +2653,11 @@ input[type="search"]::-webkit-search-results-decoration {
   transition-property: border, outline, color, background-color, transform, fill, stroke, opacity, filter;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
+}
+
+.events__btn-prev::after {
+  left: 18%;
+  transform: scale(-1, 1);
 }
 
 .events__btn-next:focus {
@@ -2981,7 +3002,7 @@ input[type="search"]::-webkit-search-results-decoration {
   .events__card-title {
     margin-bottom: 1px;
   }
-  .events__btn-next {
+  .events__btn-next, .events__btn-prev {
     display: block;
   }
   .events__pagination {

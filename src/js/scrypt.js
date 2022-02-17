@@ -336,13 +336,15 @@ const swiperEvents = new Swiper('.events__swiper', {
     rows: 1,
     fill: 'row',
   },
-  loop: true,
   a11y: false,
   keyboard: true,
   watchSlidesProgress: true,
   watchSlidesVisibility: true,
   navigation: {
+    prevEl: '.events__btn-prev',
     nextEl: '.events__btn-next',
+    disabledClass: 'deactivate',
+
   },
   pagination: {
     el: '.events__pagination',
@@ -485,10 +487,10 @@ document.querySelectorAll('.js-scroll-link').forEach(link => {
   });
 });
 // частично отложенная загрузка карты
+let myMapLoad = false;
 document.addEventListener('DOMContentLoaded', () => {
   // Получаем нужный элемент
 const element = document.querySelector('#map');
-let myMapLoad = false;
 const Visible = function (target) {
   // Все позиции элемента
   const targetPosition = {

@@ -21,7 +21,8 @@
   &__swiper  .swiper-pagination-bullet-active {
     background-color: #666666;
   }
-  &__btn-next {
+  &__btn-next,
+  &__btn-prev {
     position: absolute;
     top: 45%;
     right: -25px;
@@ -34,7 +35,12 @@
     background-color: var(--color-light-gray-fill);
     @include transition;
   }
-  &__btn-next::after {
+  &__btn-prev {
+    right: auto;
+    left: -25px;
+  }
+  &__btn-next::after,
+  &__btn-prev::after {
     content: '';
     position: absolute;
     top: 30%;
@@ -46,6 +52,10 @@
     background-position: center;
     background-size: contain;
     @include transition;
+  }
+  &__btn-prev::after {
+    left: 18%;
+    transform: scale( -1, 1);
   }
 
   &__btn-next:focus {
@@ -308,7 +318,8 @@
     &__card-title {
       margin-bottom: 1px;
     }
-    &__btn-next {
+    &__btn-next,
+    &__btn-prev {
       display: block;
     }
     &__pagination {

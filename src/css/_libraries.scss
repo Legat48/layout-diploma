@@ -100,23 +100,21 @@ div .js-validate-error-field {
   position: relative;
   display: inline-flex;
   max-width: 16px;
-}
-.marker {
   padding: 0;
   border: 0;
   outline: none;
   background-color: transparent;
 }
-.marker path {
+.tooltip path {
   @include transition;
 }
-.marker:focus path:first-child {
+.tooltip:focus path:first-child {
   fill: var(--color-light-fill);
 }
-.marker:active path:first-child {
+.tooltip:active path:first-child {
   fill: var(--color-fill);
 }
-.marker:active path:last-child {
+.tooltip:active path:last-child {
   fill: var(--color-light-text);
 }
 .tippy-box[data-theme~='castom-tooltip'] {
@@ -171,7 +169,9 @@ div .js-validate-error-field {
   .burger--active:hover span {
     width: 100%;
   }
-  .marker:focus path:first-child {
+}
+@media (min-width: 1025px) {
+  .tooltip:hover path:first-child {
     fill: var(--color-light-fill);
   }
 }
